@@ -1,12 +1,12 @@
 spring:
   application:
-    name: Tycoon Admin Management
+    name: LifeTech
   
   profiles:
     active: dev
   
   datasource:
-    url: jdbc:postgresql://localhost:5433/tycoon_admin
+    url: jdbc:postgresql://localhost:5433/lifetech_admin
     username: admin
     password: password
     driver-class-name: org.postgresql.Driver
@@ -53,7 +53,7 @@ spring:
         
   data:
     mongodb:
-      uri: ${MONGO_URI:mongodb://localhost:27017/tycoon_admin_docs}
+      uri: ${MONGO_URI:mongodb://localhost:27017/lifetech_admin_docs}
       
   rabbitmq:
     host: ${RABBITMQ_HOST:localhost}
@@ -76,7 +76,7 @@ spring:
 # Application Configuration
 app:
   jwt:
-    secret: ${JWT_SECRET:myVerySecretJWTKeyForTycoonAdminSystemThatIsAtLeast256BitsLong}
+    secret: ${JWT_SECRET:myVerySecretJWTKeyForLifeTechSystemThatIsAtLeast256BitsLong}
     expiration: 3600000 # 1 hour
     refresh-expiration: 604800000 # 7 days
   

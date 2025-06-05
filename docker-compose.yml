@@ -1,4 +1,4 @@
-# Tycoon Admin Management System - Docker Compose Configuration
+# LifeTech System - Docker Compose Configuration
 # 
 # This docker-compose.yml sets up the complete development/production environment including:
 # - PostgreSQL database (port 5433 on host, 5432 in container)
@@ -19,10 +19,10 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: tycoon-postgres
+    container_name: lifetech-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_DB: tycoon_admin
+      POSTGRES_DB: lifetech_admin
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
     ports:
@@ -30,36 +30,36 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U admin -d tycoon_admin"]
+      test: ["CMD-SHELL", "pg_isready -U admin -d lifetech_admin"]
       interval: 10s
       timeout: 5s
       retries: 5
       start_period: 10s
     networks:
-      - tycoon-network
+      - lifetech-network
 
   mongodb:
     image: mongo:7.0
-    container_name: tycoon-mongodb
+    container_name: lifetech-mongodb
     restart: unless-stopped
     environment:
-      MONGO_INITDB_DATABASE: tycoon_admin_docs
+      MONGO_INITDB_DATABASE: lifetech_admin_docs
     ports:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/tycoon_admin_docs --quiet
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/lifetech_admin_docs --quiet
       interval: 10s
       timeout: 5s
       retries: 5
       start_period: 10s
     networks:
-      - tycoon-network
+      - lifetech-network
 
   redis:
     image: redis:7-alpine
-    container_name: tycoon-redis
+    container_name: lifetech-redis
     restart: unless-stopped
     ports:
       - "6380:6379"
@@ -72,7 +72,7 @@ services:
       retries: 5
       start_period: 10s
     networks:
-      - tycoon-network
+      - lifetech-network
     command: ["redis-server", 
               "--bind", "0.0.0.0",
               "--appendonly", "yes",
@@ -84,7 +84,7 @@ services:
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
-    container_name: tycoon-rabbitmq
+    container_name: lifetech-rabbitmq
     restart: unless-stopped
     environment:
       RABBITMQ_DEFAULT_USER: guest
@@ -101,13 +101,13 @@ services:
       retries: 5
       start_period: 30s
     networks:
-      - tycoon-network
+      - lifetech-network
 
   app:
     build:
       context: ./Backend
       dockerfile: Dockerfile
-    container_name: tycoon-admin-app
+    container_name: lifetech-app
     restart: unless-stopped
     depends_on:
       postgres:
@@ -123,10 +123,10 @@ services:
     environment:
       - SERVER_PORT=8090
       - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/tycoon_admin
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/lifetech_admin
       - SPRING_DATASOURCE_USERNAME=admin
       - SPRING_DATASOURCE_PASSWORD=password
-      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/tycoon_admin_docs
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/lifetech_admin_docs
       - SPRING_REDIS_HOST=redis
       - SPRING_REDIS_PORT=6379
       - SPRING_RABBITMQ_HOST=rabbitmq
@@ -143,10 +143,10 @@ services:
       retries: 5
       start_period: 60s
     networks:
-      - tycoon-network
+      - lifetech-network
 
 networks:
-  tycoon-network:
+  lifetech-network:
     driver: bridge
 
 volumes:

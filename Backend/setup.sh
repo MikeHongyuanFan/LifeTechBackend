@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Setting up Tycoon Admin Management System..."
+echo "Setting up LifeTech System..."
 
 # Check if Redis port is specified, default to 6380
 REDIS_PORT=${REDIS_PORT:-6380}
@@ -85,7 +85,7 @@ start_spring_boot() {
     fi
     
     # Set environment variables for database connection
-    export SPRING_DATASOURCE_URL="jdbc:postgresql://localhost:$POSTGRES_PORT/tycoon_admin"
+    export SPRING_DATASOURCE_URL="jdbc:postgresql://localhost:$POSTGRES_PORT/lifetech_admin"
     export SPRING_DATASOURCE_USERNAME="admin"
     export SPRING_DATASOURCE_PASSWORD="password"
     export SPRING_REDIS_HOST="localhost"

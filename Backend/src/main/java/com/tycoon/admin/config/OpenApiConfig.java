@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenApiConfig {
 
-    @Value("${spring.application.name:Tycoon Admin Management}")
+    @Value("${spring.application.name:LifeTech}")
     private String applicationName;
 
     @Bean
@@ -25,14 +25,14 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .info(new Info()
                         .title(applicationName + " API")
-                        .description("API documentation for Tycoon Admin Management System")
+                        .description("API documentation for LifeTech System")
                         .version("1.0.0")
                         .contact(new Contact()
-                                .name("Tycoon Development Team")
-                                .email("dev-team@tycoon.com"))
+                                .name("LifeTech Development Team")
+                                .email("dev-team@lifetech.com"))
                         .license(new License()
                                 .name("Private License")
-                                .url("https://tycoon.com")))
+                                .url("https://lifetech.com")))
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
                 .components(new Components()
                         .addSecuritySchemes(securitySchemeName,
@@ -47,7 +47,7 @@ public class OpenApiConfig {
     @Bean
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
-                .group("tycoon-admin-api")
+                .group("lifetech-api")
                 .packagesToScan("com.tycoon.admin")
                 .build();
     }
