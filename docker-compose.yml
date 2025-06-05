@@ -1,0 +1,156 @@
+# Tycoon Admin Management System - Docker Compose Configuration
+# 
+# This docker-compose.yml sets up the complete development/production environment including:
+# - PostgreSQL database (port 5433 on host, 5432 in container)
+# - MongoDB document store (port 27017)
+# - Redis cache (port 6379)
+# - RabbitMQ message broker (ports 5672, 15672 for management UI)
+# - Spring Boot application (port 8090)
+#
+# Usage:
+#   - Development: docker-compose up -d
+#   - Production: docker-compose -f docker-compose.yml up -d
+#   - View logs: docker-compose logs -f app
+#   - Stop all: docker-compose down
+#   - Clean rebuild: docker-compose down -v && docker-compose build --no-cache && docker-compose up -d
+#
+# Health checks ensure services start in correct order and are fully ready before dependent services start.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: tycoon-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: tycoon_admin
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d tycoon_admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - tycoon-network
+
+  mongodb:
+    image: mongo:7.0
+    container_name: tycoon-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: tycoon_admin_docs
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/tycoon_admin_docs --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - tycoon-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: tycoon-redis
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - tycoon-network
+    command: ["redis-server", 
+              "--bind", "0.0.0.0",
+              "--appendonly", "yes",
+              "--maxmemory", "256mb",
+              "--maxmemory-policy", "allkeys-lru",
+              "--save", "900", "1",
+              "--save", "300", "10",
+              "--save", "60", "10000"]
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: tycoon-rabbitmq
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - tycoon-network
+
+  app:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: tycoon-admin-app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    ports:
+      - "8090:8090"
+    environment:
+      - SERVER_PORT=8090
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/tycoon_admin
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/tycoon_admin_docs
+      - SPRING_REDIS_HOST=redis
+      - SPRING_REDIS_PORT=6379
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=guest
+      - SPRING_RABBITMQ_PASSWORD=guest
+      - JAVA_OPTS=-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0
+      - MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,info,metrics
+      - MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS=always
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8090/api/admin/actuator/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    networks:
+      - tycoon-network
+
+networks:
+  tycoon-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  mongodb_data:
+  redis_data:
+  rabbitmq_data:
