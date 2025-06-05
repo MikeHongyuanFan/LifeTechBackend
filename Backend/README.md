@@ -314,10 +314,10 @@ This project is proprietary software for Tycoon Financial Platform.
 ## 📞 Support
 
 For technical support or questions:
-- **Email**: dev-team@tycoon.com
-- **Documentation**: Internal wiki
+- **Email**: fanhongyuan897@gmail.com
+- **Documentation**: Requriements folder
 - **Issues**: Internal issue tracker
 
 ---
 
-**Built with ❤️ by the Tycoon Development Team** 
+**Built with ❤️ by Mike StarX development team
