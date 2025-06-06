@@ -387,4 +387,46 @@ Default admin user created with username: admin and password: admin123
 -2025-06-05 18:09:37.216 -DEBUG 45737 --- [nio-8090-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
 -2025-06-05 18:09:37.216 -DEBUG 45737 --- [nio-8090-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/lifetech-api
 -2025-06-05 18:09:37.645 - INFO 45737 --- [nio-8090-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 421 ms
+-2025-06-05 18:11:49.085 -DEBUG 45737 --- [nio-8090-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+-2025-06-05 18:11:49.088 -DEBUG 45737 --- [nio-8090-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+-2025-06-05 18:11:49.089 -DEBUG 45737 --- [nio-8090-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+-2025-06-05 18:11:49.138 -DEBUG 45737 --- [io-8090-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
+-2025-06-05 18:11:49.138 -DEBUG 45737 --- [io-8090-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+-2025-06-05 18:11:49.138 -DEBUG 45737 --- [nio-8090-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+-2025-06-05 18:11:49.138 -DEBUG 45737 --- [io-8090-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
+-2025-06-05 18:11:49.138 -DEBUG 45737 --- [nio-8090-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
+-2025-06-05 18:11:49.138 -DEBUG 45737 --- [nio-8090-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+-2025-06-05 18:11:49.138 -DEBUG 45737 --- [nio-8090-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
+-2025-06-05 18:11:49.139 -DEBUG 45737 --- [nio-8090-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+-2025-06-05 18:11:49.139 -DEBUG 45737 --- [nio-8090-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+-2025-06-05 18:11:49.139 -DEBUG 45737 --- [nio-8090-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+-2025-06-05 18:11:49.139 -DEBUG 45737 --- [nio-8090-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+-2025-06-05 18:11:49.139 -DEBUG 45737 --- [nio-8090-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
+-2025-06-05 18:11:49.139 -DEBUG 45737 --- [nio-8090-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
+-2025-06-05 18:11:49.139 -DEBUG 45737 --- [nio-8090-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+-2025-06-05 18:11:49.139 -DEBUG 45737 --- [nio-8090-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+-2025-06-05 18:11:49.220 -DEBUG 45737 --- [nio-8090-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+-2025-06-05 18:11:49.220 -DEBUG 45737 --- [nio-8090-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+-2025-06-05 18:11:49.221 -DEBUG 45737 --- [nio-8090-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+-2025-06-05 18:11:49.222 -DEBUG 45737 --- [nio-8090-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/favicon-32x32.png
+-2025-06-05 18:11:49.223 -DEBUG 45737 --- [nio-8090-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+-2025-06-05 18:11:49.223 -DEBUG 45737 --- [nio-8090-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/favicon-32x32.png
+-2025-06-05 18:11:49.238 -DEBUG 45737 --- [nio-8090-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/lifetech-api
+-2025-06-05 18:11:49.239 -DEBUG 45737 --- [nio-8090-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+-2025-06-05 18:11:49.239 -DEBUG 45737 --- [nio-8090-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/lifetech-api
+-2025-06-05 18:51:08.095 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m45s247ms).
+-2025-06-05 20:09:29.556 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h18m21s481ms).
+-2025-06-05 21:05:49.376 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56m19s820ms).
+-2025-06-05 22:18:26.580 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h12m37s204ms).
+-2025-06-05 23:36:15.360 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h17m48s767ms).
+-2025-06-06 00:36:50.007 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h34s658ms).
+-2025-06-06 01:56:40.984 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h19m50s977ms).
+-2025-06-06 03:08:58.708 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h12m17s725ms).
+-2025-06-06 04:48:40.265 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h39m41s554ms).
+-2025-06-06 06:14:30.339 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h25m50s76ms).
+-2025-06-06 07:18:17.118 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h3m46s778ms).
+-2025-06-06 08:36:28.670 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h18m11s551ms).
+-2025-06-06 09:38:20.281 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m51s613ms).
+-2025-06-06 10:36:46.790 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58m26s509ms).
+-2025-06-06 10:54:12.687 - WARN 45737 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m25s897ms).
 -
