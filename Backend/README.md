@@ -1,6 +1,6 @@
-# Tycoon Admin Management System
+# Finance Admin Management System
 
-A comprehensive Spring Boot backend system for the Tycoon Financial Platform's administrative management terminal.
+A comprehensive Spring Boot backend system for the Finance Financial Platform's administrative management terminal.
 
 ## 🏗️ Architecture Overview
 
@@ -29,7 +29,7 @@ This system implements a production-ready admin management platform with the fol
 
 ```
 Backend/
-├── src/main/java/com/tycoon/admin/
+├── src/main/java/com/finance/admin/
 │   ├── AdminManagementApplication.java          # Main application class
 │   ├── auth/                                    # Authentication module (AR-001)
 │   │   ├── controller/AuthController.java      # Login, MFA, logout endpoints
@@ -53,7 +53,7 @@ Backend/
 │   ├── application.yml                        # Main configuration
 │   └── application-test.yml                   # Test configuration
 └── src/test/java/                            # Integration tests
-    └── com/tycoon/admin/auth/
+    └── com/finance/admin/auth/
         └── AuthenticationIntegrationTest.java # Comprehensive auth tests
 ```
 
@@ -72,15 +72,15 @@ Backend/
 
 1. **PostgreSQL**:
 ```sql
-CREATE DATABASE tycoon_admin;
+CREATE DATABASE finance_admin;
 CREATE USER admin WITH PASSWORD 'password';
-GRANT ALL PRIVILEGES ON DATABASE tycoon_admin TO admin;
+GRANT ALL PRIVILEGES ON DATABASE finance_admin TO admin;
 ```
 
 2. **MongoDB**:
 ```bash
 # Create database and user
-use tycoon_admin_docs
+use finance_admin_docs
 db.createUser({
   user: "admin",
   pwd: "password",
@@ -309,7 +309,7 @@ Access interactive API documentation at:
 
 ## 📄 License
 
-This project is proprietary software for Tycoon Financial Platform.
+This project is proprietary software for Finance Financial Platform.
 
 ## 📞 Support
 

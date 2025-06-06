@@ -1,9 +1,9 @@
-# LifeTech System - Docker Compose Configuration
+# Finance Admin Management System - Docker Compose Configuration
 # 
 # This docker-compose.yml sets up the complete development/production environment including:
 # - PostgreSQL database (port 5433 on host, 5432 in container)
 # - MongoDB document store (port 27017)
-# - Redis cache (port 6379)
+# - Redis cache (port 6380)
 # - RabbitMQ message broker (ports 5672, 15672 for management UI)
 # - Spring Boot application (port 8090)
 #
@@ -19,47 +19,52 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: lifetech-postgres
+    container_name: finance-admin-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_DB: lifetech_admin
+      POSTGRES_DB: finance_admin
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
     ports:
       - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./Backend/src/main/resources/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U admin -d lifetech_admin"]
+      test: ["CMD-SHELL", "pg_isready -U admin -d finance_admin"]
       interval: 10s
       timeout: 5s
       retries: 5
       start_period: 10s
     networks:
-      - lifetech-network
+      - finance-network
 
   mongodb:
-    image: mongo:7.0
-    container_name: lifetech-mongodb
+    image: mongo:8.0
+    container_name: finance-admin-mongodb
     restart: unless-stopped
     environment:
-      MONGO_INITDB_DATABASE: lifetech_admin_docs
+      MONGO_INITDB_DATABASE: finance_admin_docs
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
     ports:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/lifetech_admin_docs --quiet
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 10s
       timeout: 5s
       retries: 5
       start_period: 10s
     networks:
-      - lifetech-network
+      - finance-network
 
   redis:
-    image: redis:7-alpine
-    container_name: lifetech-redis
+    image: redis:7.4-alpine
+    container_name: finance-admin-redis
     restart: unless-stopped
     ports:
       - "6380:6379"
@@ -72,19 +77,19 @@ services:
       retries: 5
       start_period: 10s
     networks:
-      - lifetech-network
+      - finance-network
     command: ["redis-server", 
               "--bind", "0.0.0.0",
               "--appendonly", "yes",
-              "--maxmemory", "256mb",
+              "--maxmemory", "512mb",
               "--maxmemory-policy", "allkeys-lru",
               "--save", "900", "1",
               "--save", "300", "10",
               "--save", "60", "10000"]
 
   rabbitmq:
-    image: rabbitmq:3-management-alpine
-    container_name: lifetech-rabbitmq
+    image: rabbitmq:3.13-management-alpine
+    container_name: finance-admin-rabbitmq
     restart: unless-stopped
     environment:
       RABBITMQ_DEFAULT_USER: guest
@@ -101,13 +106,15 @@ services:
       retries: 5
       start_period: 30s
     networks:
-      - lifetech-network
+      - finance-network
 
   app:
     build:
       context: ./Backend
       dockerfile: Dockerfile
-    container_name: lifetech-app
+      args:
+        - MAVEN_OPTS=-Xmx1024m -XX:MaxPermSize=256m
+    container_name: finance-admin-app
     restart: unless-stopped
     depends_on:
       postgres:
@@ -123,34 +130,48 @@ services:
     environment:
       - SERVER_PORT=8090
       - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/lifetech_admin
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/finance_admin
       - SPRING_DATASOURCE_USERNAME=admin
       - SPRING_DATASOURCE_PASSWORD=password
-      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/lifetech_admin_docs
+      - SPRING_DATA_MONGODB_URI=mongodb://admin:password@mongodb:27017/finance_admin_docs?authSource=admin
       - SPRING_REDIS_HOST=redis
       - SPRING_REDIS_PORT=6379
       - SPRING_RABBITMQ_HOST=rabbitmq
       - SPRING_RABBITMQ_PORT=5672
       - SPRING_RABBITMQ_USERNAME=guest
       - SPRING_RABBITMQ_PASSWORD=guest
-      - JAVA_OPTS=-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0
+      - JAVA_OPTS=-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -Dspring.output.ansi.enabled=ALWAYS
       - MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,info,metrics
       - MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS=always
+      - JWT_SECRET=myVerySecretJWTKeyForFinanceAdminSystemThatIsAtLeast256BitsLong
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8090/api/admin/actuator/health || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 5
-      start_period: 60s
+      start_period: 90s
     networks:
-      - lifetech-network
+      - finance-network
+    volumes:
+      - app_logs:/app/logs
 
 networks:
-  lifetech-network:
+  finance-network:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
 
 volumes:
   postgres_data:
+    driver: local
   mongodb_data:
+    driver: local
+  mongodb_config:
+    driver: local
   redis_data:
+    driver: local
   rabbitmq_data:
+    driver: local
+  app_logs:
+    driver: local

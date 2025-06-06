@@ -1,6 +1,8 @@
 spring:
   application:
-    name: tycoon-admin-management-test
+    name: finance-admin-management-test
+  profiles:
+    active: test
   
   datasource:
     url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
@@ -11,8 +13,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
-    database-platform: org.hibernate.dialect.H2Dialect
-    show-sql: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
     
   redis:
     host: localhost
@@ -21,7 +26,7 @@ spring:
     
   data:
     mongodb:
-      uri: mongodb://localhost:27017/tycoon_admin_test
+      uri: mongodb://localhost:27017/finance_admin_test
       
   rabbitmq:
     host: localhost
@@ -32,7 +37,7 @@ spring:
 # Test-specific configuration
 app:
   jwt:
-    secret: testSecretKeyForTycoonAdminSystemThatIsAtLeast256BitsLongForTestingPurposes
+    secret: testSecretKeyForFinanceAdminSystemThatIsAtLeast256BitsLongForTestingPurposes
     expiration: 600000 # 10 minutes for tests
     refresh-expiration: 3600000 # 1 hour for tests
   
@@ -49,11 +54,16 @@ app:
 # Logging for tests
 logging:
   level:
-    com.tycoon.admin: INFO
-    org.springframework.security: WARN
-    org.hibernate.SQL: WARN
-    org.springframework.web: WARN
-    org.testcontainers: WARN
+    root: WARN
+    org.springframework: INFO
+    org.hibernate: INFO
+    org.springframework.security: DEBUG
+    org.springframework.test: DEBUG
+    org.springframework.boot.test: DEBUG
+    org.springframework.transaction: DEBUG
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.data.jpa: DEBUG
+    com.finance.admin: INFO
   pattern:
     console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
 

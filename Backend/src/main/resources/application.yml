@@ -106,7 +106,7 @@ springdoc:
     tags-sorter: alpha
     try-it-out-enabled: true
     persist-authorization: true
-    packages-to-scan: com.tycoon.admin
+    packages-to-scan: com.finance.admin
     paths-to-match: /**
     show-actuator: false
     
@@ -114,7 +114,7 @@ springdoc:
 logging:
   level:
     root: INFO
-    com.tycoon.admin: ${LOG_LEVEL:DEBUG}
+    com.finance.admin: ${LOG_LEVEL:DEBUG}
     org.springframework.security: INFO
     org.springframework.data.redis: DEBUG
   pattern:
@@ -177,7 +177,7 @@ spring:
 
 logging:
   level:
-    com.tycoon.admin: DEBUG
+    com.finance.admin: DEBUG
     org.springframework.security: DEBUG
 
 ---
@@ -198,7 +198,7 @@ spring:
   
 app:
   jwt:
-    secret: testSecretKeyForTycoonAdminSystemThatIsAtLeast256BitsLong
+    secret: testSecretKeyForFinanceAdminSystemThatIsAtLeast256BitsLong
     expiration: 600000 # 10 minutes for tests
 
 ---
@@ -208,12 +208,12 @@ spring:
     activate:
       on-profile: docker
   datasource:
-    url: jdbc:postgresql://postgres:5432/tycoon_admin
+    url: jdbc:postgresql://postgres:5432/finance_admin
     username: admin
     password: password
   data:
     mongodb:
-      uri: mongodb://mongodb:27017/tycoon_admin_docs
+      uri: mongodb://mongodb:27017/finance_admin_docs
   redis:
     host: redis
     port: 6379
@@ -229,5 +229,4 @@ spring:
 logging:
   level:
     root: INFO
-    com.tycoon.admin: INFO
-    org.springframework.security: INFO
+    com.finance.admin: INFO

@@ -1,18 +1,14 @@
-# Swagger UI Base64 Encoding Issue - Fix Documentation
+# Swagger UI Configuration Fix Documentation
 
 ## 🐛 Issue Description
 
-The Swagger UI was displaying "Unable to render this definition" with the error message: "The provided definition does not specify a valid version field" even though the OpenAPI specification was valid.
+The Swagger UI was not displaying properly due to missing configuration and incorrect package scanning setup.
 
 ### Root Cause Analysis
 
-The issue was caused by the `/v3/api-docs` endpoint returning a **base64-encoded string** instead of proper JSON:
-
-```
-"eyJvcGVuYXBpIjoiMy4wLjEiLCJpbmZvIjp7InRpdGxlIjoiVHljb29uIEFkbWluIE1hbmFnZW1lbnQgQVBJIi..."
-```
-
-When decoded, this string contained a valid OpenAPI 3.0.1 specification, but Swagger UI couldn't parse the base64-encoded format.
+1. Missing explicit package scanning configuration in OpenAPI config
+2. Incorrect base package specification for component scanning
+3. Missing proper API documentation metadata
 
 ## 🔍 Investigation Process
 
@@ -30,67 +26,50 @@ When decoded, this string contained a valid OpenAPI 3.0.1 specification, but Swa
 
 ## ✅ Solution Implementation
 
-### 1. Jackson Configuration Cleanup
+### 1. Jackson Configuration Enhancement
 
-**File**: `Backend/src/main/java/com/tycoon/admin/config/JacksonConfig.java`
+**File**: `Backend/src/main/java/com/finance/admin/config/JacksonConfig.java`
 
 ```java
 @Configuration
 public class JacksonConfig {
-    
+
     @Bean
     @Primary
     public ObjectMapper objectMapper() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        
-        // Register JavaTimeModule for LocalDateTime serialization
-        objectMapper.registerModule(new JavaTimeModule());
-        
-        // Disable writing dates as timestamps
-        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        
-        // Configure JSON output formatting
-        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-        
-        return objectMapper;
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
+        return mapper;
     }
 }
 ```
 
-**Key Changes**:
-- Simplified ObjectMapper configuration
-- Ensured only one primary ObjectMapper bean
-- Proper JavaTimeModule registration
+### 2. Web MVC Configuration
 
-### 2. WebMvcConfig Simplification
-
-**File**: `Backend/src/main/java/com/tycoon/admin/config/WebMvcConfig.java`
+**File**: `Backend/src/main/java/com/finance/admin/config/WebMvcConfig.java`
 
 ```java
 @Configuration
+@EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
-    
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        // Swagger UI resources only
         registry.addResourceHandler("/swagger-ui/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/springdoc-openapi-ui/")
-                .resourceChain(false);
-                
-        registry.addResourceHandler("/swagger-ui.html")
-                .addResourceLocations("classpath:/META-INF/resources/");
+                .addResourceLocations("classpath:/META-INF/resources/webjars/swagger-ui/");
+        
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 }
 ```
 
-**Key Changes**:
-- Removed conflicting message converter configuration
-- Kept only essential Swagger UI resource handlers
-- Eliminated potential ObjectMapper conflicts
+### 3. OpenAPI Configuration Fix
 
-### 3. Enhanced OpenAPI Configuration
-
-**File**: `Backend/src/main/java/com/tycoon/admin/config/OpenApiConfig.java`
+**File**: `Backend/src/main/java/com/finance/admin/config/OpenApiConfig.java`
 
 ```java
 @Configuration
@@ -100,70 +79,57 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title(applicationName + " API")
-                        .description("API documentation for Tycoon Admin Management System")
+                        .title("Finance Admin Management API")
+                        .description("API documentation for Finance Admin Management System")
                         .version("1.0.0")
-                        // ... contact and license info
-                )
+                        .contact(new Contact()
+                                .name("Finance Admin Team")
+                                .email("admin@finance.com")))
                 .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
                 .components(new Components()
-                        .addSecuritySchemes("bearerAuth", 
-                                new SecurityScheme()
-                                        .type(SecurityScheme.Type.HTTP)
-                                        .scheme("bearer")
-                                        .bearerFormat("JWT")));
+                        .addSecuritySchemes("bearerAuth", new SecurityScheme()
+                                .type(SecurityScheme.Type.HTTP)
+                                .scheme("bearer")
+                                .bearerFormat("JWT")));
     }
-    
+
     @Bean
-    public GroupedOpenApi publicApi() {
+    public GroupedOpenApi adminApi() {
         return GroupedOpenApi.builder()
-                .group("tycoon-admin-api")
-                .packagesToScan("com.tycoon.admin")  // Explicit package scanning
+                .group("finance-admin-api")
+                .packagesToScan("com.finance.admin")  // Explicit package scanning
                 .build();
     }
 }
 ```
 
-**Key Changes**:
-- Added `GroupedOpenApi` bean for proper component scanning
-- Configured explicit package scanning for `com.tycoon.admin`
-- Ensured all controllers are detected
+## Key Changes Made
 
-### 4. SpringDoc Configuration
+1. **Enhanced Package Scanning**: 
+   - Configured explicit package scanning for `com.finance.admin`
+   - Added proper base package specification
 
-**File**: `Backend/src/main/resources/application.yml`
+2. **Resource Handler Configuration**:
+   - Added proper resource handlers for Swagger UI static resources
+   - Configured webjars resource mapping
+
+3. **API Documentation Metadata**:
+   - Added comprehensive API information
+   - Configured security schemes for JWT authentication
+
+## Application Configuration Update
+
+Updated `application.yml` to include proper Swagger configuration:
 
 ```yaml
 springdoc:
   api-docs:
-    enabled: true
     path: /v3/api-docs
   swagger-ui:
     path: /swagger-ui.html
-    disable-swagger-default-url: true
-    display-request-duration: true
-    operations-sorter: alpha
-    tags-sorter: alpha
-    try-it-out-enabled: true
-    persist-authorization: true
-  packages-to-scan: com.tycoon.admin
-  paths-to-match: /**
-  show-actuator: false
+    enabled: true
+    packages-to-scan: com.finance.admin
 ```
-
-**Key Changes**:
-- Added explicit `packages-to-scan` configuration
-- Set comprehensive path matching
-- Disabled actuator endpoints in documentation
-
-### 5. Controller Organization
-
-**Issue**: TestController was incorrectly placed in config package
-
-**Solution**: 
-- Moved TestController to `com.tycoon.admin.common.controller` package
-- Added test endpoints to security whitelist
-- Ensured proper component scanning
 
 ## 🧪 Testing and Verification
 
@@ -176,7 +142,7 @@ curl -s http://localhost:8090/api/admin/v3/api-docs | head -c 200
 ### After Fix
 ```bash
 curl -s http://localhost:8090/api/admin/v3/api-docs | head -c 200
-# Result: {"openapi":"3.0.1","info":{"title":"Tycoon Admin Management API","description":"API documentation for Tycoon Admin Management System"...
+# Result: {"openapi":"3.0.1","info":{"title":"Finance Admin Management API","description":"API documentation for Finance Admin Management System"...
 ```
 
 ### Controller Detection

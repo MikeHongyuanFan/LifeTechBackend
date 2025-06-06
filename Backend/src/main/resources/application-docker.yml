@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/tycoon_admin
+    url: jdbc:postgresql://postgres:5432/finance_admin
     username: admin
     password: password
   
   data:
     mongodb:
-      uri: mongodb://mongodb:27017/tycoon_admin_docs
+      uri: mongodb://mongodb:27017/finance_admin_docs
   
   redis:
     host: redis

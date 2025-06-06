@@ -1,6 +1,6 @@
-# Tycoon Admin Management System - Password Setup Guide
+# Finance Admin Management System - Password Setup Guide
 
-This document outlines the password management system implemented in the Tycoon Admin Management System, including how to set up initial admin users, password security features, and best practices.
+This document outlines the password management system implemented in the Finance Admin Management System, including how to set up initial admin users, password security features, and best practices.
 
 ## 🔐 Password Security Implementation
 
@@ -36,8 +36,9 @@ public class AdminUserSeeder implements CommandLineRunner {
             // Create a new admin user
             AdminUser admin = new AdminUser();
             admin.setUsername("admin");
-            admin.setEmail("admin@tycoon.com");
-            admin.setPasswordHash(passwordEncoder.encode("admin123"));
+            admin.setEmail("admin@finance.com");
+            admin.setPasswordHash(passwordEncoder.encode("Admin@123"));
+            admin.setRole(AdminRole.SUPER_ADMIN);
             admin.setStatus(AdminUserStatus.ACTIVE);
             admin.setMfaEnabled(false);
             admin.setForcePasswordChange(false);
@@ -53,7 +54,7 @@ public class AdminUserSeeder implements CommandLineRunner {
             
             userRepository.save(admin);
             
-            System.out.println("Default admin user created with username: admin and password: admin123");
+            System.out.println("Default admin user created with username: admin and password: Admin@123");
         }
     }
 }
@@ -66,7 +67,7 @@ For creating admin users manually or for testing purposes, you can use the `Pass
 ```java
 public class PasswordHashGenerator {
     public static void main(String[] args) {
-        String rawPassword = "admin123"; // <-- your chosen admin password
+        String rawPassword = "Admin@123"; // <-- your chosen admin password
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String hashedPassword = encoder.encode(rawPassword);
         System.out.println("Hashed password: " + hashedPassword);
@@ -77,19 +78,12 @@ public class PasswordHashGenerator {
 Run this utility to generate a BCrypt hash, then insert it directly into the database:
 
 ```sql
-INSERT INTO admin_users (
-    id, username, email, password_hash, status, 
-    mfa_enabled, force_password_change, failed_login_attempts, 
-    session_timeout_minutes, created_at, version
-) VALUES (
-    gen_random_uuid(), 'admin', 'admin@tycoon.com', 
-    '$2a$10$ltB2BtiEZnK0IBjdd1nzpeIiNlEK6nPO6plnQVhp8uzjrHp4hNBBm', 
-    'ACTIVE', false, false, 0, 30, CURRENT_TIMESTAMP, 0
+INSERT INTO admin_users (id, username, email, password_hash, role, status, mfa_enabled, created_at, updated_at)
+VALUES (
+    gen_random_uuid(), 'admin', 'admin@finance.com',
+    '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lbdxIo0jQDjT6VmRq',
+    'SUPER_ADMIN', 'ACTIVE', false, NOW(), NOW()
 );
-
--- Add SUPER_ADMIN role
-INSERT INTO admin_user_roles (admin_user_id, role)
-SELECT id, 'SUPER_ADMIN' FROM admin_users WHERE username = 'admin';
 ```
 
 ### Option 3: Using the API (After Initial Setup)
@@ -103,10 +97,9 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "username": "newadmin",
-    "email": "newadmin@tycoon.com",
-    "password": "securepassword123",
-    "roles": ["SYSTEM_ADMIN"],
-    "forcePasswordChange": true
+    "email": "newadmin@finance.com",
+    "password": "SecurePass@123",
+    "role": "SYSTEM_ADMIN"
   }'
 ```
 
@@ -124,7 +117,7 @@ To fix a truncated hash, update it directly:
 
 ```sql
 UPDATE admin_users 
-SET password_hash = '$2a$10$ltB2BtiEZnK0IBjdd1nzpeIiNlEK6nPO6plnQVhp8uzjrHp4hNBBm' 
+SET password_hash = '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lbdxIo0jQDjT6VmRq' 
 WHERE username = 'admin';
 ```
 
@@ -161,7 +154,7 @@ CREATE TABLE admin_users (
 Password policies are configured in `application.yml`:
 
 ```yaml
-tycoon:
+finance:
   security:
     password:
       min-length: 8
@@ -202,7 +195,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "username": "admin",
-    "password": "admin123"
+    "password": "Admin@123"
   }'
 ```
 

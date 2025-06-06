@@ -1,4 +1,8 @@
-# Tycoon System - Technical Specifications
+# Finance System - Technical Specifications
+
+## 1. System Overview
+
+The Finance System is a comprehensive financial management platform designed to provide secure, scalable, and efficient financial services. This document outlines the technical specifications for implementing the system using Spring Boot Java framework with modern enterprise architecture patterns.
 
 ## Technology Stack Overview
 
@@ -593,51 +597,19 @@ public class JwtTokenProvider {
 ```yaml
 spring:
   application:
-    name: tycoon-system
-  
+    name: finance-system
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
   datasource:
-    url: jdbc:postgresql://localhost:5432/tycoon_db
-    username: ${DB_USERNAME:tycoon_user}
-    password: ${DB_PASSWORD:password}
+    url: jdbc:postgresql://localhost:5432/finance_db
+    username: ${DB_USERNAME:finance_user}
+    password: ${DB_PASSWORD:finance_password}
     driver-class-name: org.postgresql.Driver
-    
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    show-sql: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-        
-  redis:
-    host: ${REDIS_HOST:localhost}
-    port: ${REDIS_PORT:6379}
-    password: ${REDIS_PASSWORD:}
-    timeout: 2000ms
-    lettuce:
-      pool:
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
-        
-  rabbitmq:
-    host: ${RABBITMQ_HOST:localhost}
-    port: ${RABBITMQ_PORT:5672}
-    username: ${RABBITMQ_USERNAME:guest}
-    password: ${RABBITMQ_PASSWORD:guest}
-    
-  mail:
-    host: ${MAIL_HOST:smtp.gmail.com}
-    port: ${MAIL_PORT:587}
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 300000
+      connection-timeout: 20000
 
 # JWT Configuration
 app:
@@ -656,9 +628,12 @@ springdoc:
 # Logging
 logging:
   level:
-    com.tycoon: DEBUG
-    org.springframework.security: DEBUG
+    root: INFO
+    com.finance: DEBUG
+    org.springframework.security: INFO
+    org.springframework.web: INFO
     org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     
 # Rate Limiting
 bucket4j:
@@ -871,4 +846,4 @@ Microservices Architecture:
   Distributed Tracing: Spring Cloud Sleuth with Zipkin
 ```
 
-This technical specification now provides a comprehensive Spring Boot Java foundation for implementing the Tycoon System with proper security, scalability, and integration capabilities using the Spring ecosystem. 
+This technical specification now provides a comprehensive Spring Boot Java foundation for implementing the Finance System with proper security, scalability, and integration capabilities using the Spring ecosystem. 

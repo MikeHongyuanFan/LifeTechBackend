@@ -1,8 +1,8 @@
-# Tycoon Admin Management System - Setup Guide
+# Finance Admin Management System - Setup Guide
 
 ## 📋 Overview
 
-This guide provides step-by-step instructions for setting up the Tycoon Admin Management System, including all required infrastructure services and the Spring Boot application.
+This guide provides step-by-step instructions for setting up the Finance Admin Management System, including all required infrastructure services and the Spring Boot application.
 
 ## 🛠️ Prerequisites
 
@@ -73,11 +73,11 @@ Wait until all services show "healthy" status. This may take 2-3 minutes.
 
 ```bash
 # Set environment variables
-export SPRING_DATASOURCE_URL="jdbc:postgresql://localhost:5433/tycoon_admin"
+export SPRING_DATASOURCE_URL="jdbc:postgresql://localhost:5433/finance_admin"
 export SPRING_DATASOURCE_USERNAME="admin"
 export SPRING_DATASOURCE_PASSWORD="password"
 export SPRING_REDIS_HOST="localhost"
-export SPRING_REDIS_PORT="6380"
+export SPRING_REDIS_PORT="6379"
 
 # Start application
 ./mvnw spring-boot:run
@@ -164,20 +164,32 @@ The application supports the following environment variables:
 
 ```bash
 # Database Configuration
-SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5433/tycoon_admin
+SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5433/finance_admin
 SPRING_DATASOURCE_USERNAME=admin
 SPRING_DATASOURCE_PASSWORD=password
 
 # Redis Configuration
 SPRING_REDIS_HOST=localhost
-SPRING_REDIS_PORT=6380
+SPRING_REDIS_PORT=6379
 
 # Security Configuration
-JWT_SECRET=myVerySecretJWTKeyForTycoonAdminSystemThatIsAtLeast256BitsLong
+JWT_SECRET=myVerySecretJWTKeyForFinanceAdminSystemThatIsAtLeast256BitsLong
 ALLOWED_IPS=127.0.0.1,::1,0:0:0:0:0:0:0:1,localhost
 
 # Logging Level
 LOG_LEVEL=DEBUG
+
+# MongoDB Configuration
+SPRING_DATA_MONGODB_URI=mongodb://localhost:27017/finance_admin_docs
+
+# RabbitMQ Configuration
+SPRING_RABBITMQ_HOST=localhost
+SPRING_RABBITMQ_PORT=5672
+SPRING_RABBITMQ_USERNAME=guest
+SPRING_RABBITMQ_PASSWORD=guest
+
+# Spring Profiles
+SPRING_PROFILES_ACTIVE="dev"
 ```
 
 ### Application Profiles
