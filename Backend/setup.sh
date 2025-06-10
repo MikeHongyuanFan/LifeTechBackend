@@ -85,7 +85,7 @@ start_spring_boot() {
     fi
     
     # Set environment variables for database connection
-    export SPRING_DATASOURCE_URL="jdbc:postgresql://localhost:$POSTGRES_PORT/lifetech_admin"
+    export SPRING_DATASOURCE_URL="jdbc:postgresql://localhost:$POSTGRES_PORT/finance_admin"
     export SPRING_DATASOURCE_USERNAME="admin"
     export SPRING_DATASOURCE_PASSWORD="password"
     export SPRING_REDIS_HOST="localhost"
