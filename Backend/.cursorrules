@@ -1,0 +1,316 @@
+# LifeTech Finance Admin Management System - Cursor Rules
+
+## Project Overview
+This is a Spring Boot 3.2+ finance admin management system using Java 17+, PostgreSQL, MongoDB, Redis, and RabbitMQ. Follow enterprise-grade patterns with strong emphasis on security, audit logging, and maintainable code architecture.
+
+## Core Technologies & Frameworks
+- **Framework**: Spring Boot 3.2+, Spring Security 6+, Spring Data JPA
+- **Java Version**: 17+
+- **Database**: PostgreSQL (primary), MongoDB (documents), Redis (cache)
+- **Message Queue**: RabbitMQ with Spring AMQP
+- **Testing**: JUnit 5, Spring Boot Test, MockMvc, Testcontainers
+- **Documentation**: OpenAPI 3.0 + Swagger UI
+- **Build Tool**: Maven
+- **Utilities**: MapStruct, Lombok, Apache Commons Lang3
+
+## Code Structure & Architecture
+
+### Package Organization
+Follow the established modular package structure:
+```
+com.finance.admin/
+├── auth/           # Authentication module
+├── user/           # User management module  
+├── role/           # Role management module
+├── audit/          # Audit logging module
+├── common/         # Shared components
+├── config/         # Configuration classes
+├── notification/   # Notification services
+└── util/           # Utility classes
+```
+
+### Layer Architecture
+Each module must follow this structure:
+- `controller/` - REST controllers
+- `service/` - Business logic interfaces and implementations
+- `repository/` - Data access layer
+- `entity/` - JPA entities
+- `dto/` - Data transfer objects
+- `mapper/` - Entity-DTO mappers (using MapStruct)
+- `specification/` - JPA Specifications for dynamic queries
+
+## Coding Standards
+
+### Entity Classes
+- **MUST** extend `BaseEntity` for audit fields (id, createdAt, updatedAt, createdBy, updatedBy, version)
+- Use `UUID` for primary keys with `@GeneratedValue(strategy = GenerationType.UUID)`
+- Add database indexes using `@Index` annotations for frequently queried columns
+- Use Jakarta validation annotations (`@NotBlank`, `@Email`, `@Size`, `@Pattern`)
+- Implement proper constructors, getters, and setters
+- Use `@Enumerated(EnumType.STRING)` for enums
+- Add utility methods like `getFullName()`, `incrementLoginCount()` for business logic
+- Use column naming convention: snake_case for database columns (`@Column(name = "first_name")`)
+
+### DTO Classes
+- Create separate request/response DTOs (e.g., `UserCreateRequest`, `UserUpdateRequest`, `UserResponse`)
+- Apply Jakarta validation annotations on request DTOs
+- Use `@JsonInclude(JsonInclude.Include.NON_NULL)` to exclude null fields from responses
+- Implement search criteria DTOs for complex filtering
+- Default constructors required for JSON deserialization
+- Use meaningful naming: `*Request`, `*Response`, `*SearchCriteria`
+
+### Controller Classes
+- Use `@RestController` and `@RequestMapping` for base path
+- Add comprehensive Swagger annotations: `@Tag`, `@Operation` with detailed descriptions
+- Use `@PreAuthorize` for method-level security with specific authorities
+- **MUST** return `ResponseEntity<ApiResponse<T>>` for consistent responses
+- Log important operations using SLF4J logger with structured messages
+- Use `@Valid` for request validation
+- Implement proper HTTP status codes (201 for creation, 200 for success)
+- Use `@PathVariable` for resource identifiers, `@RequestParam` for optional parameters
+- Add pagination support with `@PageableDefault`
+
+### Service Classes
+- Create interface and implementation pairs (`UserService` + `UserServiceImpl`)
+- Use `@Service` and `@Transactional` annotations
+- Add `@Transactional(readOnly = true)` for read-only operations
+- Implement comprehensive logging with structured messages including method entry/exit
+- Handle exceptions with meaningful error messages
+- Use constructor injection instead of `@Autowired` field injection
+- Include business validation logic and state management
+
+### Repository Interfaces
+- Extend `JpaRepository<Entity, UUID>` and `JpaSpecificationExecutor<Entity>`
+- Use `@Repository` annotation
+- Define custom query methods with `@Query` annotations using JPQL
+- Use `@Modifying` for update/delete operations
+- Include `@Param` for named parameters
+- Follow naming convention: `findBy*`, `existsBy*`, `countBy*`
+
+### Configuration Classes
+- Use `@Configuration` and `@EnableConfigurationProperties`
+- Implement security, database, Redis, and messaging configurations
+- Add `@Profile` annotations for environment-specific configs
+- Use `@ConfigurationProperties` for complex configurations
+- Keep environment variables uppercase with underscores: `${DB_USERNAME:admin}`
+
+## API Response Standards
+
+### Consistent Response Format
+**ALWAYS** use `ApiResponse<T>` wrapper:
+```java
+@PostMapping
+@Operation(summary = "Create user", description = "Create a new user account")
+@PreAuthorize("hasRole('ADMIN') or hasAuthority('USER_CREATE')")
+public ResponseEntity<ApiResponse<UserResponse>> createUser(@Valid @RequestBody UserCreateRequest request) {
+    logger.info("Creating user with username: {}", request.getUsername());
+    UserResponse response = userService.createUser(request);
+    return ResponseEntity.status(HttpStatus.CREATED)
+        .body(ApiResponse.success("User created successfully", response));
+}
+```
+
+### Error Handling
+- Use custom exceptions extending `RuntimeException`
+- Implement global exception handler with `@ControllerAdvice`
+- Return appropriate HTTP status codes with meaningful messages
+- Use `ApiResponse.error()` for error responses
+
+## Security Implementation
+
+### Authentication & Authorization
+- Implement JWT-based authentication with refresh tokens
+- Use role-based access control (RBAC) with `@PreAuthorize`
+- Support comprehensive security features (IP whitelisting, account locking, etc.)
+- Implement rate limiting and session management
+
+### Security Annotations Pattern
+```java
+@PreAuthorize("hasRole('ADMIN') or hasAuthority('USER_CREATE')")
+@PreAuthorize("hasRole('ADMIN') or hasAuthority('USER_BULK_UPDATE')")
+```
+
+## Database & JPA Patterns
+
+### Entity Relationships
+- Use appropriate cascade types and fetch strategies (`LAZY` by default)
+- Implement bidirectional relationships carefully
+- Use proper join annotations (`@JoinColumn`, `@JoinTable`)
+- Add comprehensive indexes for performance
+
+### Query Optimization
+- Use JPA Specifications for dynamic queries
+- Implement pagination with `Pageable` for all list endpoints
+- Add database indexes for frequently queried columns
+- Use batch operations for bulk updates
+
+## Configuration Management
+
+### Application Properties Structure
+Use YAML format with profiles:
+```yaml
+spring:
+  application:
+    name: LifeTech
+  profiles:
+    active: dev
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/lifetech_admin}
+    username: ${DB_USERNAME:admin}
+    password: ${DB_PASSWORD:password}
+```
+
+### Environment-Specific Configuration
+- Use Spring profiles (dev, test, prod)
+- Externalize sensitive configuration with environment variables
+- Use meaningful defaults for development
+- Implement proper connection pooling (HikariCP)
+
+## Testing Standards
+
+### Test Structure
+- Use `@SpringBootTest` for integration tests
+- Implement `@WebMvcTest` for controller testing
+- Use Testcontainers for database integration tests
+- Add `@Transactional` with rollback for clean tests
+
+### Test Naming Convention
+Use descriptive test method names: `should_CreateUser_When_ValidDataProvided`
+
+## Logging & Monitoring
+
+### Logging Standards
+- Use SLF4J with structured logging
+- Create static logger: `private static final Logger logger = LoggerFactory.getLogger(ClassName.class);`
+- Log method entry with parameters and exit with results for important operations
+- Use appropriate log levels (DEBUG for development, INFO for business events, WARN/ERROR for issues)
+- Include correlation IDs and contextual information
+
+### Example Logging Pattern
+```java
+private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+
+@Override
+public UserResponse createUser(UserCreateRequest request) {
+    logger.info("Creating user with username: {}", request.getUsername());
+    // ... implementation
+    logger.info("User created successfully with ID: {}", savedUser.getId());
+    return userMapper.toResponse(savedUser);
+}
+```
+
+## Documentation Standards
+
+### API Documentation
+- Use OpenAPI 3.0 with comprehensive Swagger annotations
+- Add detailed operation descriptions and parameter documentation
+- Include request/response examples
+- Document authentication requirements and error codes
+- Use `@Parameter` for detailed parameter descriptions
+
+### Code Documentation
+- Add Javadoc for public methods and classes
+- Document complex business logic and utility methods
+- Include parameter descriptions and return value documentation
+
+## Bulk Operations Pattern
+
+### Implementation Standard
+For administrative functionality, implement comprehensive bulk operations:
+```java
+@PostMapping("/bulk/status-update")
+@Operation(summary = "Bulk update user status", description = "Update status for multiple users simultaneously")
+@PreAuthorize("hasRole('ADMIN') or hasAuthority('USER_BULK_UPDATE')")
+public ResponseEntity<ApiResponse<Void>> bulkUpdateUserStatus(
+        @RequestBody List<UUID> userIds,
+        @RequestParam UserStatus status,
+        @RequestParam(required = false, defaultValue = "Bulk status update") String reason) {
+    
+    userService.bulkUpdateUserStatus(userIds, status, reason);
+    return ResponseEntity.ok(ApiResponse.success("Bulk user status update completed successfully"));
+}
+```
+
+## Performance & Best Practices
+
+### Database Optimization
+- Use HikariCP connection pooling
+- Implement Redis caching strategies
+- Add proper database indexes
+- Use batch operations for bulk processing
+- Implement pagination for all list operations
+
+### Memory Management
+- Use pagination for large datasets
+- Implement proper connection management
+- Monitor and optimize query performance
+
+## Code Quality Standards
+
+### General Guidelines
+- Follow single responsibility principle
+- Use meaningful variable and method names
+- Keep methods focused and concise (max 20-30 lines)
+- Implement proper null checking and validation
+- Use `Optional` for nullable return values
+- Follow consistent naming conventions (camelCase for methods/variables, PascalCase for classes)
+- Use constructor injection over field injection
+
+### MapStruct Integration
+- Use MapStruct for entity-DTO mapping
+- Create separate mappers for each module
+- Use `@Mapper(componentModel = "spring")` for Spring integration
+
+### Utility Methods in Entities
+Add business logic methods to entities when appropriate:
+```java
+public String getFullName() {
+    return (firstName != null ? firstName : "") + " " + (lastName != null ? lastName : "");
+}
+
+public void incrementLoginCount() {
+    this.loginCount = (this.loginCount != null ? this.loginCount : 0L) + 1;
+    this.lastLoginAt = LocalDateTime.now();
+}
+```
+
+## Application Configuration
+
+### Main Application Class
+Use comprehensive Spring Boot configuration:
+```java
+@SpringBootApplication
+@EnableJpaAuditing
+@EnableMongoAuditing
+@EnableCaching
+@EnableAsync
+@EnableScheduling
+@EnableTransactionManagement
+public class AdminManagementApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(AdminManagementApplication.class, args);
+    }
+}
+```
+
+## Code Review Checklist
+
+### Security & Compliance
+- Verify `@PreAuthorize` annotations are present on all endpoints
+- Check for proper input validation and sanitization
+- Ensure sensitive data is properly handled
+- Validate audit logging is implemented
+
+### Architecture & Design
+- Confirm consistent use of `ApiResponse<T>` wrapper
+- Verify proper exception handling patterns
+- Check pagination implementation for list endpoints
+- Validate proper HTTP status codes
+
+### Performance & Quality
+- Review database query optimization
+- Confirm proper logging implementation
+- Validate test coverage is adequate
+- Check for memory leaks and resource management
+
+Remember: This is a financial system requiring the highest standards of security, reliability, and maintainability. Always prioritize data integrity, comprehensive audit trails, and secure coding practices. 
