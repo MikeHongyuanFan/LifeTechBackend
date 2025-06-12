@@ -1,14 +1,14 @@
-# Sprint 1.1: Admin Management Module Requirements
+# Sprint 1.1: Admin User Management Module Requirements
 
 ## Overview
-The Admin Management module provides comprehensive administrative user management, authentication, authorization, and system administration capabilities for the Finance Admin Management System. This module serves as the foundation for all administrative operations and user access control.
+The Admin User Management module provides comprehensive administrative user management, permissions, and audit logging capabilities for the Finance Admin Management System. This module serves as the foundation for all administrative operations and user access control.
 
-## Module: Admin Management (Sprint 1.1) ✅ IMPLEMENTED
+## Module: Admin User Management (Sprint 1.1) ✅ IMPLEMENTED
 
-### 1. Admin User Creation & Management
+### 1. Admin List
 
 #### 1.1 Core Functionality
-- **Description**: Allow super admin users to create, manage, and maintain administrative user accounts
+- **Description**: Add, edit, delete admin users
 - **Priority**: Critical
 - **Sprint**: 1.1
 - **Status**: ✅ IMPLEMENTED
@@ -17,10 +17,10 @@ The Admin Management module provides comprehensive administrative user managemen
 
 **Functional Requirements:**
 - Super admin users can create new administrative user accounts
-- Role-based access control with predefined admin roles
-- Mandatory field validation before account creation
-- Auto-generation of unique admin user IDs
-- Integration with secure authentication system
+- Edit existing admin user information
+- Delete/deactivate admin user accounts
+- View comprehensive list of all admin users
+- Search and filter admin users
 
 **Data Fields Required:**
 - **Personal Information:**
@@ -53,51 +53,15 @@ The Admin Management module provides comprehensive administrative user managemen
 - Role-based access control (RBAC) implementation
 - Audit logging for all admin user operations
 
-### 2. Authentication & Authorization System
+### 2. Permissions
 
 #### 2.1 Core Functionality
-- **Description**: Secure authentication and authorization system for admin portal access
+- **Description**: Assign role-based access to each admin user
 - **Priority**: Critical
 - **Sprint**: 1.1
 - **Status**: ✅ IMPLEMENTED
 
 #### 2.2 Requirements
-
-**Authentication Methods:**
-- Username + Password login
-- Email + Password login
-- Multi-factor authentication (MFA) support
-- Single Sign-On (SSO) capability
-
-**Password Management:**
-- Strong password policy enforcement
-- Password reset functionality via email
-- Mandatory password rotation (90-day policy)
-- Password history tracking (prevent reuse of last 12 passwords)
-
-**Security Features:**
-- Account lockout after 5 failed attempts
-- Session management with configurable timeout
-- IP address whitelisting capability
-- Concurrent session limitation
-- Login attempt monitoring and alerting
-
-**Technical Implementation:**
-- JWT token-based authentication
-- bcrypt password hashing with rounds configuration
-- Rate limiting for login attempts
-- HTTPS enforcement with SSL/TLS certificates
-- Session hijacking protection
-
-### 3. Role & Permission Management
-
-#### 3.1 Core Functionality
-- **Description**: Comprehensive role-based access control system with granular permissions
-- **Priority**: Critical
-- **Sprint**: 1.1
-- **Status**: ✅ IMPLEMENTED
-
-#### 3.2 Requirements
 
 **Role Hierarchy:**
 - **Super Administrator**: Full system access and user management
@@ -122,46 +86,15 @@ The Admin Management module provides comprehensive administrative user managemen
 - IP-based access control
 - Module-specific permissions
 
-### 4. Admin Dashboard & Monitoring
+### 3. Audit Logs
 
-#### 4.1 Core Functionality
-- **Description**: Comprehensive administrative dashboard with system monitoring and management capabilities
-- **Priority**: High
-- **Sprint**: 1.1
-- **Status**: ✅ IMPLEMENTED
-
-#### 4.2 Requirements
-
-**Dashboard Features:**
-- System overview and health monitoring
-- User activity summary and statistics
-- Recent system events and alerts
-- Performance metrics and analytics
-- Quick access to common administrative tasks
-
-**Monitoring Capabilities:**
-- Real-time system performance monitoring
-- Database connection and query monitoring
-- Application error tracking and alerting
-- Security event monitoring
-- Audit log visualization
-
-**Administrative Tools:**
-- User session management
-- System configuration management
-- Database maintenance tools
-- Log file management
-- Backup and restore operations
-
-### 5. Audit Logging & Security Monitoring
-
-#### 5.1 Core Functionality
-- **Description**: Comprehensive audit logging and security monitoring for all administrative activities
+#### 3.1 Core Functionality
+- **Description**: Record activities: action type, operator, timestamp, details
 - **Priority**: Critical
 - **Sprint**: 1.1
 - **Status**: ✅ IMPLEMENTED
 
-#### 5.2 Requirements
+#### 3.2 Requirements
 
 **Audit Logging Features:**
 - Complete audit trail for all admin operations
@@ -169,6 +102,21 @@ The Admin Management module provides comprehensive administrative user managemen
 - Data modification tracking with before/after values
 - System configuration change logging
 - Failed access attempt tracking
+
+**Audit Log Data Fields:**
+- **Action Information:**
+  - Action Type (CREATE, READ, UPDATE, DELETE, LOGIN, LOGOUT)
+  - Operator (Admin User ID and Username)
+  - Timestamp (Date and Time with timezone)
+  - Details (Specific action description)
+  - IP Address
+  - User Agent/Browser Information
+
+- **Data Changes:**
+  - Before Values (for UPDATE operations)
+  - After Values (for UPDATE operations)
+  - Affected Records (Record IDs and types)
+  - Change Reason/Comments
 
 **Security Monitoring:**
 - Real-time security event detection
@@ -198,220 +146,169 @@ PUT    /api/admin/users/{id}/status        - Change user status
 PUT    /api/admin/users/{id}/roles         - Update user roles
 ```
 
-### Authentication APIs
+### Permission Management APIs
 ```
-POST   /api/admin/auth/login               - Admin login
-POST   /api/admin/auth/logout              - Admin logout
-POST   /api/admin/auth/refresh             - Refresh JWT token
-POST   /api/admin/auth/forgot-password     - Password reset request
-POST   /api/admin/auth/reset-password      - Password reset confirmation
-PUT    /api/admin/auth/change-password     - Change password
-GET    /api/admin/auth/profile             - Get admin profile
-POST   /api/admin/auth/mfa/enable          - Enable MFA
-POST   /api/admin/auth/mfa/verify          - Verify MFA token
-```
-
-### Role & Permission APIs
-```
+GET    /api/admin/permissions              - Get all available permissions
 GET    /api/admin/roles                    - Get all roles
 POST   /api/admin/roles                    - Create new role
-PUT    /api/admin/roles/{id}               - Update role
+PUT    /api/admin/roles/{id}               - Update role permissions
 DELETE /api/admin/roles/{id}               - Delete role
-GET    /api/admin/permissions              - Get all permissions
+GET    /api/admin/users/{id}/permissions   - Get user permissions
 PUT    /api/admin/users/{id}/permissions   - Update user permissions
 ```
 
-### Audit & Monitoring APIs
+### Audit Log APIs
 ```
-GET    /api/admin/audit/logs               - Get audit logs (with filtering)
-GET    /api/admin/audit/users/{id}         - Get user-specific audit logs
-GET    /api/admin/monitoring/dashboard     - Get dashboard metrics
-GET    /api/admin/monitoring/health        - System health check
-GET    /api/admin/monitoring/sessions      - Active sessions overview
+GET    /api/admin/audit-logs               - Get audit logs (with pagination and filters)
+GET    /api/admin/audit-logs/{id}          - Get specific audit log entry
+GET    /api/admin/audit-logs/user/{userId} - Get audit logs for specific user
+GET    /api/admin/audit-logs/export        - Export audit logs
+POST   /api/admin/audit-logs/search        - Advanced audit log search
 ```
 
-## Database Schema Implemented
+## Authentication & Authorization System
 
-### admin_users Table
+### Authentication Methods
+- Username + Password login
+- Email + Password login
+- Multi-factor authentication (MFA) support
+- Single Sign-On (SSO) capability
+
+### Password Management
+- Strong password policy enforcement
+- Password reset functionality via email
+- Mandatory password rotation (90-day policy)
+- Password history tracking (prevent reuse of last 12 passwords)
+
+### Security Features
+- Account lockout after 5 failed attempts
+- Session management with configurable timeout
+- IP address whitelisting capability
+- Concurrent session limitation
+- Login attempt monitoring and alerting
+
+### Technical Implementation
+- JWT token-based authentication
+- bcrypt password hashing with rounds configuration
+- Rate limiting for login attempts
+- HTTPS enforcement with SSL/TLS certificates
+- Session hijacking protection
+
+## Database Schema
+
+### Admin Users Table
 ```sql
 CREATE TABLE admin_users (
-    id BIGSERIAL PRIMARY KEY,
-    employee_id VARCHAR(20) UNIQUE NOT NULL,
+    id VARCHAR(36) PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
-    email_primary VARCHAR(255) UNIQUE NOT NULL,
-    email_secondary VARCHAR(255),
-    first_name VARCHAR(100) NOT NULL,
-    middle_name VARCHAR(100),
-    last_name VARCHAR(100) NOT NULL,
-    phone_primary VARCHAR(20),
-    phone_secondary VARCHAR(20),
-    department VARCHAR(100),
-    job_title VARCHAR(100),
-    password_hash TEXT NOT NULL,
-    password_salt VARCHAR(255) NOT NULL,
-    last_password_change TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    status VARCHAR(20) DEFAULT 'ACTIVE',
-    failed_login_attempts INTEGER DEFAULT 0,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+    mfa_enabled BOOLEAN NOT NULL DEFAULT FALSE,
+    mfa_secret VARCHAR(255),
+    force_password_change BOOLEAN NOT NULL DEFAULT FALSE,
+    password_expires_at TIMESTAMP,
+    last_password_change TIMESTAMP,
+    session_timeout_minutes INTEGER DEFAULT 30,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_login TIMESTAMP,
+    failed_login_attempts INTEGER NOT NULL DEFAULT 0,
     locked_until TIMESTAMP,
-    last_login_at TIMESTAMP,
-    last_login_ip INET,
-    mfa_enabled BOOLEAN DEFAULT false,
-    mfa_secret TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    created_by BIGINT REFERENCES admin_users(id),
-    updated_by BIGINT REFERENCES admin_users(id)
+    created_by VARCHAR(36),
+    updated_by VARCHAR(36),
+    version BIGINT DEFAULT 0
 );
 ```
 
-### admin_roles Table
-```sql
-CREATE TABLE admin_roles (
-    id BIGSERIAL PRIMARY KEY,
-    role_name VARCHAR(50) UNIQUE NOT NULL,
-    role_description TEXT,
-    role_level INTEGER NOT NULL,
-    is_system_role BOOLEAN DEFAULT false,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    created_by BIGINT REFERENCES admin_users(id)
-);
-```
-
-### admin_permissions Table
-```sql
-CREATE TABLE admin_permissions (
-    id BIGSERIAL PRIMARY KEY,
-    permission_name VARCHAR(100) UNIQUE NOT NULL,
-    permission_description TEXT,
-    module_name VARCHAR(50) NOT NULL,
-    action_type VARCHAR(50) NOT NULL,
-    resource_type VARCHAR(50),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-### admin_user_roles Table
+### Admin User Roles Table
 ```sql
 CREATE TABLE admin_user_roles (
-    id BIGSERIAL PRIMARY KEY,
-    user_id BIGINT REFERENCES admin_users(id) ON DELETE CASCADE,
-    role_id BIGINT REFERENCES admin_roles(id) ON DELETE CASCADE,
-    assigned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    assigned_by BIGINT REFERENCES admin_users(id),
-    UNIQUE(user_id, role_id)
+    admin_user_id VARCHAR(36) NOT NULL,
+    role VARCHAR(50) NOT NULL,
+    PRIMARY KEY (admin_user_id, role),
+    FOREIGN KEY (admin_user_id) REFERENCES admin_users(id)
 );
 ```
 
-### admin_role_permissions Table
+### Audit Logs Table
 ```sql
-CREATE TABLE admin_role_permissions (
+CREATE TABLE audit_logs (
     id BIGSERIAL PRIMARY KEY,
-    role_id BIGINT REFERENCES admin_roles(id) ON DELETE CASCADE,
-    permission_id BIGINT REFERENCES admin_permissions(id) ON DELETE CASCADE,
-    granted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    granted_by BIGINT REFERENCES admin_users(id),
-    UNIQUE(role_id, permission_id)
-);
-```
-
-### admin_login_history Table
-```sql
-CREATE TABLE admin_login_history (
-    id BIGSERIAL PRIMARY KEY,
-    user_id BIGINT REFERENCES admin_users(id),
-    login_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    logout_timestamp TIMESTAMP,
-    ip_address INET,
-    user_agent TEXT,
-    session_id VARCHAR(255),
-    session_duration INTERVAL,
-    login_successful BOOLEAN DEFAULT true,
-    failure_reason VARCHAR(255),
-    mfa_used BOOLEAN DEFAULT false
-);
-```
-
-### admin_audit_logs Table
-```sql
-CREATE TABLE admin_audit_logs (
-    id BIGSERIAL PRIMARY KEY,
-    user_id BIGINT REFERENCES admin_users(id),
     action_type VARCHAR(50) NOT NULL,
-    entity_type VARCHAR(50) NOT NULL,
-    entity_id BIGINT,
-    old_values JSONB,
-    new_values JSONB,
-    ip_address INET,
+    operator_id VARCHAR(36),
+    operator_username VARCHAR(50),
+    timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    details TEXT,
+    ip_address VARCHAR(45),
     user_agent TEXT,
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    session_id VARCHAR(255),
-    success BOOLEAN DEFAULT true,
-    error_message TEXT
+    before_values JSONB,
+    after_values JSONB,
+    affected_records JSONB,
+    change_reason TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
-## Security Implementation
+## Security Considerations
 
 ### Data Protection
-- bcrypt password hashing with configurable rounds (minimum 12)
-- AES-256 encryption for sensitive data
-- Field-level access control based on roles
-- Regular security audits and vulnerability assessments
-- OWASP security guidelines compliance
+- All sensitive data encrypted at rest and in transit
+- PII data anonymization for non-production environments
+- Regular security audits and penetration testing
+- GDPR and Privacy Act compliance
 
-### Authentication Security
-- Strong password policy (minimum 12 characters, complexity requirements)
-- Multi-factor authentication with TOTP support
-- JWT tokens with short expiration (15 minutes) and refresh tokens
-- Account lockout protection with exponential backoff
-- Session fixation and hijacking protection
+### Access Control
+- Principle of least privilege
+- Regular access reviews and certifications
+- Automated deprovisioning for terminated users
+- Emergency access procedures
 
-### Authorization Security
-- Role-based access control with principle of least privilege
-- Resource-level authorization checks
-- Permission inheritance and role hierarchy
-- Dynamic permission evaluation
-- Audit trail for all authorization decisions
+### Monitoring & Alerting
+- Real-time security monitoring
+- Automated threat detection
+- Incident response procedures
+- Regular security reporting
 
-## Testing Implementation
+## Testing Requirements
 
-### Unit Tests
-- User management operations testing
-- Authentication flow testing
-- Role and permission assignment testing
-- Password policy validation testing
-- Audit logging functionality testing
+### Unit Testing
+- ✅ Authentication service tests
+- ✅ Authorization service tests
+- ✅ User management service tests
+- ✅ Audit logging service tests
 
-### Integration Tests
-- Database integration with transaction rollback
-- Authentication system integration
-- Email notification system integration
-- Session management testing
-- API endpoint security testing
+### Integration Testing
+- ✅ API endpoint testing
+- ✅ Database integration testing
+- ✅ Security integration testing
+- ✅ End-to-end workflow testing
 
-### Security Tests
-- Penetration testing for common vulnerabilities
-- SQL injection and XSS protection testing
-- Authentication bypass testing
-- Authorization escalation testing
-- Session security testing
+### Performance Testing
+- Load testing for concurrent users
+- Stress testing for peak usage
+- Security testing for vulnerabilities
+- Compliance testing for regulations
 
-## Performance Metrics
+## Deployment & Operations
 
-### Response Time Requirements (ACHIEVED)
-- Login authentication: < 500ms
-- User management operations: < 1 second
-- Dashboard loading: < 2 seconds
-- Search operations: < 1 second
-- Audit log queries: < 3 seconds
+### Environment Configuration
+- Development, staging, and production environments
+- Environment-specific configuration management
+- Automated deployment pipelines
+- Database migration management
 
-### Scalability Metrics (ACHIEVED)
-- Support for 1000+ concurrent admin sessions
-- Handle 10,000+ audit log entries per day
-- Database query optimization with indexes
-- Connection pooling and resource management
-- Horizontal scaling capability
+### Monitoring & Maintenance
+- Application performance monitoring
+- Database performance monitoring
+- Log aggregation and analysis
+- Regular backup and recovery testing
+
+### Documentation
+- API documentation with Swagger/OpenAPI
+- User manuals and training materials
+- Operations runbooks
+- Security procedures documentation
 
 ## Success Criteria ✅ ACHIEVED
 

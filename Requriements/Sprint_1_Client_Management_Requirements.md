@@ -50,6 +50,10 @@ The Client Management module enables admin users to create, manage, and track cl
 - Encrypted storage of sensitive information (TFN, Bank Details)
 - Audit logging for all client creation activities
 
+**Blockchain Integration:**
+- **Identity Verification**: Utilize blockchain for tamper-proof identity verification through on-chain storage of hashed client identifiers. Client identity hashes (SHA-256 of TFN + DOB + email) are stored on-chain to create immutable identity anchors that can be used for verification purposes without exposing sensitive data.
+- **Tamper-proof Audit Logging**: Implement blockchain-based audit logging for all client profile updates and critical operations. Each significant client data modification triggers a blockchain transaction that creates an immutable audit trail, ensuring complete transparency and preventing unauthorized alterations to client records.
+
 ### 2. Portal Login System
 
 #### 2.1 Core Functionality
@@ -193,6 +197,11 @@ GET    /api/admin/clients/{id}/activity     - Get client activity log
 GET    /api/admin/clients/activity/summary  - Activity summary dashboard
 ```
 
+### Blockchain Integration APIs
+```
+POST   /api/admin/clients/{id}/anchor-identity - Anchor client identity hash on blockchain
+```
+
 ## Database Schema Requirements
 
 ### clients Table
@@ -226,6 +235,7 @@ CREATE TABLE clients (
     bank_account_name VARCHAR(255),
     investment_target DECIMAL(15,2),
     risk_profile VARCHAR(50),
+    blockchain_identity_hash VARCHAR(128),
     status VARCHAR(20) DEFAULT 'ACTIVE',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -268,6 +278,10 @@ CREATE TABLE client_login_history (
 - Immutable log storage
 - Real-time monitoring and alerting
 - Compliance reporting capabilities
+
+### Blockchain Security
+- **Immutable Audit Trails**: Leverage blockchain technology to create tamper-proof audit logs for all client profile modifications and critical operations. Each audit entry is cryptographically signed and stored on-chain, providing indisputable evidence of all system activities.
+- **On-chain Identity Storage**: Secure storage of client identity hashes (SHA-256 of TFN + DOB + email) on blockchain ensures immutable identity verification without exposing sensitive personal information. This creates a permanent, verifiable record of client identity that cannot be altered or deleted.
 
 ## Testing Requirements
 

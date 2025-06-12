@@ -1,26 +1,27 @@
 # Sprint 1.4: Investment Product Management Module Requirements
 
 ## Overview
-The Investment Product Management module enables comprehensive management of client investments, including investment records, financial tracking, entity management, and portfolio oversight. This module forms the core of the investment management platform.
+The Investment Product Management module enables comprehensive management of client investments through data entry operations. This module provides investment record management with manual data entry capabilities for ongoing and completed investment records.
 
-## Module: Investment Product Management (Sprint 1.4)
+## Module: Investment Product Management (Sprint 1.4) - Only Data Entry
 
-### 1. Investment Lists & Portfolio Management
+### 1. Investment Lists
 
 #### 1.1 Core Functionality
-- **Description**: View and manage ongoing and completed investment records for all clients
+- **Description**: View ongoing and completed investment records
 - **Priority**: High
 - **Sprint**: 1.4
+- **Note**: Only data entry functionality
 
 #### 1.2 Requirements
 
 **Investment List Features:**
-- **Comprehensive Investment Views:**
+- **Investment Record Views:**
   - All active investments across all clients
   - Individual client investment portfolios
   - Investment history and completed investments
-  - Investment performance summaries
-  - Filter by investment type, status, date range
+  - Investment status tracking
+  - Basic investment information display
 
 - **Investment Categories:**
   - **Property Investments**: Residential, Commercial, Industrial
@@ -40,32 +41,32 @@ The Investment Product Management module enables comprehensive management of cli
 - **DEFAULTED**: Investment has failed/defaulted
 
 **List Management Features:**
-- Sortable columns (amount, date, returns, status)
-- Advanced filtering and search capabilities
-- Export to Excel/CSV for reporting
-- Bulk operations on multiple investments
-- Real-time data updates and synchronization
+- View investment records in tabular format
+- Basic sorting by date, amount, status
+- Simple search functionality
+- Export to Excel/CSV for basic reporting
+- Pagination for large datasets
 
-### 2. Investment Record Creation & Management
+### 2. Add Investment
 
 #### 2.1 Core Functionality
-- **Description**: Manually add and maintain detailed investment records in client profiles
+- **Description**: Manually add new investment record in specific client's profile, input investment info (payment date, investment amount, and return details)
 - **Priority**: High
 - **Sprint**: 1.4
+- **Note**: Manual data entry only
 
 #### 2.2 Requirements
 
-**Investment Data Fields:**
+**Investment Data Entry Fields:**
 - **Basic Information:**
   - Investment Name/Title
   - Investment Type/Category
   - Investment Description
-  - Investment Objective
-  - Risk Rating (Conservative, Moderate, Aggressive)
+  - Client Association (link to client profile)
 
 - **Financial Details:**
-  - Initial Investment Amount
   - Payment Date
+  - Investment Amount
   - Expected Return Rate (%)
   - Expected Return Amount
   - Investment Term/Duration
@@ -74,10 +75,9 @@ The Investment Product Management module enables comprehensive management of cli
 - **Return Information:**
   - Return Type (Capital Growth, Income, Hybrid)
   - Distribution Frequency (Monthly, Quarterly, Annually)
-  - Current Value
-  - Unrealized Gains/Losses
-  - Realized Gains/Losses
-  - Total Return to Date
+  - Current Value (manual entry)
+  - Realized Gains/Losses (manual entry)
+  - Total Return to Date (manual entry)
 
 - **Transaction Details:**
   - Purchase Price per Unit
@@ -85,105 +85,57 @@ The Investment Product Management module enables comprehensive management of cli
   - Transaction Fees
   - Management Fees
   - Performance Fees
-  - Tax Implications
 
-**Investment Management Features:**
-- **Create New Investments**: Structured forms for different investment types
-- **Edit Existing Investments**: Update investment details and performance
-- **Investment Validation**: Ensure data integrity and business rules
-- **Investment Approval Workflow**: Multi-level approval for large investments
-- **Investment Documentation**: Attach contracts, certificates, reports
+**Data Entry Features:**
+- **Form-based Investment Creation**: Structured forms for different investment types
+- **Client Selection**: Dropdown to select client for investment association
+- **Data Validation**: Basic validation for required fields and data formats
+- **Save and Continue**: Ability to save partial entries
+- **Confirmation**: Review screen before final submission
 
-### 3. Entity Management & Structure
+**Technical Requirements:**
+- Simple form-based interface
+- Basic field validation
+- Database storage of investment records
+- Audit trail for investment creation
+- Integration with client management system
+
+### 3. Investment Edit
 
 #### 3.1 Core Functionality
-- **Description**: Manage associated entities in client profiles including company structures and trust arrangements
+- **Description**: Edit/delete investment records
 - **Priority**: Medium
 - **Sprint**: 1.4
+- **Note**: Basic edit and delete functionality
 
 #### 3.2 Requirements
 
-**Entity Types:**
-- **Individual Clients**: Personal investment accounts
-- **Joint Accounts**: Multiple individual ownership
-- **Companies**: Corporate investment entities
-- **Trusts**: Family trusts, Unit trusts, Discretionary trusts
-- **Self-Managed Super Funds (SMSF)**: Retirement investment vehicles
-- **Partnerships**: Business partnership investments
+**Edit Capabilities:**
+- **Update Investment Information**: Modify existing investment details
+- **Edit Financial Data**: Update amounts, dates, and return information
+- **Status Changes**: Update investment status
+- **Performance Updates**: Manual entry of current values and returns
+- **Fee Adjustments**: Update fee information
 
-**Entity Information Fields:**
-- **Entity Identification:**
-  - Entity Name
-  - Entity Type
-  - Registration Number (ABN, ACN, TFN)
-  - Registration Date
-  - Registered Address
+**Delete Functionality:**
+- **Soft Delete**: Mark investments as inactive rather than permanent deletion
+- **Delete Confirmation**: Confirmation dialog before deletion
+- **Audit Trail**: Record deletion activities in audit logs
+- **Restore Capability**: Ability to restore soft-deleted records
 
-- **Contact Information:**
-  - Primary Contact Person
-  - Phone Numbers
-  - Email Addresses
-  - Mailing Address
-  - Physical Address
+**Edit Features:**
+- Pre-populated forms with existing data
+- Field-level editing permissions
+- Change tracking and audit logging
+- Validation on updates
+- Confirmation before saving changes
 
-- **Legal Structure:**
-  - Ownership Structure
-  - Beneficial Owners
-  - Directors/Trustees
-  - Authorized Signatories
-  - Power of Attorney arrangements
-
-- **Tax & Compliance:**
-  - Tax File Number
-  - GST Registration
-  - Tax Residency Status
-  - Reporting Requirements
-  - Compliance Obligations
-
-**Entity Management Features:**
-- **Add/Edit Entities**: Comprehensive entity profile management
-- **Entity Relationships**: Link entities to clients and investments
-- **Entity Hierarchy**: Manage complex ownership structures
-- **Document Management**: Store entity documents and certificates
-- **Compliance Tracking**: Monitor entity compliance requirements
-
-### 4. Investment Performance Tracking
-
-#### 4.1 Core Functionality
-- **Description**: Track and analyze investment performance across portfolios
-- **Priority**: High
-- **Sprint**: 1.4
-
-#### 4.2 Requirements
-
-**Performance Metrics:**
-- **Return Calculations:**
-  - Total Return (Absolute and Percentage)
-  - Annualized Return
-  - Capital Growth vs Income Return
-  - Risk-Adjusted Returns (Sharpe Ratio)
-  - Benchmark Comparison
-
-- **Portfolio Analytics:**
-  - Asset Allocation Analysis
-  - Diversification Metrics
-  - Concentration Risk Analysis
-  - Sector/Geographic Distribution
-  - Risk Profile Assessment
-
-- **Time-based Analysis:**
-  - Performance over multiple periods
-  - Rolling returns analysis
-  - Volatility measurements
-  - Correlation analysis
-  - Historical performance trends
-
-**Performance Reporting:**
-- **Client Reports**: Customized performance reports for clients
-- **Management Reports**: Internal investment analysis reports
-- **Regulatory Reports**: Compliance and regulatory filing support
-- **Tax Reports**: Capital gains and income tax reporting
-- **Ad-hoc Analysis**: Custom performance analysis tools
+**Data Management:**
+- Version history for investment records
+- Change log with timestamps
+- User attribution for modifications
+- Data integrity checks
+- Rollback capabilities for critical errors
 
 ## API Endpoints Required
 
@@ -193,249 +145,178 @@ POST   /api/admin/investments                     - Create new investment
 GET    /api/admin/investments                     - Get all investments (paginated)
 GET    /api/admin/investments/{id}                - Get specific investment
 PUT    /api/admin/investments/{id}                - Update investment
-DELETE /api/admin/investments/{id}                - Deactivate investment
+DELETE /api/admin/investments/{id}                - Soft delete investment
 GET    /api/admin/clients/{clientId}/investments  - Get client investments
-POST   /api/admin/investments/bulk-import         - Bulk import investments
-PUT    /api/admin/investments/bulk-update         - Bulk update investments
+POST   /api/admin/investments/search              - Search investments
+GET    /api/admin/investments/export              - Export investment data
 ```
 
-### Portfolio Management APIs
+### Investment Data Entry APIs
 ```
-GET    /api/admin/portfolios/{clientId}           - Get client portfolio
-GET    /api/admin/portfolios/summary              - Portfolio summary dashboard
-POST   /api/admin/portfolios/rebalance            - Portfolio rebalancing
-GET    /api/admin/portfolios/performance          - Performance analytics
-GET    /api/admin/portfolios/risk-analysis        - Risk analysis report
-```
-
-### Entity Management APIs
-```
-POST   /api/admin/entities                        - Create new entity
-GET    /api/admin/entities                        - Get all entities
-GET    /api/admin/entities/{id}                   - Get specific entity
-PUT    /api/admin/entities/{id}                   - Update entity
-DELETE /api/admin/entities/{id}                   - Deactivate entity
-GET    /api/admin/clients/{clientId}/entities     - Get client entities
-POST   /api/admin/entities/{id}/documents         - Upload entity documents
+GET    /api/admin/investments/types               - Get investment types
+GET    /api/admin/investments/statuses            - Get investment statuses
+POST   /api/admin/investments/validate            - Validate investment data
+GET    /api/admin/investments/{id}/history        - Get investment change history
+PUT    /api/admin/investments/{id}/restore        - Restore soft-deleted investment
 ```
 
-### Performance Tracking APIs
-```
-GET    /api/admin/performance/summary             - Performance dashboard
-GET    /api/admin/performance/{clientId}          - Client performance
-GET    /api/admin/performance/benchmarks          - Benchmark comparisons
-POST   /api/admin/performance/calculate           - Trigger performance calculation
-GET    /api/admin/performance/reports/{type}      - Generate performance reports
-```
+## Database Schema
 
-## Database Schema Requirements
-
-### investments Table
+### Investments Table
 ```sql
 CREATE TABLE investments (
     id BIGSERIAL PRIMARY KEY,
-    client_id BIGINT REFERENCES clients(id),
-    entity_id BIGINT REFERENCES entities(id),
+    client_id BIGINT NOT NULL REFERENCES clients(id),
     investment_name VARCHAR(255) NOT NULL,
-    investment_type VARCHAR(100) NOT NULL,
-    investment_category VARCHAR(100),
-    description TEXT,
-    investment_objective TEXT,
-    risk_rating VARCHAR(20),
-    initial_amount DECIMAL(15,2) NOT NULL,
-    current_value DECIMAL(15,2),
-    purchase_date DATE NOT NULL,
-    maturity_date DATE,
+    investment_type VARCHAR(50) NOT NULL,
+    investment_description TEXT,
+    
+    -- Financial Details
+    payment_date DATE NOT NULL,
+    investment_amount DECIMAL(15,2) NOT NULL,
     expected_return_rate DECIMAL(5,2),
     expected_return_amount DECIMAL(15,2),
-    actual_return_amount DECIMAL(15,2),
-    units_purchased DECIMAL(15,4),
-    purchase_price_per_unit DECIMAL(15,4),
-    current_price_per_unit DECIMAL(15,4),
-    transaction_fees DECIMAL(10,2),
-    management_fees DECIMAL(10,2),
-    performance_fees DECIMAL(10,2),
-    status VARCHAR(20) DEFAULT 'ACTIVE',
+    investment_term_months INTEGER,
+    maturity_date DATE,
+    
+    -- Return Information
+    return_type VARCHAR(20) DEFAULT 'HYBRID',
+    distribution_frequency VARCHAR(20),
+    current_value DECIMAL(15,2),
+    realized_gains_losses DECIMAL(15,2) DEFAULT 0,
+    total_return_to_date DECIMAL(15,2) DEFAULT 0,
+    
+    -- Transaction Details
+    purchase_price_per_unit DECIMAL(10,4),
+    number_of_units DECIMAL(15,4),
+    transaction_fees DECIMAL(10,2) DEFAULT 0,
+    management_fees DECIMAL(10,2) DEFAULT 0,
+    performance_fees DECIMAL(10,2) DEFAULT 0,
+    
+    -- Status and Metadata
+    status VARCHAR(20) DEFAULT 'PENDING',
+    is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    created_by BIGINT REFERENCES admin_users(id),
-    updated_by BIGINT REFERENCES admin_users(id)
+    created_by VARCHAR(36) NOT NULL,
+    updated_by VARCHAR(36),
+    version INTEGER DEFAULT 1
 );
+
+CREATE INDEX idx_investments_client ON investments(client_id);
+CREATE INDEX idx_investments_type ON investments(investment_type);
+CREATE INDEX idx_investments_status ON investments(status);
+CREATE INDEX idx_investments_payment_date ON investments(payment_date);
 ```
 
-### entities Table
+### Investment History Table
 ```sql
-CREATE TABLE entities (
+CREATE TABLE investment_history (
     id BIGSERIAL PRIMARY KEY,
-    client_id BIGINT REFERENCES clients(id),
-    entity_name VARCHAR(255) NOT NULL,
-    entity_type VARCHAR(50) NOT NULL,
-    registration_number VARCHAR(50),
-    abn VARCHAR(11),
-    acn VARCHAR(9),
-    tfn_encrypted TEXT,
-    registration_date DATE,
-    registered_street VARCHAR(255),
-    registered_city VARCHAR(100),
-    registered_state VARCHAR(100),
-    registered_postal_code VARCHAR(20),
-    registered_country VARCHAR(100),
-    contact_person VARCHAR(255),
-    contact_phone VARCHAR(20),
-    contact_email VARCHAR(255),
-    tax_residency_status VARCHAR(50),
-    gst_registered BOOLEAN DEFAULT false,
-    status VARCHAR(20) DEFAULT 'ACTIVE',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    created_by BIGINT REFERENCES admin_users(id)
+    investment_id BIGINT NOT NULL REFERENCES investments(id),
+    change_type VARCHAR(20) NOT NULL, -- CREATE, UPDATE, DELETE, RESTORE
+    changed_fields JSONB,
+    old_values JSONB,
+    new_values JSONB,
+    changed_by VARCHAR(36) NOT NULL,
+    changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    change_reason TEXT
 );
+
+CREATE INDEX idx_investment_history_investment ON investment_history(investment_id);
+CREATE INDEX idx_investment_history_date ON investment_history(changed_at);
 ```
 
-### investment_performance Table
-```sql
-CREATE TABLE investment_performance (
-    id BIGSERIAL PRIMARY KEY,
-    investment_id BIGINT REFERENCES investments(id),
-    performance_date DATE NOT NULL,
-    market_value DECIMAL(15,2),
-    book_value DECIMAL(15,2),
-    unrealized_gain_loss DECIMAL(15,2),
-    realized_gain_loss DECIMAL(15,2),
-    income_received DECIMAL(15,2),
-    total_return DECIMAL(15,2),
-    return_percentage DECIMAL(8,4),
-    benchmark_return DECIMAL(8,4),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
+## Technical Requirements
 
-### investment_transactions Table
-```sql
-CREATE TABLE investment_transactions (
-    id BIGSERIAL PRIMARY KEY,
-    investment_id BIGINT REFERENCES investments(id),
-    transaction_type VARCHAR(20) NOT NULL, -- BUY, SELL, DIVIDEND, INTEREST, FEE
-    transaction_date DATE NOT NULL,
-    units DECIMAL(15,4),
-    price_per_unit DECIMAL(15,4),
-    transaction_amount DECIMAL(15,2),
-    fees DECIMAL(10,2),
-    tax_amount DECIMAL(10,2),
-    description TEXT,
-    reference_number VARCHAR(100),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    created_by BIGINT REFERENCES admin_users(id)
-);
-```
-
-## Security & Compliance Requirements
-
-### Data Security
-- **Financial Data Protection**: Encrypt sensitive financial information
-- **Access Control**: Role-based access to investment data
-- **Audit Trail**: Complete logging of all investment operations
-- **Data Backup**: Regular automated backups of investment data
-- **Disaster Recovery**: Comprehensive disaster recovery procedures
-
-### Regulatory Compliance
-- **Financial Services Compliance**: Adhere to ASIC regulations
-- **Tax Compliance**: Accurate tax reporting and calculations
-- **Privacy Compliance**: Protect client financial privacy
-- **Record Keeping**: Maintain required financial records
-- **Reporting Standards**: Comply with financial reporting standards
-
-### Risk Management
-- **Investment Risk Assessment**: Monitor and assess investment risks
-- **Concentration Risk**: Alert for over-concentration in single investments
-- **Compliance Monitoring**: Monitor compliance with investment mandates
-- **Performance Monitoring**: Track investment performance against benchmarks
-- **Fraud Detection**: Detect and prevent fraudulent investment activities
-
-## Integration Requirements
-
-### External Services
-- **Market Data Feeds**: Real-time market data for investment valuation
-- **Banking Integration**: Connect with banking systems for transactions
-- **Tax Calculation**: Integration with tax calculation services
-- **Compliance Systems**: Connect with regulatory compliance systems
-- **Reporting Services**: External reporting and analytics platforms
-
-### Internal Systems
-- **Client Management**: Full integration with client profiles
-- **KYC System**: Integration with KYC verification status
-- **Document Management**: Link investment documents and contracts
-- **Audit System**: Integration with audit and logging systems
-- **Notification System**: Automated investment alerts and notifications
-
-## Performance Requirements
-
-### System Performance
-- **Data Processing**: Process large volumes of investment data efficiently
-- **Real-time Updates**: Near real-time investment value updates
-- **Report Generation**: Generate complex reports within 30 seconds
-- **Search Performance**: Investment searches returning results within 2 seconds
-- **Scalability**: Support for 100,000+ investment records
+### Data Entry Interface
+- Simple, intuitive form-based interface
+- Client-side validation for immediate feedback
+- Auto-save functionality for long forms
+- Responsive design for mobile/tablet access
+- Clear error messaging and validation feedback
 
 ### Data Management
-- **Historical Data**: Maintain 10+ years of investment history
-- **Data Accuracy**: 99.99% accuracy in investment calculations
-- **Data Synchronization**: Real-time synchronization across systems
-- **Backup & Recovery**: Daily backups with 1-hour RTO
-- **Archive Management**: Automated archiving of old investment data
+- Comprehensive audit logging for all operations
+- Data validation and integrity checks
+- Backup and recovery procedures
+- Data export capabilities
+- Integration with existing client management system
 
-## Testing Requirements
+### Performance Requirements
+- Form loading time: < 2 seconds
+- Data save operations: < 3 seconds
+- Investment list loading: < 5 seconds
+- Search operations: < 3 seconds
+- Export generation: < 30 seconds for standard datasets
 
-### Functional Testing
-- Investment creation and management workflows
-- Portfolio calculation and performance tracking
-- Entity management and relationship mapping
-- API endpoint testing with various scenarios
-- Integration testing with external data sources
+### Security Requirements
+- Role-based access control for investment data
+- Audit logging for all data entry operations
+- Data encryption for sensitive financial information
+- User authentication and authorization
+- Data privacy compliance
 
-### Financial Testing
-- Investment calculation accuracy testing
-- Performance metric validation
-- Tax calculation verification
-- Currency conversion testing
-- Regulatory compliance testing
+## User Interface Requirements
 
-### Security Testing
-- Financial data security testing
-- Access control verification
-- Audit trail validation
-- Data encryption testing
-- Fraud detection testing
+### Investment List Interface
+- Tabular display with sortable columns
+- Search and filter capabilities
+- Pagination controls
+- Export buttons
+- Quick action buttons (Edit, Delete, View)
+
+### Investment Entry Form
+- Multi-section form with logical grouping
+- Progress indicators for multi-step forms
+- Field validation with real-time feedback
+- Save draft functionality
+- Clear navigation between sections
+
+### Investment Edit Interface
+- Pre-populated forms with existing data
+- Highlighted changed fields
+- Change confirmation dialogs
+- Version comparison capabilities
+- Audit trail display
 
 ## Success Criteria
 
-1. **Accuracy**: 99.99% accuracy in investment calculations and reporting
-2. **Performance**: All investment operations complete within acceptable timeframes
-3. **Compliance**: 100% compliance with financial regulations and standards
-4. **Security**: Zero security breaches in financial data handling
-5. **User Satisfaction**: High satisfaction from investment managers and clients
-6. **Scalability**: System supports projected growth in investment volume
+### Functional Success
+- ✅ Investment records can be created successfully
+- ✅ Investment data can be edited and updated
+- ✅ Investment records can be soft deleted and restored
+- ✅ Investment lists display correctly with proper filtering
+- ✅ Data validation prevents invalid entries
 
-## Dependencies
+### Data Integrity Success
+- ✅ All investment data is accurately stored
+- ✅ Audit trails capture all changes
+- ✅ Data relationships maintained correctly
+- ✅ No data loss during operations
+- ✅ Backup and recovery procedures tested
 
-- Client Management Module (Sprint 1.2) - Required for client data
-- KYC Verification Module (Sprint 1.3) - Required for compliance
-- Admin User Management (Sprint 1.1) - Required for user access control
-- External market data providers - Required for investment valuation
-- Banking integration services - Required for transaction processing
+### User Experience Success
+- ✅ Intuitive data entry interface
+- ✅ Quick and responsive form interactions
+- ✅ Clear error messaging and validation
+- ✅ Efficient workflow for investment management
+- ✅ Mobile-friendly interface design
 
-## Estimated Development Time
-- **Backend Development**: 5-6 weeks
-- **Frontend Development**: 4-5 weeks
-- **Integration Development**: 3-4 weeks
-- **Testing & QA**: 2-3 weeks
-- **Total Estimated Time**: 14-18 weeks
+## Limitations and Scope
 
-## Future Enhancements
-- **Automated Investment Processing**: AI-powered investment recommendations
-- **Advanced Analytics**: Predictive analytics for investment performance
-- **Mobile App Integration**: Mobile access for investment monitoring
-- **Robo-Advisory**: Automated portfolio management and rebalancing
-- **ESG Integration**: Environmental, Social, and Governance investment tracking
-- **Cryptocurrency Support**: Native support for digital asset investments
-- **Alternative Investment Platforms**: Integration with alternative investment platforms 
+### Current Scope (Sprint 1.4)
+- **Data Entry Only**: Focus on manual data entry and basic CRUD operations
+- **No Automated Calculations**: Return calculations are manual entries
+- **No Real-time Data**: No integration with market data feeds
+- **Basic Reporting**: Simple export functionality only
+- **No Advanced Analytics**: No performance analysis or complex calculations
+
+### Future Enhancements (Later Sprints)
+- Automated return calculations
+- Real-time market data integration
+- Advanced performance analytics
+- Automated report generation
+- Portfolio optimization tools
+- Risk assessment capabilities
+- Integration with external financial systems 
