@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-06-12T14:18:57+1000",
+    date = "2025-06-12T17:43:23+1000",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.15 (Eclipse Adoptium)"
 )
 @Component
@@ -53,8 +53,12 @@ public class ClientMapperImpl implements ClientMapper {
         clientResponse.status( client.getStatus() );
         clientResponse.createdAt( client.getCreatedAt() );
         clientResponse.updatedAt( client.getUpdatedAt() );
-        clientResponse.createdBy( client.getCreatedBy() );
-        clientResponse.updatedBy( client.getUpdatedBy() );
+        if ( client.getCreatedBy() != null ) {
+            clientResponse.createdBy( Long.parseLong( client.getCreatedBy() ) );
+        }
+        if ( client.getUpdatedBy() != null ) {
+            clientResponse.updatedBy( Long.parseLong( client.getUpdatedBy() ) );
+        }
 
         return clientResponse.build();
     }

@@ -253,6 +253,9 @@ CREATE INDEX idx_users_status ON users(status);
 CREATE INDEX idx_user_created_at ON users(created_at);
 CREATE INDEX idx_user_last_login ON users(last_login_at);
 
+-- NOTE: client_documents table is automatically created by Hibernate from ClientDocument entity
+-- Removed manual table creation to avoid conflict with JPA auto-DDL
+
 -- Create certificate_templates table
 CREATE TABLE IF NOT EXISTS certificate_templates (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,

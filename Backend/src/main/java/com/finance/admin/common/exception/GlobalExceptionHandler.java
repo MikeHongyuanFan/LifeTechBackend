@@ -11,6 +11,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.multipart.support.MissingServletRequestPartException;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -92,6 +93,22 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
     }
 
+    @ExceptionHandler(MissingServletRequestPartException.class)
+    public ResponseEntity<Map<String, Object>> handleMissingServletRequestPartException(
+            MissingServletRequestPartException ex, WebRequest request) {
+        
+        log.error("Missing required part: {}", ex.getMessage());
+        
+        Map<String, Object> errorResponse = createErrorResponse(
+            HttpStatus.BAD_REQUEST.value(),
+            "Missing Required Part",
+            "Required file or form part is missing: " + ex.getRequestPartName(),
+            request.getDescription(false)
+        );
+        
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<Map<String, Object>> handleBadCredentialsException(
             BadCredentialsException ex, WebRequest request) {
@@ -162,6 +179,38 @@ public class GlobalExceptionHandler {
         Map<String, Object> errorResponse = createErrorResponse(
             HttpStatus.BAD_REQUEST.value(),
             "Invalid Argument",
+            ex.getMessage(),
+            request.getDescription(false)
+        );
+        
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<Map<String, Object>> handleIllegalStateException(
+            IllegalStateException ex, WebRequest request) {
+        
+        log.error("Illegal state: {}", ex.getMessage());
+        
+        // Check if this is a forbidden operation (like trying to delete system documents)
+        if (ex.getMessage() != null && (
+            ex.getMessage().contains("cannot be deleted") ||
+            ex.getMessage().contains("not allowed") ||
+            ex.getMessage().contains("System documents"))) {
+            
+            Map<String, Object> errorResponse = createErrorResponse(
+                HttpStatus.FORBIDDEN.value(),
+                "Operation Not Allowed",
+                ex.getMessage(),
+                request.getDescription(false)
+            );
+            
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(errorResponse);
+        }
+        
+        Map<String, Object> errorResponse = createErrorResponse(
+            HttpStatus.BAD_REQUEST.value(),
+            "Invalid Operation",
             ex.getMessage(),
             request.getDescription(false)
         );

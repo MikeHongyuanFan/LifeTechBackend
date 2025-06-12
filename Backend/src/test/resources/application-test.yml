@@ -19,7 +19,7 @@ spring:
     show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
+        dialect: com.finance.admin.config.CustomH2Dialect
         format_sql: false
         use_sql_comments: false
         globally_quoted_identifiers: false
@@ -29,7 +29,7 @@ spring:
     generate-ddl: true
     defer-datasource-initialization: true
     open-in-view: false
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: com.finance.admin.config.CustomH2Dialect
     
   # SQL Initialization
   sql:
@@ -62,12 +62,19 @@ spring:
     allow-circular-references: true
     lazy-initialization: true
 
+  # Disable email for tests
+  mail:
+    enabled: false
+    host: localhost
+    port: 3025
+    username: test
+    password: test
+
 # Test-specific Application Configuration
 app:
   jwt:
-    secret: testSecretKeyForFinanceAdminSystemThatIsAtLeast256BitsLongForTestingPurposesAndMustBe256Bits
-    expiration: 600000 # 10 minutes for tests
-    refresh-expiration: 3600000 # 1 hour for tests
+    secret: test-secret-key-for-jwt-token-generation-in-tests
+    expiration: 3600000
   
   security:
     allowed-ips: 127.0.0.1,::1,192.168.1.0/24
@@ -81,6 +88,16 @@ app:
     
   encryption:
     key: testEncryptionKeyForAESGCMMustBe256BitsLongForDataSecurityTesting123456789012345
+
+  # Disable email features for tests
+  email:
+    enabled: false
+    smtp:
+      enabled: false
+  
+  certificate:
+    email:
+      enabled: false
 
 # Logging Configuration
 logging:
@@ -117,8 +134,10 @@ management:
 server:
   port: 0 # Random port for tests
   error:
-    include-stacktrace: never
     include-message: always
+    include-binding-errors: always
+    include-stacktrace: never
+    include-exception: false
 
 # Test-specific Jackson configuration
 spring.jackson:
@@ -131,3 +150,35 @@ spring.jackson:
 # Disable Flyway for tests
 flyway:
   enabled: false
+
+# AWS Configuration for Tests
+aws:
+  s3:
+    endpoint: http://localhost:4566
+    region: us-east-1
+    bucket: test-bucket
+    
+# Security Configuration for Tests
+security:
+  jwt:
+    secret: test-secret-key-for-jwt-token-generation-in-tests
+    expiration: 3600000
+
+# RabbitMQ Configuration for Tests
+rabbitmq:
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
+
+# MongoDB Configuration for Tests
+data:
+  mongodb:
+    host: localhost
+    port: 27017
+    database: test
+    
+# Redis Configuration for Tests
+redis:
+  host: localhost
+  port: 6379

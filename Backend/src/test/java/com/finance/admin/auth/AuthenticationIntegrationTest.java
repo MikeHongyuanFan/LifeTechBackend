@@ -3,9 +3,13 @@ package com.finance.admin.auth;
 import com.finance.admin.auth.dto.LoginRequest;
 import com.finance.admin.auth.dto.MfaVerificationRequest;
 import com.finance.admin.config.BaseIntegrationTest;
+import com.finance.admin.config.TestConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.ActiveProfiles;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,6 +18,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * Integration tests for the Authentication API endpoints
  * Using full Spring Boot application context
  */
+@SpringBootTest(
+    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+    classes = {com.finance.admin.AdminManagementApplication.class, TestConfig.class}
+)
+@ActiveProfiles("test")
 public class AuthenticationIntegrationTest extends BaseIntegrationTest {
 
     private LoginRequest loginRequest;
@@ -81,6 +90,7 @@ public class AuthenticationIntegrationTest extends BaseIntegrationTest {
     }
 
     @Test
+    @WithMockUser
     void testLogout() throws Exception {
         getMockMvc().perform(post("/auth/logout")
                 .header("Authorization", "Bearer test-token"))

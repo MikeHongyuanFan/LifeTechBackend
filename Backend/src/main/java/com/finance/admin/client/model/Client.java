@@ -130,11 +130,11 @@ public class Client {
 
     @CreatedBy
     @Column(name = "created_by")
-    private Long createdBy;
+    private String createdBy;
 
     @LastModifiedBy
     @Column(name = "updated_by")
-    private Long updatedBy;
+    private String updatedBy;
 
     // Utility methods
     public String getFullName() {
