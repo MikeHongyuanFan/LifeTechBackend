@@ -100,15 +100,66 @@ app:
       max-request-size: 50MB
       allowed-types: jpg,jpeg,png,pdf,doc,docx
       
+  certificate:
+    email:
+      enabled: true
+      from: fanhongyuan897@gmail.com
+      admin: fanhongyuan897@gmail.com
+    expiry:
+      warning-days: 30,7,1
+      monitoring:
+        enabled: true
+      auto-expire: true
+    storage:
+      path: /tmp/certificates
+    template:
+      path: /tmp/templates
+
+# AWS Configuration
+aws:
+  access-key-id: ${AWS_ACCESS_KEY_ID:}
+  secret-access-key: ${AWS_SECRET_ACCESS_KEY:}
+  region: ${AWS_REGION:us-east-1}
+  s3:
+    bucket-name: ${AWS_S3_BUCKET:lifetech-certificates}
+    enabled: ${AWS_S3_ENABLED:false}
+
+# Digital Signature Configuration
+digital-signature:
+  enabled: ${DIGITAL_SIGNATURE_ENABLED:false}
+  keystore:
+    path: ${KEYSTORE_PATH:classpath:certificates/keystore.p12}
+    password: ${KEYSTORE_PASSWORD:changeit}
+  key:
+    alias: ${KEY_ALIAS:certificate-signing}
+      
   email:
-    enabled: false
+    enabled: true
     smtp:
       host: smtp.gmail.com
       port: 587
-      username: ${EMAIL_USERNAME:}
-      password: ${EMAIL_PASSWORD:}
+      username: fanhongyuan897@gmail.com
+      password: oytebasqthbbjvdd
       auth: true
       starttls: true
+      
+  # Spring Boot Mail Configuration
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: fanhongyuan897@gmail.com
+    password: oytebasqthbbjvdd
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+    # Enable mail auto-configuration when email is enabled
+    test-connection: true
 
 # Logging configuration
 logging:

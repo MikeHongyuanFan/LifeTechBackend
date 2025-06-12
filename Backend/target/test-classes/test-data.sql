@@ -2,7 +2,7 @@
 -- Password: admin123 (BCrypt encoded - same as production data.sql)
 
 -- Insert test admin users (without role column)
-INSERT INTO admin_users (id, username, email, password_hash, status, mfa_enabled, created_at, updated_at, failed_login_attempts)
+INSERT INTO admin_users (id, username, email, password, status, mfa_enabled, created_at, updated_at, failed_login_attempts)
 VALUES 
 ('00000000-0000-0000-0000-000000000001', 'testadmin', 'testadmin@finance.com',
  '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lbdxIo0jQDjT6VmRq',
@@ -24,7 +24,7 @@ VALUES
 ('00000000-0000-0000-0000-000000000003', 'ANALYST');
 
 -- Insert test users (regular users)
-INSERT INTO users (id, username, email, password_hash, first_name, last_name, status, email_verified, phone_verified, created_at, updated_at, failed_login_attempts)
+INSERT INTO users (id, username, email, password, first_name, last_name, status, email_verified, phone_verified, created_at, updated_at, failed_login_attempts)
 VALUES 
 ('10000000-0000-0000-0000-000000000001', 'testuser', 'testuser@finance.com',
  '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lbdxIo0jQDjT6VmRq',
@@ -70,4 +70,18 @@ VALUES
 
 ('a0000000-0000-0000-0000-000000000002', '00000000-0000-0000-0000-000000000001', 'ADMIN', 'UPDATE', 'INVESTMENT', '1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'SUCCESS', '127.0.0.1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 
-('a0000000-0000-0000-0000-000000000003', '00000000-0000-0000-0000-000000000002', 'ADMIN', 'VIEW', 'ENTITY', '2', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'SUCCESS', '192.168.1.100', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); 
+('a0000000-0000-0000-0000-000000000003', '00000000-0000-0000-0000-000000000002', 'ADMIN', 'VIEW', 'ENTITY', '2', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'SUCCESS', '192.168.1.100', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- Insert test certificate templates
+INSERT INTO certificate_templates (id, template_name, template_type, template_content, is_active, is_default, version, created_by, created_at, updated_at)
+VALUES 
+(1, 'Default Share Certificate', 'SHARE_CERTIFICATE', 'Default template for share certificates with company branding', TRUE, TRUE, 1, '00000000-0000-0000-0000-000000000001', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(2, 'Investment Certificate Template', 'INVESTMENT_CERTIFICATE', 'Standard investment certificate template', TRUE, TRUE, 1, '00000000-0000-0000-0000-000000000001', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(3, 'Bond Certificate Template', 'BOND_CERTIFICATE', 'Template for bond certificates', TRUE, TRUE, 1, '00000000-0000-0000-0000-000000000001', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- Insert test certificates
+INSERT INTO certificates (id, certificate_number, investment_id, client_id, template_id, certificate_type, issue_date, expiry_date, status, investment_amount, number_of_shares, share_price, created_by, created_at, updated_at)
+VALUES 
+(1, 'SHR-202401-0001', 1, 1, 1, 'SHARE_CERTIFICATE', '2023-01-15', '2025-01-15', 'ACTIVE', 50000.00, 2000.00, 25.00, '00000000-0000-0000-0000-000000000001', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(2, 'INV-202401-0001', 2, 2, 2, 'INVESTMENT_CERTIFICATE', '2022-06-01', '2024-06-01', 'ACTIVE', 250000.00, NULL, NULL, '00000000-0000-0000-0000-000000000001', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(3, 'BND-202401-0001', 3, 3, 3, 'BOND_CERTIFICATE', '2023-03-01', '2025-03-01', 'ACTIVE', 100000.00, 100.00, 1000.00, '00000000-0000-0000-0000-000000000001', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); 

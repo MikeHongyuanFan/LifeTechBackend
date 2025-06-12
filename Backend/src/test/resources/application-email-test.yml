@@ -1,0 +1,63 @@
+spring:
+  profiles:
+    active: email-test
+    
+  # Use H2 for testing
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+    
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    
+  h2:
+    console:
+      enabled: true
+
+# Email configuration for testing Gmail SMTP
+app:
+  email:
+    enabled: true
+    smtp:
+      host: smtp.gmail.com
+      port: 587
+      username: fanhongyuan897@gmail.com
+      password: oytebasqthbbjvdd
+      auth: true
+      starttls: true
+      
+  certificate:
+    email:
+      enabled: true
+      from: fanhongyuan897@gmail.com
+      admin: fanhongyuan897@gmail.com
+
+# Spring Boot Mail Configuration for Gmail
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: fanhongyuan897@gmail.com
+    password: oytebasqthbbjvdd
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+    test-connection: true
+
+# Logging for email testing
+logging:
+  level:
+    com.finance.admin.certificate.service.CertificateEmailService: DEBUG
+    com.finance.admin.email.service: DEBUG
+    org.springframework.mail: DEBUG 

@@ -1,3 +1,4 @@
+com/finance/admin/certificate/EmailIntegrationTest.class
 com/finance/admin/config/TestConfig.class
 com/finance/admin/config/BaseIntegrationTest.class
 com/finance/admin/auth/AuthenticationIntegrationTest.class

@@ -31,7 +31,7 @@ public class AdminUser extends BaseEntity {
 
     @NotBlank
     @Size(min = 8, max = 255)
-    @Column(name = "password_hash", nullable = false)
+    @Column(name = "password", nullable = false)
     private String passwordHash;
 
     @Enumerated(EnumType.STRING)

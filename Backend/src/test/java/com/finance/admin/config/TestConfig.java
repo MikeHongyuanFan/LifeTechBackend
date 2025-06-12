@@ -30,7 +30,9 @@ import java.util.Optional;
     "com.finance.admin.auth.repository",
     "com.finance.admin.audit.repository",
     "com.finance.admin.client.repository",
-    "com.finance.admin.investment.repository"
+    "com.finance.admin.investment.repository",
+    "com.finance.admin.enquiry.repository",
+    "com.finance.admin.certificate.repository"
 })
 @EntityScan(basePackages = {
     "com.finance.admin.user.entity",
@@ -38,6 +40,8 @@ import java.util.Optional;
     "com.finance.admin.audit.entity",
     "com.finance.admin.client.model",
     "com.finance.admin.investment.model",
+    "com.finance.admin.enquiry.model",
+    "com.finance.admin.certificate.model",
     "com.finance.admin.common.entity"
 })
 @AutoConfigureDataJpa

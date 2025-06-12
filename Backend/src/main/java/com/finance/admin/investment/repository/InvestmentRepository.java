@@ -10,6 +10,10 @@ import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Optional;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -112,4 +116,20 @@ public interface InvestmentRepository extends JpaRepository<Investment, Long> {
     
     // Check if entity has investments
     boolean existsByEntityId(Long entityId);
+
+    // Dashboard aggregation queries
+    @Query("SELECT SUM(i.initialAmount) FROM Investment i")
+    Optional<BigDecimal> sumInvestmentAmount();
+
+    @Query("SELECT COUNT(DISTINCT i.client.id) FROM Investment i")
+    Long countDistinctClients();
+
+    @Query("SELECT SUM(i.initialAmount) FROM Investment i WHERE i.purchaseDate BETWEEN :startDate AND :endDate")
+    Optional<BigDecimal> sumInvestmentAmountByDateRange(@Param("startDate") LocalDate startDate, @Param("endDate") LocalDate endDate);
+
+    @Query("SELECT SUM(i.currentValue) FROM Investment i WHERE i.currentValue IS NOT NULL")
+    Optional<BigDecimal> sumCurrentValue();
+
+    @Query("SELECT COUNT(DISTINCT i.client.id) FROM Investment i WHERE i.purchaseDate BETWEEN :startDate AND :endDate")
+    Long countDistinctClientsByDateRange(@Param("startDate") LocalDate startDate, @Param("endDate") LocalDate endDate);
 } 

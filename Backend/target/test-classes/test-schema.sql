@@ -7,13 +7,14 @@ DROP TABLE IF EXISTS entities CASCADE;
 DROP TABLE IF EXISTS investments CASCADE;
 DROP TABLE IF EXISTS audit_logs CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS enquiries CASCADE;
 
 -- Create admin_users table
 CREATE TABLE admin_users (
     id VARCHAR(36) PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
     mfa_enabled BOOLEAN NOT NULL DEFAULT FALSE,
     mfa_secret VARCHAR(255),
@@ -163,23 +164,64 @@ CREATE TABLE users (
     id VARCHAR(36) PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    first_name VARCHAR(100),
-    last_name VARCHAR(100),
-    phone VARCHAR(20),
-    status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+    password VARCHAR(255) NOT NULL,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    phone_number VARCHAR(20),
+    status VARCHAR(20) NOT NULL DEFAULT 'PENDING_VERIFICATION',
     email_verified BOOLEAN NOT NULL DEFAULT FALSE,
     phone_verified BOOLEAN NOT NULL DEFAULT FALSE,
-    email_verified_at TIMESTAMP,
-    phone_verified_at TIMESTAMP,
-    last_login TIMESTAMP,
+    profile_image_url VARCHAR(255),
+    date_of_birth TIMESTAMP,
+    timezone VARCHAR(10),
+    locale VARCHAR(10),
+    login_count BIGINT DEFAULT 0,
+    last_login_at TIMESTAMP,
+    last_login_ip VARCHAR(45),
     failed_login_attempts INTEGER NOT NULL DEFAULT 0,
-    locked_until TIMESTAMP,
+    last_failed_login_at TIMESTAMP,
+    account_locked_at TIMESTAMP,
+    password_changed_at TIMESTAMP,
+    status_changed_at TIMESTAMP,
+    status_changed_by VARCHAR(36),
+    status_change_reason VARCHAR(500),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     created_by VARCHAR(36),
     updated_by VARCHAR(36),
     version BIGINT DEFAULT 0
+);
+
+-- Create enquiries table
+CREATE TABLE enquiries (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    client_id BIGINT,
+    enquiry_number VARCHAR(20) UNIQUE NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    description TEXT,
+    enquiry_type VARCHAR(50) NOT NULL,
+    priority VARCHAR(20) DEFAULT 'MEDIUM',
+    status VARCHAR(30) DEFAULT 'OPEN',
+    contact_name VARCHAR(100),
+    contact_email VARCHAR(100),
+    contact_phone VARCHAR(20),
+    assigned_to VARCHAR(36),
+    response TEXT,
+    response_date TIMESTAMP,
+    resolved_date TIMESTAMP,
+    due_date TIMESTAMP,
+    source VARCHAR(50),
+    category VARCHAR(100),
+    tags VARCHAR(500),
+    internal_notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_by VARCHAR(36),
+    updated_by VARCHAR(36),
+    FOREIGN KEY (client_id) REFERENCES clients(id),
+    FOREIGN KEY (assigned_to) REFERENCES users(id),
+    FOREIGN KEY (created_by) REFERENCES users(id),
+    FOREIGN KEY (updated_by) REFERENCES users(id)
 );
 
 -- Create indexes for better performance
@@ -207,4 +249,68 @@ CREATE INDEX idx_audit_logs_start_time ON audit_logs(start_time);
 
 CREATE INDEX idx_users_username ON users(username);
 CREATE INDEX idx_users_email ON users(email);
-CREATE INDEX idx_users_status ON users(status); 
+CREATE INDEX idx_users_status ON users(status);
+CREATE INDEX idx_user_created_at ON users(created_at);
+CREATE INDEX idx_user_last_login ON users(last_login_at);
+
+-- Create certificate_templates table
+CREATE TABLE IF NOT EXISTS certificate_templates (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    template_name VARCHAR(255) NOT NULL,
+    template_type VARCHAR(50) NOT NULL,
+    template_content TEXT NOT NULL,
+    template_variables TEXT,
+    is_active BOOLEAN DEFAULT TRUE,
+    is_default BOOLEAN DEFAULT FALSE,
+    version INTEGER DEFAULT 1,
+    template_file_path VARCHAR(500),
+    template_format VARCHAR(20) DEFAULT 'PDF',
+    company_logo_path VARCHAR(500),
+    background_image_path VARCHAR(500),
+    primary_color VARCHAR(7) DEFAULT '#2196F3',
+    secondary_color VARCHAR(7) DEFAULT '#4CAF50',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(36) NOT NULL
+);
+
+-- Create certificates table
+CREATE TABLE IF NOT EXISTS certificates (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    certificate_number VARCHAR(50) UNIQUE NOT NULL,
+    investment_id BIGINT NOT NULL,
+    client_id BIGINT NOT NULL,
+    template_id BIGINT,
+    certificate_type VARCHAR(50) NOT NULL,
+    issue_date DATE NOT NULL,
+    expiry_date DATE,
+    status VARCHAR(20) DEFAULT 'ACTIVE',
+    investment_amount DECIMAL(15,2),
+    number_of_shares DECIMAL(15,4),
+    share_price DECIMAL(10,4),
+    file_path VARCHAR(500),
+    file_size BIGINT,
+    file_hash VARCHAR(128),
+    digital_signature TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(36) NOT NULL,
+    updated_by VARCHAR(36),
+    version INTEGER DEFAULT 1,
+    FOREIGN KEY (investment_id) REFERENCES investments(id),
+    FOREIGN KEY (client_id) REFERENCES clients(id),
+    FOREIGN KEY (template_id) REFERENCES certificate_templates(id)
+);
+
+-- Create indexes for certificates
+CREATE INDEX IF NOT EXISTS idx_certificates_investment ON certificates(investment_id);
+CREATE INDEX IF NOT EXISTS idx_certificates_client ON certificates(client_id);
+CREATE INDEX IF NOT EXISTS idx_certificates_number ON certificates(certificate_number);
+CREATE INDEX IF NOT EXISTS idx_certificates_type ON certificates(certificate_type);
+CREATE INDEX IF NOT EXISTS idx_certificates_status ON certificates(status);
+CREATE INDEX IF NOT EXISTS idx_certificates_issue_date ON certificates(issue_date);
+
+-- Create indexes for certificate templates
+CREATE INDEX IF NOT EXISTS idx_certificate_templates_type ON certificate_templates(template_type);
+CREATE INDEX IF NOT EXISTS idx_certificate_templates_active ON certificate_templates(is_active);
+CREATE INDEX IF NOT EXISTS idx_certificate_templates_default ON certificate_templates(is_default); 

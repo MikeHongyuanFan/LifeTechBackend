@@ -6,5 +6,6 @@
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/config/MinimalTestConfig.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/auth/AuthenticationIntegrationTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/audit/AuditControllerTest.java
+/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/certificate/EmailIntegrationTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/config/TestConfig.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/config/BaseTestConfiguration.java
