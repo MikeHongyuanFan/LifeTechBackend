@@ -104,14 +104,14 @@ start_spring_boot() {
     
     # Start the Spring Boot application with environment variables
     echo "Starting Spring Boot application..."
-    nohup ./mvnw spring-boot:run > app.log 2>&1 &
+    nohup ./mvnw spring-boot:run -DskipTests > app.log 2>&1 &
     
     # Wait for the application to start
     echo "Waiting for Spring Boot application to start..."
     max_attempts=30
     attempt=1
     while [ $attempt -le $max_attempts ]; do
-        if curl -s http://localhost:8090/api/admin/actuator/health | grep -q "UP"; then
+        if curl -s http://localhost:8090/actuator/health | grep -q "UP"; then
             echo "Spring Boot application is healthy!"
             return 0
         fi
@@ -147,9 +147,9 @@ docker-compose ps
 
 # Show application health details
 echo "Application health details:"
-curl -s http://localhost:8090/api/admin/actuator/health | python -m json.tool 2>/dev/null || curl -s http://localhost:8090/api/admin/actuator/health
+curl -s http://localhost:8090/actuator/health | python -m json.tool 2>/dev/null || curl -s http://localhost:8090/actuator/health
 
 echo "Setup completed successfully!"
-echo "Swagger UI is available at: http://localhost:8090/api/admin/swagger-ui/index.html"
-echo "API documentation is available at: http://localhost:8090/api/admin/openapi.json"
+echo "Swagger UI is available at: http://localhost:8090/swagger-ui/index.html"
+echo "API documentation is available at: http://localhost:8090/v3/api-docs"
 echo "Application logs are available in: $(dirname "$0")/app.log"

@@ -1,232 +1,254 @@
+server:
+  port: 8090
+
 spring:
   application:
-    name: LifeTech
+    name: lifetech-backend
   
   profiles:
-    active: dev
+    active: development
+    
+  main:
+    allow-bean-definition-overriding: true
   
   datasource:
-    url: jdbc:postgresql://localhost:5433/lifetech_admin
+    url: jdbc:postgresql://localhost:5433/finance_admin
     username: admin
     password: password
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 20
       minimum-idle: 5
-      connection-timeout: 30000
-      idle-timeout: 600000
-      max-lifetime: 1800000
-      
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 1200000
+        
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+        
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
     show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
-        default_schema: public
-        jdbc:
-          batch_size: 20
-        order_inserts: true
-        order_updates: true
-    defer-datasource-initialization: true
-    
-  sql:
-    init:
-      mode: always
-      continue-on-error: true
+        use_sql_comments: true
         
+  jackson:
+    default-property-inclusion: NON_NULL
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+      
   redis:
     host: localhost
     port: 6380
-    password: ${REDIS_PASSWORD:}
-    timeout: 2000
+    password:
+    timeout: 60000
+    database: 0
     lettuce:
       pool:
         max-active: 8
         max-idle: 8
         min-idle: 0
-        shutdown-timeout: 200
-      client:
-        type: lettuce
-        
-  data:
-    mongodb:
-      uri: ${MONGO_URI:mongodb://localhost:27017/lifetech_admin_docs}
-      
-  rabbitmq:
-    host: ${RABBITMQ_HOST:localhost}
-    port: ${RABBITMQ_PORT:5672}
-    username: ${RABBITMQ_USERNAME:guest}
-    password: ${RABBITMQ_PASSWORD:guest}
-    
-  mail:
-    host: ${MAIL_HOST:smtp.gmail.com}
-    port: ${MAIL_PORT:587}
-    username: ${MAIL_USERNAME:}
-    password: ${MAIL_PASSWORD:}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
+        max-wait: -1ms
 
-# Application Configuration
+# Application specific configuration
 app:
-  jwt:
-    secret: ${JWT_SECRET:myVerySecretJWTKeyForLifeTechSystemThatIsAtLeast256BitsLong}
-    expiration: 3600000 # 1 hour
-    refresh-expiration: 604800000 # 7 days
-  
-  security:
-    allowed-ips: ${ALLOWED_IPS:127.0.0.1,::1,0:0:0:0:0:0:0:1,localhost}
-    max-failed-attempts: 5
-    lockout-duration: 900000 # 15 minutes
-    session-timeout: 1800000 # 30 minutes
-    ip-blocking-enabled: false
-    filter:
-      order: 10
+  version: 1.0.0
+  server:
+    url: http://localhost:8090
     
   audit:
-    retention-days: 2555 # 7 years
-    cleanup-schedule: "0 0 2 * * ?" # Daily at 2 AM
-
-# API Documentation
-springdoc:
-  api-docs:
+    retention-days: 90
+    cleanup-schedule: "0 0 1 * * ?" # Run at 1 AM every day
     enabled: true
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-    disable-swagger-default-url: true
-    display-request-duration: true
-    operations-sorter: alpha
-    tags-sorter: alpha
-    try-it-out-enabled: true
-    persist-authorization: true
-    packages-to-scan: com.finance.admin
-    paths-to-match: /**
-    show-actuator: false
     
-# Logging Configuration
-logging:
-  level:
-    root: INFO
-    com.finance.admin: ${LOG_LEVEL:DEBUG}
-    org.springframework.security: INFO
-    org.springframework.data.redis: DEBUG
-  pattern:
-    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
+  jwt:
+    secret: ${JWT_SECRET:LifeTechSecretKeyForJWTTokenGenerationMustBe256BitsLongForSecurity}
+    expiration: 86400000 # 24 hours
+    refresh-expiration: 604800000 # 7 days
+    
+  security:
+    max-failed-attempts: 5
+    lockout-duration: 1800 # 30 minutes in seconds
+    password-history-count: 5
+    password-expiry-days: 90
+    password-pattern: "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$"
+    password-pattern-message: "Password must be at least 8 characters long and contain at least one digit, one lowercase letter, one uppercase letter, and one special character"
+    
+  encryption:
+    key: LifeTechEncryptionKeyForAESGCMMustBe256BitsLongForDataSecurity
+    
+  blockchain:
+    enabled: true
+    network: ethereum-testnet
+    contract-address: 0x742d35Cc6634C0532925a3b8D4Ad8d0000000000
+    gas-limit: 300000
+    gas-price: 20000000000  # 20 gwei
+    
+  file:
+    upload:
+      max-file-size: 10MB
+      max-request-size: 50MB
+      allowed-types: jpg,jpeg,png,pdf,doc,docx
+      
+  email:
+    enabled: false
+    smtp:
+      host: smtp.gmail.com
+      port: 587
+      username: ${EMAIL_USERNAME:}
+      password: ${EMAIL_PASSWORD:}
+      auth: true
+      starttls: true
 
-# Actuator
-management:
-  endpoints:
-    web:
-      base-path: /actuator
-      exposure:
-        include: health,info,metrics
-  endpoint:
-    health:
-      show-details: always
-      probes:
-        enabled: true
-      group:
-        readiness:
-          include: db,redis,mongo,rabbit
-        liveness:
-          include: ping
-  health:
-    redis:
-      enabled: true
-    db:
-      enabled: true
-    mongo:
-      enabled: true
-    rabbit:
-      enabled: true
-    mail:
-      enabled: false
-    diskspace:
-      enabled: true
-
-# Server Configuration
-server:
-  port: 8090
-  servlet:
-    context-path: /api/admin
-  error:
-    include-message: always
-    include-binding-errors: always
-
----
-# Development Profile
-spring:
-  config:
-    activate:
-      on-profile: dev
-  jpa:
-    show-sql: true
-  redis:
-    host: localhost
-    port: 6380
-  h2:
-    console:
-      enabled: true
-
+# Logging configuration
 logging:
   level:
     com.finance.admin: DEBUG
     org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/lifetech-backend.log
+
+# Management endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: when-authorized
+      show-components: always
+  info:
+    env:
+      enabled: true
+    java:
+      enabled: true
+    os:
+      enabled: true
+
+# Swagger/OpenAPI configuration
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operationsSorter: method
+    tagsSorter: alpha
+    tryItOutEnabled: true
+    displayRequestDuration: true
+  show-actuator: true
+
+# Database migration
+flyway:
+  enabled: false  # Disabled for H2 in-memory database
+  locations: classpath:db/migration
+  baseline-on-migrate: true
 
 ---
-# Test Profile
+# Production profile
+spring:
+  config:
+    activate:
+      on-profile: production
+      
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/lifetech}
+    username: ${DATABASE_USERNAME:lifetech}
+    password: ${DATABASE_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    
+  h2:
+    console:
+      enabled: false
+
+app:
+  server:
+    url: ${SERVER_URL:https://api.lifetech.com}
+    
+  jwt:
+    secret: ${JWT_SECRET:LifeTechSecretKeyForJWTTokenGenerationMustBe256BitsLongForSecurity}
+    
+  encryption:
+    key: ${ENCRYPTION_KEY:LifeTechEncryptionKeyForAESGCMMustBe256BitsLongForDataSecurity}
+    
+  blockchain:
+    network: ${BLOCKCHAIN_NETWORK:ethereum-mainnet}
+    contract-address: ${BLOCKCHAIN_CONTRACT_ADDRESS:}
+    private-key: ${BLOCKCHAIN_PRIVATE_KEY:}
+    
+  email:
+    enabled: true
+    smtp:
+      username: ${EMAIL_USERNAME:}
+      password: ${EMAIL_PASSWORD:}
+
+logging:
+  level:
+    com.finance.admin: INFO
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+  file:
+    name: /var/log/lifetech/backend.log
+
+flyway:
+  enabled: true
+
+---
+# Test profile
 spring:
   config:
     activate:
       on-profile: test
+      
   datasource:
     url: jdbc:h2:mem:testdb
     username: sa
     password: 
-    driver-class-name: org.h2.Driver
+    
   jpa:
     hibernate:
       ddl-auto: create-drop
-    database-platform: org.hibernate.dialect.H2Dialect
-  
-app:
-  jwt:
-    secret: testSecretKeyForFinanceAdminSystemThatIsAtLeast256BitsLong
-    expiration: 600000 # 10 minutes for tests
+    show-sql: false
 
----
-# Docker Profile
-spring:
-  config:
-    activate:
-      on-profile: docker
-  datasource:
-    url: jdbc:postgresql://postgres:5432/finance_admin
-    username: admin
-    password: password
-  data:
-    mongodb:
-      uri: mongodb://mongodb:27017/finance_admin_docs
-  redis:
-    host: redis
-    port: 6379
-    timeout: 2000
-    lettuce:
-      shutdown-timeout: 200
-  rabbitmq:
-    host: rabbitmq
-    port: 5672
-    username: guest
-    password: guest
+app:
+  blockchain:
+    enabled: false
+    
+  email:
+    enabled: false
 
 logging:
   level:
-    root: INFO
-    com.finance.admin: INFO
+    com.finance.admin: WARN
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN

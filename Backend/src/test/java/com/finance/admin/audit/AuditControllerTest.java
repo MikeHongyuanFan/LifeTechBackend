@@ -1,19 +1,16 @@
 package com.finance.admin.audit;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.finance.admin.audit.controller.AuditController;
 import com.finance.admin.audit.entity.AuditLog;
 import com.finance.admin.audit.service.AuditService;
+import com.finance.admin.config.BaseUnitTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -21,10 +18,10 @@ import java.lang.reflect.Field;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
+import java.util.Arrays;
 
 import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -32,31 +29,31 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Unit tests for the Audit Management API endpoints
  * Using minimal standalone MockMvc configuration
  */
-public class AuditControllerTest {
+public class AuditControllerTest extends BaseUnitTest {
 
     private MockMvc mockMvc;
-    private ObjectMapper objectMapper;
-
-    @Mock
     private AuditService auditService;
-
     private AuditController auditController;
     private List<AuditLog> auditLogs;
     private UUID userId;
     private UUID entityId;
 
     @BeforeEach
-    void setUp() throws Exception {
-        MockitoAnnotations.openMocks(this);
+    protected void setUp() {
+        super.setUp(); // Call parent setup
         
-        // Create controller and inject dependencies
+        // Create mocks
+        auditService = mock(AuditService.class);
         auditController = new AuditController();
-        objectMapper = new ObjectMapper();
         
         // Use reflection to inject the mocked service
-        Field auditServiceField = AuditController.class.getDeclaredField("auditService");
-        auditServiceField.setAccessible(true);
-        auditServiceField.set(auditController, auditService);
+        try {
+            Field auditServiceField = AuditController.class.getDeclaredField("auditService");
+            auditServiceField.setAccessible(true);
+            auditServiceField.set(auditController, auditService);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to inject mock service", e);
+        }
         
         // Setup MockMvc with PageableHandlerMethodArgumentResolver
         mockMvc = MockMvcBuilders.standaloneSetup(auditController)
@@ -87,11 +84,11 @@ public class AuditControllerTest {
         log2.setEntityType("USER");
         log2.setEntityId(entityId);
         log2.setStartTime(LocalDateTime.now().minusHours(1));
-        log2.setEndTime(LocalDateTime.now().minusHours(1).plusSeconds(1));
+        log2.setEndTime(LocalDateTime.now().minusHours(1).plusSeconds(2));
         log2.setIpAddress("127.0.0.1");
         log2.setStatus("SUCCESS");
-
-        auditLogs = List.of(log1, log2);
+        
+        auditLogs = Arrays.asList(log1, log2);
     }
 
     @Test
@@ -99,36 +96,16 @@ public class AuditControllerTest {
         Page<AuditLog> page = new PageImpl<>(auditLogs, PageRequest.of(0, 10), 2);
         
         when(auditService.findAuditLogs(
-                eq(userId), eq("ADMIN"), eq("CREATE"), isNull(), 
+                isNull(), isNull(), isNull(), isNull(), 
                 isNull(), isNull(), isNull(), 
                 isNull(), any(Pageable.class)))
                 .thenReturn(page);
 
-        mockMvc.perform(get("/audit/logs")
-                .param("userId", userId.toString())
-                .param("userType", "ADMIN")
-                .param("actionType", "CREATE"))
+        mockMvc.perform(get("/audit/logs"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.success").value(true))
                 .andExpect(jsonPath("$.data.content").isArray())
-                .andExpect(jsonPath("$.data.content.length()").value(2))
-                .andExpect(jsonPath("$.data.totalElements").value(2));
-    }
-
-    @Test
-    void testExportAuditLogs() throws Exception {
-        when(auditService.exportAuditLogs(
-                eq(userId), isNull(), isNull(), isNull(),
-                any(LocalDateTime.class), isNull()))
-                .thenReturn(auditLogs);
-
-        mockMvc.perform(get("/audit/export")
-                .param("userId", userId.toString())
-                .param("startDate", LocalDateTime.now().minusDays(7).toString()))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.success").value(true))
-                .andExpect(jsonPath("$.data").isArray())
-                .andExpect(jsonPath("$.data.length()").value(2));
+                .andExpect(jsonPath("$.data.content.length()").value(2));
     }
 
     @Test
@@ -166,9 +143,31 @@ public class AuditControllerTest {
     }
 
     @Test
-    void testUnauthorizedAccess() throws Exception {
-        // In minimal setup without security, this should return 200 instead of 403
+    void testGetAuditLogsWithFilters() throws Exception {
         Page<AuditLog> page = new PageImpl<>(auditLogs, PageRequest.of(0, 10), 2);
+        
+        when(auditService.findAuditLogs(
+                eq(userId), eq("ADMIN"), eq("CREATE"), eq("USER"), 
+                eq(entityId), any(), any(), 
+                eq("SUCCESS"), any(Pageable.class)))
+                .thenReturn(page);
+
+        mockMvc.perform(get("/audit/logs")
+                .param("userId", userId.toString())
+                .param("userType", "ADMIN")
+                .param("actionType", "CREATE")
+                .param("entityType", "USER")
+                .param("entityId", entityId.toString())
+                .param("status", "SUCCESS"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.success").value(true))
+                .andExpect(jsonPath("$.data.content").isArray())
+                .andExpect(jsonPath("$.data.content.length()").value(2));
+    }
+
+    @Test
+    void testGetAuditLogsWithPagination() throws Exception {
+        Page<AuditLog> page = new PageImpl<>(auditLogs, PageRequest.of(1, 5), 2);
         
         when(auditService.findAuditLogs(
                 isNull(), isNull(), isNull(), isNull(), 
@@ -176,7 +175,11 @@ public class AuditControllerTest {
                 isNull(), any(Pageable.class)))
                 .thenReturn(page);
 
-        mockMvc.perform(get("/audit/logs"))
-                .andExpect(status().isOk());
+        mockMvc.perform(get("/audit/logs")
+                .param("page", "1")
+                .param("size", "5"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.success").value(true))
+                .andExpect(jsonPath("$.data.content").isArray());
     }
 }

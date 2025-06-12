@@ -2,47 +2,70 @@ spring:
   application:
     name: finance-admin-management-test
   
+  # Test Database Configuration
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
     username: sa
     password: 
     driver-class-name: org.h2.Driver
     
+  # JPA Configuration for Tests
   jpa:
     hibernate:
       ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
     show-sql: false
     properties:
       hibernate:
-        format_sql: true
         dialect: org.hibernate.dialect.H2Dialect
+        format_sql: false
+        use_sql_comments: false
+        globally_quoted_identifiers: false
+        enable_lazy_load_no_trans: true
+        hbm2ddl:
+          auto: create-drop
     generate-ddl: true
+    defer-datasource-initialization: true
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
     
+  # SQL Initialization
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:test-data.sql
+      schema-locations: classpath:test-schema.sql
+      platform: h2
+      continue-on-error: false
+      
+  # H2 Console for debugging
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      
+  # Exclude external services for testing
   autoconfigure:
     exclude:
       - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
       - org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration
+      - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
       - org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+      - org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration
     
-  redis:
-    host: localhost
-    port: 6379
-    timeout: 2000ms
-    
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/finance_admin_test
-      
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+  # Main configuration
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+    lazy-initialization: true
 
-# Test-specific configuration
+# Test-specific Application Configuration
 app:
   jwt:
-    secret: testSecretKeyForFinanceAdminSystemThatIsAtLeast256BitsLongForTestingPurposes
+    secret: testSecretKeyForFinanceAdminSystemThatIsAtLeast256BitsLongForTestingPurposesAndMustBe256Bits
     expiration: 600000 # 10 minutes for tests
     refresh-expiration: 3600000 # 1 hour for tests
   
@@ -53,22 +76,28 @@ app:
     session-timeout: 300000 # 5 minutes for tests
     
   audit:
-    retention-days: 30 # Shorter retention for tests
+    retention-days: 7 # Shorter retention for tests
     cleanup-schedule: "0 0 1 * * ?" # Daily at 1 AM
+    
+  encryption:
+    key: testEncryptionKeyForAESGCMMustBe256BitsLongForDataSecurityTesting123456789012345
 
-# Logging for tests
+# Logging Configuration
 logging:
   level:
     root: WARN
-    org.springframework: INFO
-    org.hibernate: INFO
-    org.springframework.security: DEBUG
-    org.springframework.test: DEBUG
-    org.springframework.boot.test: DEBUG
-    org.springframework.transaction: DEBUG
-    org.springframework.orm.jpa: DEBUG
-    org.springframework.data.jpa: DEBUG
+    org.springframework: WARN
+    org.springframework.security: INFO
+    org.springframework.test: INFO
+    org.springframework.boot.test: INFO
+    org.springframework.transaction: WARN
+    org.springframework.orm.jpa: WARN
+    org.springframework.data.jpa: WARN
+    org.hibernate: WARN
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
     com.finance.admin: INFO
+    com.zaxxer.hikari: WARN
   pattern:
     console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
 
@@ -79,7 +108,26 @@ management:
   endpoint:
     health:
       enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: false
 
 # Server configuration for tests
 server:
-  port: 0 # Random port for tests 
+  port: 0 # Random port for tests
+  error:
+    include-stacktrace: never
+    include-message: always
+
+# Test-specific Jackson configuration
+spring.jackson:
+  default-property-inclusion: NON_NULL
+  serialization:
+    write-dates-as-timestamps: false
+  deserialization:
+    fail-on-unknown-properties: false
+
+# Disable Flyway for tests
+flyway:
+  enabled: false

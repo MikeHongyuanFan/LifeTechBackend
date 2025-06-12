@@ -1,25 +1,22 @@
 package com.finance.admin.user;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.finance.admin.config.BaseUnitTest;
 import com.finance.admin.user.controller.UserController;
 import com.finance.admin.user.dto.UserCreateRequest;
 import com.finance.admin.user.dto.UserResponse;
 import com.finance.admin.user.dto.UserUpdateRequest;
 import com.finance.admin.user.entity.UserStatus;
-import com.finance.admin.user.repository.UserRepository;
 import com.finance.admin.user.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 
 import java.lang.reflect.Field;
 import java.time.LocalDateTime;
@@ -30,8 +27,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -39,17 +35,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Unit tests for the User Management API endpoints
  * Using minimal standalone MockMvc configuration
  */
-public class UserControllerTest {
+public class UserControllerTest extends BaseUnitTest {
 
     private MockMvc mockMvc;
-    private ObjectMapper objectMapper;
-
-    @Mock
     private UserService userService;
-
-    @Mock
-    private UserRepository userRepository;
-
     private UserController userController;
     private UserResponse testUserResponse;
     private UserCreateRequest createRequest;
@@ -57,17 +46,21 @@ public class UserControllerTest {
     private UUID userId;
 
     @BeforeEach
-    void setUp() throws Exception {
-        MockitoAnnotations.openMocks(this);
+    protected void setUp() {
+        super.setUp(); // Call parent setup
         
-        // Create controller and inject dependencies
+        // Create mocks
+        userService = mock(UserService.class);
         userController = new UserController();
-        objectMapper = new ObjectMapper();
         
         // Use reflection to inject the mocked service
-        Field userServiceField = UserController.class.getDeclaredField("userService");
-        userServiceField.setAccessible(true);
-        userServiceField.set(userController, userService);
+        try {
+            Field userServiceField = UserController.class.getDeclaredField("userService");
+            userServiceField.setAccessible(true);
+            userServiceField.set(userController, userService);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to inject mock service", e);
+        }
         
         // Setup MockMvc with PageableHandlerMethodArgumentResolver
         mockMvc = MockMvcBuilders.standaloneSetup(userController)
@@ -109,7 +102,7 @@ public class UserControllerTest {
 
         mockMvc.perform(post("/users")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(createRequest)))
+                .content(getObjectMapper().writeValueAsString(createRequest)))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.success").value(true))
                 .andExpect(jsonPath("$.data.username").value(testUserResponse.getUsername()));
@@ -141,7 +134,7 @@ public class UserControllerTest {
 
         mockMvc.perform(put("/users/{id}", userId)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(updateRequest)))
+                .content(getObjectMapper().writeValueAsString(updateRequest)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.success").value(true))
                 .andExpect(jsonPath("$.data.id").value(userId.toString()));
