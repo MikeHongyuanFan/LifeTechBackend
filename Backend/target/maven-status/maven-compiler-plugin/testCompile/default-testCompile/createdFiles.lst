@@ -6,6 +6,7 @@ com/finance/admin/auth/AuthenticationIntegrationTest.class
 com/finance/admin/client/document/repository/ClientDocumentRepositoryTest.class
 com/finance/admin/config/TestJpaConfig.class
 com/finance/admin/client/investment/service/ClientInvestmentServiceTest.class
+com/finance/admin/client/profile/service/ClientProfileServiceTest.class
 com/finance/admin/config/MinimalTestConfig.class
 com/finance/admin/config/BaseUnitTest.class
 com/finance/admin/config/CustomH2Dialect.class

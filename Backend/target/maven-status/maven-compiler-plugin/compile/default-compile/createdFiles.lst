@@ -36,6 +36,7 @@ com/finance/admin/dashboard/service/DashboardService.class
 com/finance/admin/client/investment/dto/InvestmentAlert.class
 com/finance/admin/client/investment/dto/InvestmentFilterRequest$1.class
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse$ComparisonInsights$ComparisonInsightsBuilder.class
+com/finance/admin/client/profile/dto/UpdateClientProfileRequest.class
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse$BenchmarkComparison$BenchmarkPerformance.class
 com/finance/admin/config/AdminUserSeeder.class
 com/finance/admin/dashboard/dto/DashboardSummaryResponse.class
@@ -58,6 +59,7 @@ com/finance/admin/user/mapper/UserMapper.class
 com/finance/admin/dashboard/dto/ClientStatsResponse$ClientTrendData.class
 com/finance/admin/client/investment/dto/AllInvestmentsResponse$AllInvestmentsResponseBuilder.class
 com/finance/admin/certificate/model/Certificate.class
+com/finance/admin/client/profile/dto/ClientProfileResponse$ProfileCompletionInfo$ProfileCompletionInfoBuilder.class
 com/finance/admin/dashboard/dto/UpcomingBirthdaysResponse$UpcomingBirthdaysResponseBuilder.class
 com/finance/admin/investment/model/Investment$InvestmentStatus.class
 com/finance/admin/client/investment/dto/ActiveInvestmentResponse$PerformanceStatus.class
@@ -147,6 +149,7 @@ com/finance/admin/client/investment/dto/EnhancedInvestmentFilterRequest$Liquidit
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse$ComparisonChart$ChartDataSeries$ChartDataSeriesBuilder.class
 com/finance/admin/user/repository/UserRepository.class
 com/finance/admin/client/document/dto/DocumentListResponse.class
+com/finance/admin/client/profile/dto/ClientProfileResponse$KycStatusInfo$KycStatusInfoBuilder.class
 com/finance/admin/client/investment/dto/ReportGenerationRequest$ReportGenerationRequestBuilder.class
 com/finance/admin/investment/model/Investment$InvestmentType.class
 com/finance/admin/client/investment/dto/InvestmentChartsResponse$BarChartDataPoint$BarChartDataPointBuilder.class
@@ -159,7 +162,9 @@ com/finance/admin/certificate/service/CloudStorageService.class
 com/finance/admin/client/model/Client.class
 com/finance/admin/client/investment/dto/InvestmentFilterRequest$TimeRangePreset.class
 com/finance/admin/client/investment/dto/EnhancedInvestmentFilterRequest$ViewType.class
+com/finance/admin/client/profile/controller/ClientProfileController.class
 com/finance/admin/certificate/model/CertificateTemplate.class
+com/finance/admin/client/profile/dto/ClientProfileResponse$KycStatusInfo$KycDocumentStatus$KycDocumentStatusBuilder.class
 com/finance/admin/certificate/model/Certificate$CertificateStatus.class
 com/finance/admin/client/investment/dto/AllInvestmentsResponse$CategoryBreakdown.class
 com/finance/admin/client/investment/dto/InvestmentAlert$AlertType.class
@@ -208,6 +213,7 @@ com/finance/admin/client/investment/dto/AllInvestmentsResponse.class
 com/finance/admin/auth/service/AdminUserDetailsService.class
 com/finance/admin/certificate/model/Certificate$CertificateType.class
 com/finance/admin/user/dto/UserResponse.class
+com/finance/admin/client/profile/dto/UpdateClientProfileRequest$UpdateClientProfileRequestBuilder.class
 com/finance/admin/client/document/dto/ClientDocumentResponse.class
 com/finance/admin/investment/model/Entity$EntityStatus.class
 com/finance/admin/client/investment/dto/InvestmentSummaryResponse.class
@@ -224,8 +230,10 @@ com/finance/admin/investment/service/InvestmentService$InvestmentSummary$Investm
 com/finance/admin/enquiry/model/Enquiry.class
 com/finance/admin/investment/model/Entity.class
 com/finance/admin/auth/entity/AdminUserStatus.class
+com/finance/admin/client/profile/dto/ClientProfileResponse$ClientProfileResponseBuilder.class
 com/finance/admin/client/dto/ClientResponse.class
 com/finance/admin/client/document/dto/DocumentUploadResponse$DocumentUploadResponseBuilder.class
+com/finance/admin/client/profile/dto/ClientProfileResponse.class
 com/finance/admin/client/investment/dto/InvestmentFilterRequest.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$TrendAnalytics$VolatilityTrend$VolatilityTrendBuilder.class
 com/finance/admin/auth/service/MfaService.class
@@ -245,6 +253,7 @@ com/finance/admin/client/investment/dto/InvestmentComparisonResponse$InvestmentC
 com/finance/admin/investment/dto/EntityResponse$EntityResponseBuilder.class
 com/finance/admin/client/dto/ClientSearchRequest$ClientSearchRequestBuilder.class
 com/finance/admin/config/SwaggerConfig.class
+com/finance/admin/client/profile/dto/ClientProfileResponse$KycStatusInfo$KycStatus.class
 com/finance/admin/client/model/Client$ClientBuilder.class
 com/finance/admin/client/document/dto/DocumentFilterRequest.class
 com/finance/admin/auth/repository/AdminUserRepository.class
@@ -256,12 +265,14 @@ com/finance/admin/certificate/service/CertificateExpiryMonitoringService$ExpiryS
 com/finance/admin/client/investment/dto/InvestmentDetailResponse$PerformanceDataPoint$PerformanceDataPointBuilder.class
 com/finance/admin/auth/entity/AdminRole$1.class
 com/finance/admin/client/investment/dto/EnhancedInvestmentFilterRequest$PerformanceRating.class
+com/finance/admin/client/profile/dto/ClientProfileResponse$KycStatusInfo.class
 com/finance/admin/certificate/service/CertificateExpiryMonitoringService.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$DiversificationAnalytics$ConcentrationRisk.class
 com/finance/admin/config/DigitalSignatureConfig.class
 com/finance/admin/client/dto/UpdateClientRequest$UpdateClientRequestBuilder.class
 com/finance/admin/certificate/service/DigitalSignatureService.class
 com/finance/admin/client/investment/dto/InvestmentPerformanceResponse.class
+com/finance/admin/client/profile/dto/ClientProfileResponse$ProfileCompletionInfo.class
 com/finance/admin/investment/model/Entity$EntityType.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$RiskAnalytics.class
 com/finance/admin/enquiry/model/Enquiry$EnquiryBuilder.class
@@ -271,6 +282,8 @@ com/finance/admin/client/investment/dto/InvestmentComparisonResponse$InvestmentC
 com/finance/admin/investment/repository/InvestmentRepository.class
 com/finance/admin/certificate/service/CertificateExpiryMonitoringService$ExpiryReport$ExpiryReportBuilder.class
 com/finance/admin/client/controller/ClientAuthController.class
+com/finance/admin/client/profile/dto/ClientProfileResponse$KycStatusInfo$KycDocumentStatus.class
+com/finance/admin/client/profile/service/ClientProfileService.class
 com/finance/admin/client/document/dto/DocumentSearchResponse$SearchMetadata.class
 com/finance/admin/client/investment/dto/InvestmentSummaryResponse$AssetAllocation.class
 com/finance/admin/client/investment/dto/ActiveInvestmentResponse$ActiveInvestmentResponseBuilder.class

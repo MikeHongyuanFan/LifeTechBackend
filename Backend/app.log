@@ -34,75 +34,75 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.3)
 
-2025-06-12 17:43:30 [main] INFO  c.f.admin.AdminManagementApplication - Starting AdminManagementApplication using Java 17.0.15 with PID 30794 (/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/target/classes started by hongyuanfan in /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend)
-2025-06-12 17:43:30 [main] DEBUG c.f.admin.AdminManagementApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
-2025-06-12 17:43:30 [main] INFO  c.f.admin.AdminManagementApplication - The following 1 profile is active: "development"
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 11 JPA repository interfaces.
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.audit.repository.AuditLogRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.auth.repository.AdminUserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateTemplateRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.document.repository.ClientDocumentRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientLoginHistoryRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.enquiry.repository.EnquiryRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.EntityRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.InvestmentRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.user.repository.UserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 MongoDB repository interfaces.
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.audit.repository.AuditLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.auth.repository.AdminUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateTemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.document.repository.ClientDocumentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientLoginHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.enquiry.repository.EnquiryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.EntityRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.InvestmentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-06-12 17:43:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jdbcConnectionDetails' of type [org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.JpaProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jpa.hibernate-org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hikariPoolDataSourceMetadataProvider' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration$$Lambda$675/0x0000000601565e80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizationAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionExecutionListeners' of type [org.springframework.boot.autoconfigure.transaction.ExecutionListenersTransactionManagerCustomizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration' of type [org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties' of type [org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-12 17:43:31 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@22ae32ba
-2025-06-12 17:43:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceScriptDatabaseInitializer' of type [org.springframework.boot.autoconfigure.sql.init.SqlDataSourceScriptDatabaseInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$DataSourceInitializerConfiguration' of type [org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$DataSourceInitializerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.batch-org.springframework.boot.autoconfigure.batch.BatchProperties' of type [org.springframework.boot.autoconfigure.batch.BatchProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'batchDataSourceInitializer' of type [org.springframework.boot.autoconfigure.batch.BatchDataSourceScriptDatabaseInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jpaVendorAdapter' of type [org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactoryBuilder' of type [org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'persistenceManagedTypes' of type [org.springframework.orm.jpa.persistenceunit.SimplePersistenceManagedTypes] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:31 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-12 17:43:31 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-12 17:43:31 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-12 17:43:31 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-12 17:43:31 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-12 17:43:32 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#7488c183' of type [org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:32 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#7488c183' of type [org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean$TargetBeanObjectFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:32 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:44 [main] INFO  c.f.admin.AdminManagementApplication - Starting AdminManagementApplication using Java 17.0.15 with PID 40212 (/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/target/classes started by hongyuanfan in /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend)
+2025-06-13 12:08:44 [main] DEBUG c.f.admin.AdminManagementApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-06-13 12:08:44 [main] INFO  c.f.admin.AdminManagementApplication - The following 1 profile is active: "development"
+2025-06-13 12:08:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-13 12:08:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 11 JPA repository interfaces.
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.audit.repository.AuditLogRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.auth.repository.AdminUserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateTemplateRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.document.repository.ClientDocumentRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientLoginHistoryRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.enquiry.repository.EnquiryRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.EntityRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.InvestmentRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.user.repository.UserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 MongoDB repository interfaces.
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.audit.repository.AuditLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.auth.repository.AdminUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateTemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.document.repository.ClientDocumentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientLoginHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.enquiry.repository.EnquiryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.EntityRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.InvestmentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-13 12:08:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jdbcConnectionDetails' of type [org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.JpaProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jpa.hibernate-org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hikariPoolDataSourceMetadataProvider' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration$$Lambda$675/0x0000007001566048] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizationAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionExecutionListeners' of type [org.springframework.boot.autoconfigure.transaction.ExecutionListenersTransactionManagerCustomizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration' of type [org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties' of type [org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-13 12:08:45 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@22ae32ba
+2025-06-13 12:08:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceScriptDatabaseInitializer' of type [org.springframework.boot.autoconfigure.sql.init.SqlDataSourceScriptDatabaseInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$DataSourceInitializerConfiguration' of type [org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$DataSourceInitializerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.batch-org.springframework.boot.autoconfigure.batch.BatchProperties' of type [org.springframework.boot.autoconfigure.batch.BatchProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'batchDataSourceInitializer' of type [org.springframework.boot.autoconfigure.batch.BatchDataSourceScriptDatabaseInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jpaVendorAdapter' of type [org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactoryBuilder' of type [org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'persistenceManagedTypes' of type [org.springframework.orm.jpa.persistenceunit.SimplePersistenceManagedTypes] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-13 12:08:45 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-13 12:08:45 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-13 12:08:45 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-13 12:08:45 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#7488c183' of type [org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:45 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#7488c183' of type [org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean$TargetBeanObjectFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:46 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table admin_user_allowed_ips (
         admin_user_id uuid not null,
         ip_address varchar(45)
@@ -112,7 +112,7 @@ Hibernate:
         admin_user_id uuid not null,
         ip_address varchar(45)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table admin_user_roles (
         admin_user_id uuid not null,
         role varchar(255) check (role in ('SUPER_ADMIN','SYSTEM_ADMIN','FINANCIAL_ADMIN','CUSTOMER_SERVICE_ADMIN','COMPLIANCE_OFFICER','ANALYST'))
@@ -122,7 +122,7 @@ Hibernate:
         admin_user_id uuid not null,
         role varchar(255) check (role in ('SUPER_ADMIN','SYSTEM_ADMIN','FINANCIAL_ADMIN','CUSTOMER_SERVICE_ADMIN','COMPLIANCE_OFFICER','ANALYST'))
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table admin_users (
         id uuid not null,
         created_at timestamp(6) not null,
@@ -168,7 +168,7 @@ Hibernate:
         username varchar(50) not null,
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table audit_logs (
         id uuid not null,
         created_at timestamp(6) not null,
@@ -220,7 +220,7 @@ Hibernate:
         user_type varchar(10) not null,
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table certificate_templates (
         id bigserial not null,
         background_image_path varchar(500),
@@ -262,7 +262,7 @@ Hibernate:
         version integer,
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table certificates (
         id bigserial not null,
         certificate_number varchar(50) not null,
@@ -312,7 +312,7 @@ Hibernate:
         template_id bigint,
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table client_documents (
         id bigserial not null,
         access_count integer,
@@ -360,7 +360,7 @@ Hibernate:
         client_id bigint not null,
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table client_login_history (
         id bigserial not null,
         client_id bigint,
@@ -386,7 +386,7 @@ Hibernate:
         user_agent TEXT,
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table clients (
         id bigserial not null,
         address_city varchar(100),
@@ -462,7 +462,7 @@ Hibernate:
         updated_by varchar(255),
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table enquiries (
         id bigserial not null,
         assigned_to uuid,
@@ -518,7 +518,7 @@ Hibernate:
         client_id bigint,
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table entities (
         id bigserial not null,
         abn varchar(11),
@@ -574,7 +574,7 @@ Hibernate:
         client_id bigint not null,
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table investments (
         id bigserial not null,
         actual_return_amount numeric(15,2),
@@ -636,7 +636,7 @@ Hibernate:
         entity_id bigint,
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create table users (
         id uuid not null,
         created_at timestamp(6) not null,
@@ -702,191 +702,191 @@ Hibernate:
         username varchar(50) not null,
         primary key (id)
     )
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_admin_username 
        on admin_users (username)
 Hibernate: 
     create index idx_admin_username 
        on admin_users (username)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_admin_email 
        on admin_users (email)
 Hibernate: 
     create index idx_admin_email 
        on admin_users (email)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_admin_status 
        on admin_users (status)
 Hibernate: 
     create index idx_admin_status 
        on admin_users (status)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists admin_users 
        drop constraint if exists UK_cp8822350s9vtyww7xdbgeuvu
 Hibernate: 
     alter table if exists admin_users 
        drop constraint if exists UK_cp8822350s9vtyww7xdbgeuvu
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_cp8822350s9vtyww7xdbgeuvu" of relation "admin_users" does not exist, skipping
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_cp8822350s9vtyww7xdbgeuvu" of relation "admin_users" does not exist, skipping
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists admin_users 
        add constraint UK_cp8822350s9vtyww7xdbgeuvu unique (email)
 Hibernate: 
     alter table if exists admin_users 
        add constraint UK_cp8822350s9vtyww7xdbgeuvu unique (email)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists admin_users 
        drop constraint if exists UK_3fgxk4ewgaxgtgvqwb1jjudj6
 Hibernate: 
     alter table if exists admin_users 
        drop constraint if exists UK_3fgxk4ewgaxgtgvqwb1jjudj6
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_3fgxk4ewgaxgtgvqwb1jjudj6" of relation "admin_users" does not exist, skipping
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_3fgxk4ewgaxgtgvqwb1jjudj6" of relation "admin_users" does not exist, skipping
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists admin_users 
        add constraint UK_3fgxk4ewgaxgtgvqwb1jjudj6 unique (username)
 Hibernate: 
     alter table if exists admin_users 
        add constraint UK_3fgxk4ewgaxgtgvqwb1jjudj6 unique (username)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_audit_user_id 
        on audit_logs (user_id)
 Hibernate: 
     create index idx_audit_user_id 
        on audit_logs (user_id)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_audit_action_type 
        on audit_logs (action_type)
 Hibernate: 
     create index idx_audit_action_type 
        on audit_logs (action_type)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_audit_entity_type 
        on audit_logs (entity_type)
 Hibernate: 
     create index idx_audit_entity_type 
        on audit_logs (entity_type)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_audit_created_at 
        on audit_logs (created_at)
 Hibernate: 
     create index idx_audit_created_at 
        on audit_logs (created_at)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists certificates 
        drop constraint if exists UK_fipjgqr5997w3i89i4mfyng9f
 Hibernate: 
     alter table if exists certificates 
        drop constraint if exists UK_fipjgqr5997w3i89i4mfyng9f
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_fipjgqr5997w3i89i4mfyng9f" of relation "certificates" does not exist, skipping
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_fipjgqr5997w3i89i4mfyng9f" of relation "certificates" does not exist, skipping
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists certificates 
        add constraint UK_fipjgqr5997w3i89i4mfyng9f unique (certificate_number)
 Hibernate: 
     alter table if exists certificates 
        add constraint UK_fipjgqr5997w3i89i4mfyng9f unique (certificate_number)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists clients 
        drop constraint if exists UK_dpl3sg78a9pqij2c75dgctvr
 Hibernate: 
     alter table if exists clients 
        drop constraint if exists UK_dpl3sg78a9pqij2c75dgctvr
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_dpl3sg78a9pqij2c75dgctvr" of relation "clients" does not exist, skipping
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_dpl3sg78a9pqij2c75dgctvr" of relation "clients" does not exist, skipping
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists clients 
        add constraint UK_dpl3sg78a9pqij2c75dgctvr unique (email_primary)
 Hibernate: 
     alter table if exists clients 
        add constraint UK_dpl3sg78a9pqij2c75dgctvr unique (email_primary)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists clients 
        drop constraint if exists UK_fkoasmmbcyeiv908fq5chu4ta
 Hibernate: 
     alter table if exists clients 
        drop constraint if exists UK_fkoasmmbcyeiv908fq5chu4ta
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_fkoasmmbcyeiv908fq5chu4ta" of relation "clients" does not exist, skipping
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_fkoasmmbcyeiv908fq5chu4ta" of relation "clients" does not exist, skipping
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists clients 
        add constraint UK_fkoasmmbcyeiv908fq5chu4ta unique (membership_number)
 Hibernate: 
     alter table if exists clients 
        add constraint UK_fkoasmmbcyeiv908fq5chu4ta unique (membership_number)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists enquiries 
        drop constraint if exists UK_s6b5yvplflq9dexihl3yf17i5
 Hibernate: 
     alter table if exists enquiries 
        drop constraint if exists UK_s6b5yvplflq9dexihl3yf17i5
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_s6b5yvplflq9dexihl3yf17i5" of relation "enquiries" does not exist, skipping
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_s6b5yvplflq9dexihl3yf17i5" of relation "enquiries" does not exist, skipping
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists enquiries 
        add constraint UK_s6b5yvplflq9dexihl3yf17i5 unique (enquiry_number)
 Hibernate: 
     alter table if exists enquiries 
        add constraint UK_s6b5yvplflq9dexihl3yf17i5 unique (enquiry_number)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_user_email 
        on users (email)
 Hibernate: 
     create index idx_user_email 
        on users (email)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_user_username 
        on users (username)
 Hibernate: 
     create index idx_user_username 
        on users (username)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_user_status 
        on users (status)
 Hibernate: 
     create index idx_user_status 
        on users (status)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_user_created_at 
        on users (created_at)
 Hibernate: 
     create index idx_user_created_at 
        on users (created_at)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     create index idx_user_last_login 
        on users (last_login_at)
 Hibernate: 
     create index idx_user_last_login 
        on users (last_login_at)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists users 
        drop constraint if exists UK_6dotkott2kjsp8vw4d0m25fb7
 Hibernate: 
     alter table if exists users 
        drop constraint if exists UK_6dotkott2kjsp8vw4d0m25fb7
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists users 
        add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
 Hibernate: 
     alter table if exists users 
        add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists users 
        drop constraint if exists UK_r43af9ap4edm43mmtq01oddj6
 Hibernate: 
     alter table if exists users 
        drop constraint if exists UK_r43af9ap4edm43mmtq01oddj6
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
-2025-06-12 17:43:32 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_r43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-13 12:08:46 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_r43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists users 
        add constraint UK_r43af9ap4edm43mmtq01oddj6 unique (username)
 Hibernate: 
     alter table if exists users 
        add constraint UK_r43af9ap4edm43mmtq01oddj6 unique (username)
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists admin_user_allowed_ips 
        add constraint FK6djpms049826iouqv8t4aun7w 
        foreign key (admin_user_id) 
@@ -896,7 +896,7 @@ Hibernate:
        add constraint FK6djpms049826iouqv8t4aun7w 
        foreign key (admin_user_id) 
        references admin_users
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists admin_user_roles 
        add constraint FK486l3h5kt03mw088cosejeud1 
        foreign key (admin_user_id) 
@@ -906,7 +906,7 @@ Hibernate:
        add constraint FK486l3h5kt03mw088cosejeud1 
        foreign key (admin_user_id) 
        references admin_users
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists certificates 
        add constraint FKlnwjsut7480baufv45j0i4bf3 
        foreign key (client_id) 
@@ -916,7 +916,7 @@ Hibernate:
        add constraint FKlnwjsut7480baufv45j0i4bf3 
        foreign key (client_id) 
        references clients
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists certificates 
        add constraint FKmuei4qx2vt6qemjkrjqkd0r3b 
        foreign key (investment_id) 
@@ -926,7 +926,7 @@ Hibernate:
        add constraint FKmuei4qx2vt6qemjkrjqkd0r3b 
        foreign key (investment_id) 
        references investments
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists certificates 
        add constraint FK1qd9d9utbnnhhqff0e01nmgwl 
        foreign key (template_id) 
@@ -936,7 +936,7 @@ Hibernate:
        add constraint FK1qd9d9utbnnhhqff0e01nmgwl 
        foreign key (template_id) 
        references certificate_templates
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists client_documents 
        add constraint FK8w1vi21ia7d69btkpligpf3hw 
        foreign key (client_id) 
@@ -946,7 +946,7 @@ Hibernate:
        add constraint FK8w1vi21ia7d69btkpligpf3hw 
        foreign key (client_id) 
        references clients
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists client_login_history 
        add constraint FKj2f6d8l3leqrkylvad72hgpva 
        foreign key (client_id) 
@@ -956,7 +956,7 @@ Hibernate:
        add constraint FKj2f6d8l3leqrkylvad72hgpva 
        foreign key (client_id) 
        references clients
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists enquiries 
        add constraint FK9r33qikmwbv07bnak6dmstqfv 
        foreign key (client_id) 
@@ -966,7 +966,7 @@ Hibernate:
        add constraint FK9r33qikmwbv07bnak6dmstqfv 
        foreign key (client_id) 
        references clients
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists entities 
        add constraint FKofse0g9fghwfrt42ko68175y1 
        foreign key (client_id) 
@@ -976,7 +976,7 @@ Hibernate:
        add constraint FKofse0g9fghwfrt42ko68175y1 
        foreign key (client_id) 
        references clients
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists investments 
        add constraint FKrst49wjxgj0suyv8ceesdv7w1 
        foreign key (client_id) 
@@ -986,7 +986,7 @@ Hibernate:
        add constraint FKrst49wjxgj0suyv8ceesdv7w1 
        foreign key (client_id) 
        references clients
-2025-06-12 17:43:32 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:46 [main] DEBUG org.hibernate.SQL - 
     alter table if exists investments 
        add constraint FKragfnufauta9wlljt2qpue0hq 
        foreign key (entity_id) 
@@ -996,35 +996,35 @@ Hibernate:
        add constraint FKragfnufauta9wlljt2qpue0hq 
        foreign key (entity_id) 
        references entities
-2025-06-12 17:43:32 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-12 17:43:32 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactory' of type [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:32 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactory' of type [jdk.proxy2.$Proxy185] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:32 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.orm.jpa.JpaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2025-06-12 17:43:32 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$SpringBootBatchConfiguration' of type [org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$SpringBootBatchConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [jobRegistryBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2025-06-12 17:43:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8090 (http)
-2025-06-12 17:43:32 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-12 17:43:32 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
-2025-06-12 17:43:32 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-12 17:43:32 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2087 ms
-2025-06-12 17:43:32 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5433/finance_admin'
-2025-06-12 17:43:33 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-12 17:43:33 [main] INFO  c.finance.admin.config.JacksonConfig - Configuring primary Jackson ObjectMapper
-2025-06-12 17:43:33 [main] INFO  c.f.admin.config.RedisConfiguration - Configuring Redis connection to localhost:6380
-2025-06-12 17:43:33 [main] INFO  c.f.admin.config.RedisConfiguration - Creating Redis connection factory with host: localhost, port: 6380
-2025-06-12 17:43:33 [main] INFO  c.f.admin.config.RedisConfiguration - Testing Redis connection...
-2025-06-12 17:43:33 [main] INFO  c.f.admin.config.RedisConfiguration - Redis connection successful
-2025-06-12 17:43:34 [main] INFO  c.f.admin.config.EmailConfiguration - Creating Mock JavaMailSender bean - Email service is disabled
-2025-06-12 17:43:35 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.11.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "14.3.1"}, "platform": "Java/Eclipse Adoptium/17.0.15+6"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@7b6c94e2], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@27bda565, com.mongodb.Jep395RecordCodecProvider@6479d4be, com.mongodb.KotlinCodecProvider@49defb82]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@3779d962], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
-2025-06-12 17:43:35 [cluster-ClusterId{value='684a8527e363fb5e04f1a043', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8224250}
-2025-06-12 17:43:35 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
-2025-06-12 17:43:35 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-12 17:43:35 [main] INFO  c.finance.admin.config.WebMvcConfig - Configuring Swagger UI resource handlers
-2025-06-12 17:43:35 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1a6261a8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@184379f0, org.springframework.security.web.context.SecurityContextHolderFilter@15855e97, org.springframework.security.web.header.HeaderWriterFilter@77e4bde0, org.springframework.security.web.authentication.logout.LogoutFilter@371928a5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59c84058, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f227e60, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5741ff2f, org.springframework.security.web.session.SessionManagementFilter@637d3e90, org.springframework.security.web.access.ExceptionTranslationFilter@411498f1, org.springframework.security.web.access.intercept.AuthorizationFilter@ac8f75d]
-2025-06-12 17:43:35 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
-2025-06-12 17:43:35 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2025-06-12 17:43:35 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
-2025-06-12 17:43:35 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2025-06-12 17:43:35 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2025-06-13 12:08:46 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-13 12:08:46 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactory' of type [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:46 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactory' of type [jdk.proxy2.$Proxy185] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:46 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.orm.jpa.JpaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-13 12:08:46 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$SpringBootBatchConfiguration' of type [org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$SpringBootBatchConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [jobRegistryBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-06-13 12:08:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8090 (http)
+2025-06-13 12:08:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-13 12:08:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-06-13 12:08:46 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-13 12:08:46 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2127 ms
+2025-06-13 12:08:46 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5433/finance_admin'
+2025-06-13 12:08:47 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-13 12:08:47 [main] INFO  c.finance.admin.config.JacksonConfig - Configuring primary Jackson ObjectMapper
+2025-06-13 12:08:47 [main] INFO  c.f.admin.config.RedisConfiguration - Configuring Redis connection to localhost:6380
+2025-06-13 12:08:47 [main] INFO  c.f.admin.config.RedisConfiguration - Creating Redis connection factory with host: localhost, port: 6380
+2025-06-13 12:08:47 [main] INFO  c.f.admin.config.RedisConfiguration - Testing Redis connection...
+2025-06-13 12:08:47 [main] INFO  c.f.admin.config.RedisConfiguration - Redis connection successful
+2025-06-13 12:08:48 [main] INFO  c.f.admin.config.EmailConfiguration - Creating Mock JavaMailSender bean - Email service is disabled
+2025-06-13 12:08:49 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.11.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "14.3.1"}, "platform": "Java/Eclipse Adoptium/17.0.15+6"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@72c1813c], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@45faedac, com.mongodb.Jep395RecordCodecProvider@5de5689b, com.mongodb.KotlinCodecProvider@7094cd6c]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@3b6a4049], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2025-06-13 12:08:49 [cluster-ClusterId{value='684b8831a8dad579223aad14', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=9722625}
+2025-06-13 12:08:49 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+2025-06-13 12:08:49 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-13 12:08:49 [main] INFO  c.finance.admin.config.WebMvcConfig - Configuring Swagger UI resource handlers
+2025-06-13 12:08:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1536cd09, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77e4bde0, org.springframework.security.web.context.SecurityContextHolderFilter@7e34ca05, org.springframework.security.web.header.HeaderWriterFilter@2f6e023f, org.springframework.security.web.authentication.logout.LogoutFilter@34f267d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36b50fc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@49e7c13d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74ed1671, org.springframework.security.web.session.SessionManagementFilter@568fec92, org.springframework.security.web.access.ExceptionTranslationFilter@564b21ca, org.springframework.security.web.access.intercept.AuthorizationFilter@269e0783]
+2025-06-13 12:08:49 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2025-06-13 12:08:49 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-06-13 12:08:49 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
+2025-06-13 12:08:49 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2025-06-13 12:08:49 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -1032,15 +1032,15 @@ Hibernate:
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2025-06-12 17:43:35 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2025-06-12 17:43:35 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.2
-2025-06-12 17:43:35 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@59b625b3
-2025-06-12 17:43:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8090 (http) with context path ''
-2025-06-12 17:43:35 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2025-06-12 17:43:35 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2025-06-12 17:43:35 [main] INFO  c.f.admin.AdminManagementApplication - Started AdminManagementApplication in 5.479 seconds (process running for 5.656)
-2025-06-12 17:43:36 [main] INFO  o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: []
-2025-06-12 17:43:36 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:49 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-06-13 12:08:49 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.2
+2025-06-13 12:08:49 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@148cacc9
+2025-06-13 12:08:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8090 (http) with context path ''
+2025-06-13 12:08:49 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-06-13 12:08:49 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-06-13 12:08:49 [main] INFO  c.f.admin.AdminManagementApplication - Started AdminManagementApplication in 5.43 seconds (process running for 5.555)
+2025-06-13 12:08:49 [main] INFO  o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: []
+2025-06-13 12:08:49 [main] DEBUG org.hibernate.SQL - 
     /* <criteria> */ select
         au1_0.id,
         au1_0.created_at,
@@ -1090,7 +1090,7 @@ Hibernate:
         admin_users au1_0 
     where
         au1_0.username=?
-2025-06-12 17:43:36 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:50 [main] DEBUG org.hibernate.SQL - 
     /* insert for
         com.finance.admin.auth.entity.AdminUser */insert 
     into
@@ -1104,7 +1104,7 @@ Hibernate:
         admin_users (created_at, created_by, email, failed_login_attempts, force_password_change, last_login, last_password_change, locked_until, mfa_enabled, mfa_secret, password_expires_at, password, session_timeout_minutes, status, updated_at, updated_by, username, version, id) 
     values
         (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-2025-06-12 17:43:36 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:50 [main] DEBUG org.hibernate.SQL - 
     /* update
         for com.finance.admin.auth.entity.AdminUser */update admin_users 
     set
@@ -1150,7 +1150,7 @@ Hibernate:
     where
         id=? 
         and version=?
-2025-06-12 17:43:36 [main] DEBUG org.hibernate.SQL - 
+2025-06-13 12:08:50 [main] DEBUG org.hibernate.SQL - 
     /* insert for
         com.finance.admin.auth.entity.AdminUser.roles */insert 
     into
@@ -1165,42 +1165,70 @@ Hibernate:
     values
         (?, ?)
 Default admin user created with username: admin and password: admin123
-2025-06-12 17:43:38 [http-nio-8090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-12 17:43:38 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-12 17:43:38 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
-2025-06-12 17:43:38 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-12 17:43:38 [http-nio-8090-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:38 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-12 17:43:38 [http-nio-8090-exec-1] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
-2025-06-12 17:43:38 [http-nio-8090-exec-1] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#153000a:0/SimpleConnection@7d4b1e36 [delegate=amqp://guest@127.0.0.1:5672/, localPort=56644]
-2025-06-12 17:43:39 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-12 17:43:39 [http-nio-8090-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:39 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-12 17:43:39 [http-nio-8090-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
-2025-06-12 17:43:39 [http-nio-8090-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:39 [http-nio-8090-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
-2025-06-12 17:43:43 [http-nio-8090-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
-2025-06-12 17:43:43 [http-nio-8090-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:43 [http-nio-8090-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
-2025-06-12 17:43:44 [http-nio-8090-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
-2025-06-12 17:43:44 [http-nio-8090-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:44 [http-nio-8090-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
-2025-06-12 17:43:44 [http-nio-8090-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
-2025-06-12 17:43:44 [http-nio-8090-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
-2025-06-12 17:43:44 [http-nio-8090-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:44 [http-nio-8090-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
-2025-06-12 17:43:44 [http-nio-8090-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:44 [http-nio-8090-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
-2025-06-12 17:43:44 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
-2025-06-12 17:43:44 [http-nio-8090-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
-2025-06-12 17:43:44 [http-nio-8090-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:44 [http-nio-8090-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:44 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
-2025-06-12 17:43:44 [http-nio-8090-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
-2025-06-12 17:43:44 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs/swagger-config
-2025-06-12 17:43:44 [http-nio-8090-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:44 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs/swagger-config
-2025-06-12 17:43:44 [http-nio-8090-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs
-2025-06-12 17:43:44 [http-nio-8090-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-2025-06-12 17:43:44 [http-nio-8090-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs
-2025-06-12 17:43:45 [http-nio-8090-exec-3] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 953 ms
+2025-06-13 12:08:52 [http-nio-8090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-13 12:08:52 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-13 12:08:52 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-13 12:08:52 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+2025-06-13 12:08:52 [http-nio-8090-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:52 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-06-13 12:08:52 [http-nio-8090-exec-1] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2025-06-13 12:08:53 [http-nio-8090-exec-1] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#25a30529:0/SimpleConnection@212fe7dc [delegate=amqp://guest@127.0.0.1:5672/, localPort=57838]
+2025-06-13 12:08:53 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+2025-06-13 12:08:53 [http-nio-8090-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:53 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-06-13 12:08:53 [http-nio-8090-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+2025-06-13 12:08:53 [http-nio-8090-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:53 [http-nio-8090-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-06-13 12:08:56 [http-nio-8090-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-06-13 12:08:56 [http-nio-8090-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:56 [http-nio-8090-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2025-06-13 12:08:56 [http-nio-8090-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
+2025-06-13 12:08:56 [http-nio-8090-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:56 [http-nio-8090-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
+2025-06-13 12:08:56 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
+2025-06-13 12:08:56 [http-nio-8090-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:56 [http-nio-8090-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-13 12:08:56 [http-nio-8090-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
+2025-06-13 12:08:56 [http-nio-8090-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-06-13 12:08:56 [http-nio-8090-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:56 [http-nio-8090-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:56 [http-nio-8090-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:56 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
+2025-06-13 12:08:56 [http-nio-8090-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-13 12:08:56 [http-nio-8090-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-06-13 12:08:56 [http-nio-8090-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
+2025-06-13 12:08:56 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs/swagger-config
+2025-06-13 12:08:56 [http-nio-8090-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:56 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs/swagger-config
+2025-06-13 12:08:56 [http-nio-8090-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs
+2025-06-13 12:08:56 [http-nio-8090-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-13 12:08:56 [http-nio-8090-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs
+2025-06-13 12:08:57 [http-nio-8090-exec-3] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1015 ms
+2025-06-13 13:06:46 [cluster-ClusterId{value='684b8831a8dad579223aad14', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoNodeIsRecoveringException: Command failed with error 11600 (InterruptedAtShutdown): 'interrupted at shutdown' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "interrupted at shutdown", "code": 11600, "codeName": "InterruptedAtShutdown"}
+	at com.mongodb.internal.connection.ProtocolHelper.createSpecialException(ProtocolHelper.java:251)
+	at com.mongodb.internal.connection.ProtocolHelper.getCommandFailureException(ProtocolHelper.java:201)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:454)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:404)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:224)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:156)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-06-13 13:06:46 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/127.0.0.1:6380
+2025-06-13 13:06:46 [lettuce-nioEventLoop-4-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6380]: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-06-13 13:06:49 [lettuce-nioEventLoop-4-4] INFO  i.l.c.protocol.ReconnectionHandler - Reconnected to localhost/<unresolved>:6380
+2025-06-13 13:06:56 [cluster-ClusterId{value='684b8831a8dad579223aad14', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4347416}

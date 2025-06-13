@@ -8,9 +8,11 @@
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/investment/service/EntityService.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/client/document/dto/DocumentListResponse.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/auth/entity/AdminPermission.java
+/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/client/profile/dto/UpdateClientProfileRequest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/client/document/service/ClientDocumentService.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/auth/dto/LoginResponse.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/user/dto/UserSearchCriteria.java
+/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/client/profile/service/ClientProfileService.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/client/document/controller/ClientDocumentController.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/common/exception/ValidationException.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/enquiry/service/EnquiryService.java
@@ -114,6 +116,7 @@
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/user/entity/User.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/audit/entity/AuditLog.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/certificate/model/Certificate.java
+/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/client/profile/dto/ClientProfileResponse.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/config/EmailConfiguration.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/client/dto/ClientLoginRequest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/notification/service/NotificationService.java
@@ -138,6 +141,7 @@
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/certificate/service/CloudStorageService.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/config/MockJavaMailSender.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/common/dto/ApiResponse.java
+/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/client/profile/controller/ClientProfileController.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/certificate/service/CertificateEmailService.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/client/service/ClientAuthService.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/main/java/com/finance/admin/auth/security/JwtAuthenticationEntryPoint.java

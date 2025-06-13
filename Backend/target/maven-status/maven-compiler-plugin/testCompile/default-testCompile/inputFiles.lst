@@ -14,6 +14,7 @@
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/client/document/dto/DocumentUploadRequestTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/client/document/repository/ClientDocumentRepositoryTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/config/BaseIntegrationTest.java
+/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/client/profile/service/ClientProfileServiceTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/config/MinimalTestConfig.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/client/investment/service/ClientInvestmentServiceTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/audit/AuditControllerTest.java
