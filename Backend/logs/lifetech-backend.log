@@ -13864,3 +13864,2406 @@ Caused by: org.hibernate.type.descriptor.java.spi.JdbcTypeRecommendationExceptio
 2025-06-15 13:13:33 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-06-15 13:13:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-06-15 13:13:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-15 13:16:11 [main] INFO  c.f.admin.AdminManagementApplication - Starting AdminManagementApplication using Java 17.0.15 with PID 33718 (/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/target/classes started by hongyuanfan in /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend)
+2025-06-15 13:16:11 [main] DEBUG c.f.admin.AdminManagementApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-06-15 13:16:11 [main] INFO  c.f.admin.AdminManagementApplication - The following 1 profile is active: "development"
+2025-06-15 13:16:11 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 13:16:11 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 13:16:11 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 13 JPA repository interfaces.
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.audit.repository.AuditLogRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.auth.repository.AdminUserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateTemplateRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.document.repository.ClientDocumentRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.notification.repository.ClientNotificationRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientLoginHistoryRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientSessionRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.enquiry.repository.EnquiryRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.EntityRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.InvestmentRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.user.repository.UserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 MongoDB repository interfaces.
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.audit.repository.AuditLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.auth.repository.AdminUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateTemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.document.repository.ClientDocumentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.notification.repository.ClientNotificationRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientLoginHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.enquiry.repository.EnquiryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.EntityRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.InvestmentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:16:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jdbcConnectionDetails' of type [org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.JpaProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jpa.hibernate-org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hikariPoolDataSourceMetadataProvider' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration$$Lambda$675/0x00000070015655f8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizationAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionExecutionListeners' of type [org.springframework.boot.autoconfigure.transaction.ExecutionListenersTransactionManagerCustomizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration' of type [org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties' of type [org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-15 13:16:12 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@62b786dc
+2025-06-15 13:16:12 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceScriptDatabaseInitializer' of type [org.springframework.boot.autoconfigure.sql.init.SqlDataSourceScriptDatabaseInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$DataSourceInitializerConfiguration' of type [org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$DataSourceInitializerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.batch-org.springframework.boot.autoconfigure.batch.BatchProperties' of type [org.springframework.boot.autoconfigure.batch.BatchProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'batchDataSourceInitializer' of type [org.springframework.boot.autoconfigure.batch.BatchDataSourceScriptDatabaseInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jpaVendorAdapter' of type [org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactoryBuilder' of type [org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'persistenceManagedTypes' of type [org.springframework.orm.jpa.persistenceunit.SimplePersistenceManagedTypes] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 13:16:12 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-15 13:16:12 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-15 13:16:12 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 13:16:12 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#35e357b' of type [org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:12 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#35e357b' of type [org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean$TargetBeanObjectFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:13 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table admin_user_allowed_ips (
+        admin_user_id uuid not null,
+        ip_address varchar(45)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table admin_user_roles (
+        admin_user_id uuid not null,
+        role varchar(255) check (role in ('SUPER_ADMIN','SYSTEM_ADMIN','FINANCIAL_ADMIN','CUSTOMER_SERVICE_ADMIN','COMPLIANCE_OFFICER','ANALYST'))
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table admin_users (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        email varchar(100) not null,
+        failed_login_attempts integer not null,
+        force_password_change boolean not null,
+        last_login timestamp(6),
+        last_password_change timestamp(6),
+        locked_until timestamp(6),
+        mfa_enabled boolean not null,
+        mfa_secret varchar(255),
+        password_expires_at timestamp(6),
+        password varchar(255) not null,
+        session_timeout_minutes integer,
+        status varchar(20) not null check (status in ('ACTIVE','INACTIVE','SUSPENDED','LOCKED','EXPIRED','PENDING_ACTIVATION')),
+        username varchar(50) not null,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table audit_logs (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        action_type varchar(100) not null,
+        end_time timestamp(6) not null,
+        entity_id uuid,
+        entity_type varchar(100) not null,
+        error_message varchar(255),
+        ip_address varchar(45),
+        method_name varchar(100),
+        new_values jsonb,
+        old_values jsonb,
+        parameters varchar(255),
+        session_id varchar(255),
+        start_time timestamp(6) not null,
+        status varchar(20) not null,
+        user_agent varchar(255),
+        user_id uuid,
+        user_type varchar(10) not null,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table certificate_templates (
+        id bigserial not null,
+        background_image_path varchar(500),
+        company_logo_path varchar(500),
+        created_at timestamp(6) not null,
+        created_by uuid not null,
+        is_active boolean,
+        is_default boolean,
+        primary_color varchar(7),
+        secondary_color varchar(7),
+        template_content TEXT not null,
+        template_file_path varchar(500),
+        template_format varchar(20),
+        template_name varchar(255) not null,
+        template_type varchar(50) not null check (template_type in ('SHARE_CERTIFICATE','INVESTMENT_CERTIFICATE','UNIT_CERTIFICATE','BOND_CERTIFICATE','EQUITY_CERTIFICATE','CUSTOM')),
+        template_variables TEXT,
+        updated_at timestamp(6),
+        version integer,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table certificates (
+        id bigserial not null,
+        certificate_number varchar(50) not null,
+        certificate_type varchar(50) not null check (certificate_type in ('SHARE_CERTIFICATE','INVESTMENT_CERTIFICATE','UNIT_CERTIFICATE','BOND_CERTIFICATE','EQUITY_CERTIFICATE')),
+        created_at timestamp(6) not null,
+        created_by uuid not null,
+        digital_signature TEXT,
+        expiry_date date,
+        file_hash varchar(128),
+        file_path varchar(500),
+        file_size bigint,
+        investment_amount numeric(15,2),
+        issue_date date not null,
+        number_of_shares numeric(15,4),
+        share_price numeric(10,4),
+        status varchar(20) check (status in ('ACTIVE','INACTIVE','EXPIRED','REVOKED','PENDING')),
+        updated_at timestamp(6),
+        updated_by uuid,
+        version integer,
+        client_id bigint not null,
+        investment_id bigint not null,
+        template_id bigint,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table client_documents (
+        id bigserial not null,
+        access_count integer,
+        created_at timestamp(6),
+        description varchar(1000),
+        document_category varchar(255) not null check (document_category in ('LEGAL','COMPLIANCE','KYC','FINANCIAL','IDENTITY','TAX','INVESTMENT','REGULATORY','POLICY','PERSONAL')),
+        document_name varchar(255) not null,
+        document_status varchar(255) check (document_status in ('UPLOADED','UNDER_REVIEW','APPROVED','REJECTED','EXPIRED','REPLACED','ARCHIVED')),
+        document_type varchar(255) not null check (document_type in ('INVESTMENT_AGREEMENT','TERMS_CONDITIONS','REGULATORY_DISCLOSURE','TAX_DOCUMENT','COMPANY_POLICY','PRODUCT_DISCLOSURE','KYC_DOCUMENT','BANK_STATEMENT','IDENTITY_VERIFICATION','ADDRESS_PROOF','TAX_FILE_NUMBER','BANK_ACCOUNT_UPDATE','OTHER')),
+        expiry_date timestamp(6),
+        file_path varchar(500) not null,
+        file_size bigint,
+        is_active boolean,
+        last_accessed_date timestamp(6),
+        mime_type varchar(100),
+        tags varchar(500),
+        updated_at timestamp(6),
+        upload_date timestamp(6),
+        uploaded_by_client boolean,
+        version_number integer,
+        client_id bigint not null,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table client_login_history (
+        id bigserial not null,
+        client_id bigint,
+        failure_reason varchar(255),
+        ip_address varchar(255),
+        login_successful boolean,
+        login_timestamp timestamp(6) not null,
+        logout_timestamp timestamp(6),
+        session_duration numeric(21,0),
+        user_agent TEXT,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table client_notification_preferences (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        client_id bigint not null,
+        do_not_disturb_enabled boolean,
+        do_not_disturb_end_time varchar(255),
+        do_not_disturb_start_time varchar(255),
+        general_email boolean,
+        general_in_app boolean,
+        general_push boolean,
+        general_sms boolean,
+        investment_email boolean,
+        investment_in_app boolean,
+        investment_push boolean,
+        investment_sms boolean,
+        kyc_email boolean,
+        kyc_in_app boolean,
+        kyc_push boolean,
+        kyc_sms boolean,
+        language varchar(255),
+        report_email boolean,
+        report_in_app boolean,
+        report_push boolean,
+        report_sms boolean,
+        return_email boolean,
+        return_in_app boolean,
+        return_push boolean,
+        return_sms boolean,
+        security_email boolean,
+        security_in_app boolean,
+        security_push boolean,
+        security_sms boolean,
+        system_email boolean,
+        system_in_app boolean,
+        system_push boolean,
+        system_sms boolean,
+        timezone varchar(255),
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table client_notifications (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        category varchar(255) not null check (category in ('WELCOME','BIRTHDAY','ANNOUNCEMENT','DOCUMENT_REQUEST','VERIFICATION_RESULT','STATUS_UPDATE','NEW_OPPORTUNITY','MATURITY','DISTRIBUTION','MONTHLY_REPORT','ANNUAL_STATEMENT','TAX_DOCUMENT','MAINTENANCE','SECURITY_ALERT')),
+        client_id bigint not null,
+        delivered_at timestamp(6),
+        delivery_method varchar(255) check (delivery_method in ('IN_APP','EMAIL','SMS','PUSH','EMAIL_AND_PUSH','EMAIL_AND_SMS','PUSH_AND_EMAIL','ALL')),
+        delivery_status varchar(255) check (delivery_status in ('PENDING','SENT','DELIVERED','READ','FAILED','EXPIRED','CANCELLED')),
+        expires_at timestamp(6),
+        is_read boolean,
+        message TEXT not null,
+        metadata jsonb,
+        notification_type varchar(255) not null check (notification_type in ('GENERAL','KYC','INVESTMENT','RETURN','REPORT','SYSTEM','SECURITY')),
+        priority_level varchar(255) check (priority_level in ('LOW','NORMAL','HIGH','URGENT','CRITICAL')),
+        read_at timestamp(6),
+        scheduled_at timestamp(6),
+        title varchar(255) not null,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table client_sessions (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        client_id bigint not null,
+        device_fingerprint varchar(255),
+        expires_at timestamp(6) not null,
+        ip_address varchar(255),
+        is_active boolean not null,
+        last_accessed timestamp(6),
+        remember_me_expires_at timestamp(6),
+        remember_me_token varchar(255),
+        session_token varchar(255) not null,
+        user_agent TEXT,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table clients (
+        id bigserial not null,
+        address_city varchar(100),
+        address_country varchar(100),
+        address_postal_code varchar(20),
+        address_state varchar(100),
+        address_street varchar(255),
+        bank_account_name varchar(255),
+        bank_account_number_encrypted varchar(255),
+        bank_bsb varchar(10),
+        blockchain_identity_hash varchar(128),
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        date_of_birth date,
+        email_primary varchar(255) not null,
+        email_secondary varchar(255),
+        first_name varchar(100) not null,
+        investment_target numeric(15,2),
+        last_name varchar(100) not null,
+        mailing_address_same boolean,
+        mailing_city varchar(100),
+        mailing_country varchar(100),
+        mailing_postal_code varchar(20),
+        mailing_state varchar(100),
+        mailing_street varchar(255),
+        membership_number varchar(20) not null,
+        middle_name varchar(100),
+        phone_primary varchar(20),
+        phone_secondary varchar(20),
+        risk_profile varchar(50),
+        status varchar(20) check (status in ('ACTIVE','INACTIVE','PENDING','SUSPENDED')),
+        tax_residency_status varchar(50),
+        tfn_encrypted varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table enquiries (
+        id bigserial not null,
+        assigned_to uuid,
+        category varchar(100),
+        contact_email varchar(255),
+        contact_name varchar(255),
+        contact_phone varchar(20),
+        created_at timestamp(6) not null,
+        created_by uuid,
+        description TEXT,
+        due_date timestamp(6),
+        enquiry_number varchar(20) not null,
+        enquiry_type varchar(255) not null check (enquiry_type in ('GENERAL_INQUIRY','INVESTMENT_INQUIRY','ACCOUNT_SUPPORT','TECHNICAL_SUPPORT','COMPLAINT','FEEDBACK','PARTNERSHIP','MEDIA_INQUIRY','COMPLIANCE','OTHER')),
+        internal_notes TEXT,
+        priority varchar(255) check (priority in ('LOW','MEDIUM','HIGH','URGENT')),
+        resolved_date timestamp(6),
+        response TEXT,
+        response_date timestamp(6),
+        source varchar(50),
+        status varchar(255) check (status in ('OPEN','IN_PROGRESS','PENDING_CLIENT','RESOLVED','CLOSED','ESCALATED')),
+        subject varchar(255) not null,
+        tags varchar(255),
+        updated_at timestamp(6),
+        updated_by uuid,
+        client_id bigint,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table entities (
+        id bigserial not null,
+        abn varchar(11),
+        acn varchar(9),
+        contact_email varchar(255),
+        contact_person varchar(255),
+        contact_phone varchar(20),
+        created_at timestamp(6) not null,
+        created_by bigint,
+        entity_name varchar(255) not null,
+        entity_type varchar(255) not null check (entity_type in ('INDIVIDUAL','JOINT_ACCOUNT','COMPANY','FAMILY_TRUST','UNIT_TRUST','DISCRETIONARY_TRUST','SMSF','PARTNERSHIP','OTHER')),
+        gst_registered boolean,
+        registered_city varchar(100),
+        registered_country varchar(100),
+        registered_postal_code varchar(20),
+        registered_state varchar(100),
+        registered_street varchar(255),
+        registration_date date,
+        registration_number varchar(255),
+        status varchar(255) check (status in ('ACTIVE','INACTIVE','PENDING','SUSPENDED')),
+        tax_residency_status varchar(50),
+        tfn_encrypted varchar(255),
+        updated_at timestamp(6),
+        updated_by bigint,
+        client_id bigint not null,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table investments (
+        id bigserial not null,
+        actual_return_amount numeric(15,2),
+        created_at timestamp(6) not null,
+        created_by bigint,
+        current_price_per_unit numeric(15,4),
+        current_value numeric(15,2),
+        description TEXT,
+        expected_return_amount numeric(15,2),
+        expected_return_rate numeric(5,2),
+        initial_amount numeric(15,2) not null,
+        investment_category varchar(255),
+        investment_name varchar(255) not null,
+        investment_objective TEXT,
+        investment_type varchar(255) not null check (investment_type in ('PROPERTY_RESIDENTIAL','PROPERTY_COMMERCIAL','PROPERTY_INDUSTRIAL','EQUITY_LISTED_SHARES','EQUITY_PRIVATE','FIXED_INCOME_BONDS','FIXED_INCOME_TERM_DEPOSITS','FIXED_INCOME_GOVERNMENT','ALTERNATIVE_COMMODITIES','ALTERNATIVE_CRYPTOCURRENCY','ALTERNATIVE_COLLECTIBLES','MANAGED_FUNDS_MUTUAL','MANAGED_FUNDS_ETF','MANAGED_FUNDS_HEDGE','DIRECT_BUSINESS','DIRECT_STARTUPS')),
+        management_fees numeric(10,2),
+        maturity_date date,
+        performance_fees numeric(10,2),
+        purchase_date date not null,
+        purchase_price_per_unit numeric(15,4),
+        risk_rating varchar(255) check (risk_rating in ('CONSERVATIVE','MODERATE','AGGRESSIVE')),
+        status varchar(255) check (status in ('PENDING','ACTIVE','MATURED','PARTIAL_EXIT','FULLY_EXITED','SUSPENDED','DEFAULTED')),
+        transaction_fees numeric(10,2),
+        units_purchased numeric(15,4),
+        updated_at timestamp(6),
+        updated_by bigint,
+        client_id bigint not null,
+        entity_id bigint,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create table users (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        account_locked_at timestamp(6),
+        date_of_birth timestamp(6),
+        email varchar(100) not null,
+        email_verified boolean,
+        failed_login_attempts integer,
+        first_name varchar(50),
+        last_failed_login_at timestamp(6),
+        last_login_at timestamp(6),
+        last_login_ip varchar(255),
+        last_name varchar(50),
+        locale varchar(10),
+        login_count bigint,
+        password varchar(255) not null,
+        password_changed_at timestamp(6),
+        phone_number varchar(20),
+        phone_verified boolean,
+        profile_image_url varchar(255),
+        status varchar(255) not null check (status in ('ACTIVE','SUSPENDED','BANNED','PENDING_VERIFICATION','DEACTIVATED','LOCKED')),
+        status_change_reason varchar(500),
+        status_changed_at timestamp(6),
+        status_changed_by uuid,
+        timezone varchar(10),
+        username varchar(50) not null,
+        primary key (id)
+    )
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_admin_username 
+       on admin_users (username)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_admin_email 
+       on admin_users (email)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_admin_status 
+       on admin_users (status)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_users 
+       drop constraint if exists UK_cp8822350s9vtyww7xdbgeuvu
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_cp8822350s9vtyww7xdbgeuvu" of relation "admin_users" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_users 
+       add constraint UK_cp8822350s9vtyww7xdbgeuvu unique (email)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_users 
+       drop constraint if exists UK_3fgxk4ewgaxgtgvqwb1jjudj6
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_3fgxk4ewgaxgtgvqwb1jjudj6" of relation "admin_users" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_users 
+       add constraint UK_3fgxk4ewgaxgtgvqwb1jjudj6 unique (username)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_audit_user_id 
+       on audit_logs (user_id)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_audit_action_type 
+       on audit_logs (action_type)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_audit_entity_type 
+       on audit_logs (entity_type)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_audit_created_at 
+       on audit_logs (created_at)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists certificates 
+       drop constraint if exists UK_fipjgqr5997w3i89i4mfyng9f
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_fipjgqr5997w3i89i4mfyng9f" of relation "certificates" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists certificates 
+       add constraint UK_fipjgqr5997w3i89i4mfyng9f unique (certificate_number)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_notification_preferences 
+       drop constraint if exists UK_g1ob3ulb9w8c6g4u8f9fnileh
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_g1ob3ulb9w8c6g4u8f9fnileh" of relation "client_notification_preferences" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_notification_preferences 
+       add constraint UK_g1ob3ulb9w8c6g4u8f9fnileh unique (client_id)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_sessions 
+       drop constraint if exists UK_clg6qoxxv5608dc451dgbyuf5
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_clg6qoxxv5608dc451dgbyuf5" of relation "client_sessions" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_sessions 
+       add constraint UK_clg6qoxxv5608dc451dgbyuf5 unique (remember_me_token)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_sessions 
+       drop constraint if exists UK_t4khl8m6wxmjvyc59i7vwymn0
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_t4khl8m6wxmjvyc59i7vwymn0" of relation "client_sessions" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_sessions 
+       add constraint UK_t4khl8m6wxmjvyc59i7vwymn0 unique (session_token)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists clients 
+       drop constraint if exists UK_dpl3sg78a9pqij2c75dgctvr
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_dpl3sg78a9pqij2c75dgctvr" of relation "clients" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists clients 
+       add constraint UK_dpl3sg78a9pqij2c75dgctvr unique (email_primary)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists clients 
+       drop constraint if exists UK_fkoasmmbcyeiv908fq5chu4ta
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_fkoasmmbcyeiv908fq5chu4ta" of relation "clients" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists clients 
+       add constraint UK_fkoasmmbcyeiv908fq5chu4ta unique (membership_number)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists enquiries 
+       drop constraint if exists UK_s6b5yvplflq9dexihl3yf17i5
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_s6b5yvplflq9dexihl3yf17i5" of relation "enquiries" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists enquiries 
+       add constraint UK_s6b5yvplflq9dexihl3yf17i5 unique (enquiry_number)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_user_email 
+       on users (email)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_user_username 
+       on users (username)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_user_status 
+       on users (status)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_user_created_at 
+       on users (created_at)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    create index idx_user_last_login 
+       on users (last_login_at)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UK_6dotkott2kjsp8vw4d0m25fb7
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UK_r43af9ap4edm43mmtq01oddj6
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:16:13 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_r43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UK_r43af9ap4edm43mmtq01oddj6 unique (username)
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_user_allowed_ips 
+       add constraint FK6djpms049826iouqv8t4aun7w 
+       foreign key (admin_user_id) 
+       references admin_users
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_user_roles 
+       add constraint FK486l3h5kt03mw088cosejeud1 
+       foreign key (admin_user_id) 
+       references admin_users
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists certificates 
+       add constraint FKlnwjsut7480baufv45j0i4bf3 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists certificates 
+       add constraint FKmuei4qx2vt6qemjkrjqkd0r3b 
+       foreign key (investment_id) 
+       references investments
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists certificates 
+       add constraint FK1qd9d9utbnnhhqff0e01nmgwl 
+       foreign key (template_id) 
+       references certificate_templates
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_documents 
+       add constraint FK8w1vi21ia7d69btkpligpf3hw 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_login_history 
+       add constraint FKj2f6d8l3leqrkylvad72hgpva 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_sessions 
+       add constraint FKaivi0y78o2djgkrl9lg4f9xbs 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists enquiries 
+       add constraint FK9r33qikmwbv07bnak6dmstqfv 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists entities 
+       add constraint FKofse0g9fghwfrt42ko68175y1 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists investments 
+       add constraint FKrst49wjxgj0suyv8ceesdv7w1 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:16:13 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists investments 
+       add constraint FKragfnufauta9wlljt2qpue0hq 
+       foreign key (entity_id) 
+       references entities
+2025-06-15 13:16:13 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 13:16:13 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactory' of type [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:13 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactory' of type [jdk.proxy2.$Proxy186] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:13 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.orm.jpa.JpaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:16:13 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$SpringBootBatchConfiguration' of type [org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$SpringBootBatchConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [jobRegistryBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-06-15 13:16:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8090 (http)
+2025-06-15 13:16:13 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-15 13:16:13 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-06-15 13:16:13 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-15 13:16:13 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2094 ms
+2025-06-15 13:16:13 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5433/finance_admin'
+2025-06-15 13:16:13 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-15 13:16:14 [main] INFO  c.finance.admin.config.JacksonConfig - Configuring primary Jackson ObjectMapper
+2025-06-15 13:16:14 [main] INFO  c.f.admin.config.RedisConfiguration - Configuring Redis connection to localhost:6380
+2025-06-15 13:16:14 [main] INFO  c.f.admin.config.RedisConfiguration - Creating Redis connection factory with host: localhost, port: 6380
+2025-06-15 13:16:14 [main] INFO  c.f.admin.config.RedisConfiguration - Testing Redis connection...
+2025-06-15 13:16:14 [main] INFO  c.f.admin.config.RedisConfiguration - Redis connection successful
+2025-06-15 13:16:15 [main] INFO  c.f.admin.config.EmailConfiguration - Creating Mock JavaMailSender bean - Email service is disabled
+2025-06-15 13:16:16 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.11.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "14.3.1"}, "platform": "Java/Eclipse Adoptium/17.0.15+6"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@6cebd103], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@735a14c5, com.mongodb.Jep395RecordCodecProvider@4ac1c18c, com.mongodb.KotlinCodecProvider@49df2150]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@487c412f], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2025-06-15 13:16:16 [cluster-ClusterId{value='684e3b000a212823089c2b1a', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=9177334}
+2025-06-15 13:16:16 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+2025-06-15 13:16:16 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-15 13:16:16 [main] INFO  c.finance.admin.config.WebMvcConfig - Configuring Swagger UI resource handlers
+2025-06-15 13:16:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@653ea1dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5074319f, org.springframework.security.web.context.SecurityContextHolderFilter@3d8c621f, org.springframework.security.web.header.HeaderWriterFilter@86e7849, org.springframework.security.web.authentication.logout.LogoutFilter@36a446af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2872d9f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fa08f62, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f3db926, org.springframework.security.web.session.SessionManagementFilter@775ba5e, org.springframework.security.web.access.ExceptionTranslationFilter@18e954b5, org.springframework.security.web.access.intercept.AuthorizationFilter@5927f2b1]
+2025-06-15 13:16:16 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2025-06-15 13:16:16 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-06-15 13:16:16 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
+2025-06-15 13:16:16 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2025-06-15 13:16:16 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-06-15 13:16:16 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-06-15 13:16:16 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.2
+2025-06-15 13:16:16 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@74bad113
+2025-06-15 13:16:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8090 (http) with context path ''
+2025-06-15 13:16:17 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-06-15 13:16:17 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-06-15 13:16:17 [main] INFO  c.f.admin.AdminManagementApplication - Started AdminManagementApplication in 5.649 seconds (process running for 5.779)
+2025-06-15 13:16:17 [main] INFO  o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: []
+2025-06-15 13:16:17 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* UPDATE
+        ClientSession cs 
+    SET
+        cs.isActive = false 
+    WHERE
+        cs.expiresAt < :now */ update client_sessions 
+    set
+        is_active=false 
+    where
+        expires_at<?
+2025-06-15 13:16:17 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* UPDATE
+        ClientSession cs 
+    SET
+        cs.isActive = false 
+    WHERE
+        cs.rememberMeExpiresAt < :now 
+        AND cs.rememberMeToken IS NOT NULL */ update client_sessions 
+    set
+        is_active=false 
+    where
+        remember_me_expires_at<? 
+        and remember_me_token is not null
+2025-06-15 13:16:17 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:16:17 [main] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        au1_0.id,
+        au1_0.created_at,
+        au1_0.created_by,
+        au1_0.email,
+        au1_0.failed_login_attempts,
+        au1_0.force_password_change,
+        au1_0.last_login,
+        au1_0.last_password_change,
+        au1_0.locked_until,
+        au1_0.mfa_enabled,
+        au1_0.mfa_secret,
+        au1_0.password_expires_at,
+        au1_0.password,
+        au1_0.session_timeout_minutes,
+        au1_0.status,
+        au1_0.updated_at,
+        au1_0.updated_by,
+        au1_0.username,
+        au1_0.version 
+    from
+        admin_users au1_0 
+    where
+        au1_0.username=?
+2025-06-15 13:16:17 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:16:17 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing expired notifications
+2025-06-15 13:16:17 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* UPDATE
+        ClientNotification n 
+    SET
+        n.deliveryStatus = 'EXPIRED' 
+    WHERE
+        n.expiresAt <= :now 
+        AND n.deliveryStatus != 'EXPIRED' */ update client_notifications 
+    set
+        delivery_status='EXPIRED' 
+    where
+        expires_at<=? 
+        and delivery_status<>'EXPIRED'
+2025-06-15 13:16:17 [main] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.finance.admin.auth.entity.AdminUser */insert 
+    into
+        admin_users (created_at, created_by, email, failed_login_attempts, force_password_change, last_login, last_password_change, locked_until, mfa_enabled, mfa_secret, password_expires_at, password, session_timeout_minutes, status, updated_at, updated_by, username, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-15 13:16:17 [main] DEBUG org.hibernate.SQL - 
+    /* update
+        for com.finance.admin.auth.entity.AdminUser */update admin_users 
+    set
+        email=?,
+        failed_login_attempts=?,
+        force_password_change=?,
+        last_login=?,
+        last_password_change=?,
+        locked_until=?,
+        mfa_enabled=?,
+        mfa_secret=?,
+        password_expires_at=?,
+        password=?,
+        session_timeout_minutes=?,
+        status=?,
+        updated_at=?,
+        updated_by=?,
+        username=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2025-06-15 13:16:17 [main] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.finance.admin.auth.entity.AdminUser.roles */insert 
+    into
+        admin_user_roles (admin_user_id, role) 
+    values
+        (?, ?)
+2025-06-15 13:16:19 [http-nio-8090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-15 13:16:19 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-15 13:16:19 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-15 13:16:19 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+2025-06-15 13:16:19 [http-nio-8090-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:19 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-06-15 13:16:19 [http-nio-8090-exec-1] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2025-06-15 13:16:19 [http-nio-8090-exec-1] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#351bf572:0/SimpleConnection@7e9a0a57 [delegate=amqp://guest@127.0.0.1:5672/, localPort=52625]
+2025-06-15 13:16:20 [http-nio-8090-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+2025-06-15 13:16:20 [http-nio-8090-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:20 [http-nio-8090-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-06-15 13:16:20 [http-nio-8090-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+2025-06-15 13:16:20 [http-nio-8090-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:20 [http-nio-8090-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-06-15 13:16:39 [http-nio-8090-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-06-15 13:16:39 [http-nio-8090-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:39 [http-nio-8090-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2025-06-15 13:16:40 [http-nio-8090-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
+2025-06-15 13:16:40 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
+2025-06-15 13:16:40 [http-nio-8090-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:40 [http-nio-8090-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-15 13:16:40 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-06-15 13:16:40 [http-nio-8090-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:40 [http-nio-8090-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
+2025-06-15 13:16:40 [http-nio-8090-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:40 [http-nio-8090-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-15 13:16:40 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-06-15 13:16:40 [http-nio-8090-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
+2025-06-15 13:16:40 [http-nio-8090-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:40 [http-nio-8090-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
+2025-06-15 13:16:40 [http-nio-8090-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:40 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
+2025-06-15 13:16:40 [http-nio-8090-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs/swagger-config
+2025-06-15 13:16:40 [http-nio-8090-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:40 [http-nio-8090-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs/swagger-config
+2025-06-15 13:16:40 [http-nio-8090-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs
+2025-06-15 13:16:40 [http-nio-8090-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:16:40 [http-nio-8090-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs
+2025-06-15 13:16:41 [http-nio-8090-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1069 ms
+2025-06-15 13:17:17 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:17:17 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:18:17 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:18:17 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:19:17 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:19:17 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:20:17 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:20:17 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:21:07 [cluster-ClusterId{value='684e3b000a212823089c2b1a', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoNodeIsRecoveringException: Command failed with error 11600 (InterruptedAtShutdown): 'interrupted at shutdown' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "interrupted at shutdown", "code": 11600, "codeName": "InterruptedAtShutdown"}
+	at com.mongodb.internal.connection.ProtocolHelper.createSpecialException(ProtocolHelper.java:251)
+	at com.mongodb.internal.connection.ProtocolHelper.getCommandFailureException(ProtocolHelper.java:201)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:454)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:404)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:224)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:156)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-06-15 13:21:07 [lettuce-eventExecutorLoop-1-2] INFO  i.l.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost/127.0.0.1:6380
+2025-06-15 13:21:07 [lettuce-nioEventLoop-4-2] WARN  i.l.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost/<unresolved>:6380]: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-06-15 13:21:09 [lettuce-nioEventLoop-4-4] INFO  i.l.c.protocol.ReconnectionHandler - Reconnected to localhost/<unresolved>:6380
+2025-06-15 13:21:17 [cluster-ClusterId{value='684e3b000a212823089c2b1a', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5009667}
+2025-06-15 13:21:17 [scheduling-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@62b786dc (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-15 13:21:17 [scheduling-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@20cb3ecf (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-15 13:21:17 [scheduling-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4c1845d5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-15 13:21:17 [scheduling-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@35f50e0c (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-15 13:21:17 [scheduling-1] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4d07955a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-15 13:21:17 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:21:17 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:21:17 [scheduling-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 42P01
+2025-06-15 13:21:17 [scheduling-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: relation "client_notifications" does not exist
+  Position: 450
+2025-06-15 13:21:17 [scheduling-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task
+org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing SQL [/* SELECT n FROM ClientNotification n WHERE n.scheduledAt <= :now AND n.deliveryStatus = 'PENDING' */ select cn1_0.id,cn1_0.category,cn1_0.client_id,cn1_0.created_at,cn1_0.created_by,cn1_0.delivered_at,cn1_0.delivery_method,cn1_0.delivery_status,cn1_0.expires_at,cn1_0.is_read,cn1_0.message,cn1_0.metadata,cn1_0.notification_type,cn1_0.priority_level,cn1_0.read_at,cn1_0.scheduled_at,cn1_0.title,cn1_0.updated_at,cn1_0.updated_by,cn1_0.version from client_notifications cn1_0 where cn1_0.scheduled_at<=? and cn1_0.delivery_status='PENDING'] [ERROR: relation "client_notifications" does not exist
+  Position: 450] [n/a]; SQL [n/a]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:277)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:335)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy237.findScheduledNotifications(Unknown Source)
+	at com.finance.admin.client.notification.service.ClientNotificationService.processScheduledNotifications(ClientNotificationService.java:263)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.finance.admin.client.notification.service.ClientNotificationService$$SpringCGLIB$$0.processScheduledNotifications(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [/* SELECT n FROM ClientNotification n WHERE n.scheduledAt <= :now AND n.deliveryStatus = 'PENDING' */ select cn1_0.id,cn1_0.category,cn1_0.client_id,cn1_0.created_at,cn1_0.created_by,cn1_0.delivered_at,cn1_0.delivery_method,cn1_0.delivery_status,cn1_0.expires_at,cn1_0.is_read,cn1_0.message,cn1_0.metadata,cn1_0.notification_type,cn1_0.priority_level,cn1_0.read_at,cn1_0.scheduled_at,cn1_0.title,cn1_0.updated_at,cn1_0.updated_by,cn1_0.version from client_notifications cn1_0 where cn1_0.scheduled_at<=? and cn1_0.delivery_status='PENDING'] [ERROR: relation "client_notifications" does not exist
+  Position: 450] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:91)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:265)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:167)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:218)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:98)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:202)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:137)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:362)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:303)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:509)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:427)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:129)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:149)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	... 38 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "client_notifications" does not exist
+  Position: 450
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:246)
+	... 71 common frames omitted
+2025-06-15 13:21:19 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-06-15 13:21:22 [SpringApplicationShutdownHook] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2025-06-15 13:21:22 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2025-06-15 13:21:22 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-06-15 13:21:22 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2025-06-15 13:21:22 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 13:21:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-15 13:21:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-15 13:21:33 [main] INFO  c.f.admin.AdminManagementApplication - Starting AdminManagementApplication using Java 17.0.15 with PID 34710 (/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/target/classes started by hongyuanfan in /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend)
+2025-06-15 13:21:33 [main] DEBUG c.f.admin.AdminManagementApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-06-15 13:21:33 [main] INFO  c.f.admin.AdminManagementApplication - The following 1 profile is active: "development"
+2025-06-15 13:21:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 13:21:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 14 JPA repository interfaces.
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.audit.repository.AuditLogRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.auth.repository.AdminUserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateTemplateRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.document.repository.ClientDocumentRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.notification.repository.ClientNotificationRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientLoginHistoryRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientMembershipRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientSessionRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.enquiry.repository.EnquiryRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.EntityRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.InvestmentRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.finance.admin.user.repository.UserRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 MongoDB repository interfaces.
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.audit.repository.AuditLogRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.auth.repository.AdminUserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.certificate.repository.CertificateTemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.document.repository.ClientDocumentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.notification.repository.ClientNotificationRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientLoginHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientMembershipRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.client.repository.ClientSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.enquiry.repository.EnquiryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.EntityRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.investment.repository.InvestmentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.finance.admin.user.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-06-15 13:21:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jdbcConnectionDetails' of type [org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.JpaProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jpa.hibernate-org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'hikariPoolDataSourceMetadataProvider' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration$$Lambda$675/0x0000000301568230] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizationAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionExecutionListeners' of type [org.springframework.boot.autoconfigure.transaction.ExecutionListenersTransactionManagerCustomizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration' of type [org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties' of type [org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-15 13:21:34 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c58d7be
+2025-06-15 13:21:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceScriptDatabaseInitializer' of type [org.springframework.boot.autoconfigure.sql.init.SqlDataSourceScriptDatabaseInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$DataSourceInitializerConfiguration' of type [org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$DataSourceInitializerConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.batch-org.springframework.boot.autoconfigure.batch.BatchProperties' of type [org.springframework.boot.autoconfigure.batch.BatchProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'batchDataSourceInitializer' of type [org.springframework.boot.autoconfigure.batch.BatchDataSourceScriptDatabaseInitializer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jpaVendorAdapter' of type [org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactoryBuilder' of type [org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'persistenceManagedTypes' of type [org.springframework.orm.jpa.persistenceunit.SimplePersistenceManagedTypes] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 13:21:34 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-15 13:21:34 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-15 13:21:34 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 13:21:34 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#39fb5ddf' of type [org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:34 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#39fb5ddf' of type [org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean$TargetBeanObjectFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:35 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table admin_user_allowed_ips (
+        admin_user_id uuid not null,
+        ip_address varchar(45)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table admin_user_roles (
+        admin_user_id uuid not null,
+        role varchar(255) check (role in ('SUPER_ADMIN','SYSTEM_ADMIN','FINANCIAL_ADMIN','CUSTOMER_SERVICE_ADMIN','COMPLIANCE_OFFICER','ANALYST'))
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table admin_users (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        email varchar(100) not null,
+        failed_login_attempts integer not null,
+        force_password_change boolean not null,
+        last_login timestamp(6),
+        last_password_change timestamp(6),
+        locked_until timestamp(6),
+        mfa_enabled boolean not null,
+        mfa_secret varchar(255),
+        password_expires_at timestamp(6),
+        password varchar(255) not null,
+        session_timeout_minutes integer,
+        status varchar(20) not null check (status in ('ACTIVE','INACTIVE','SUSPENDED','LOCKED','EXPIRED','PENDING_ACTIVATION')),
+        username varchar(50) not null,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table audit_logs (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        action_type varchar(100) not null,
+        end_time timestamp(6) not null,
+        entity_id uuid,
+        entity_type varchar(100) not null,
+        error_message varchar(255),
+        ip_address varchar(45),
+        method_name varchar(100),
+        new_values jsonb,
+        old_values jsonb,
+        parameters varchar(255),
+        session_id varchar(255),
+        start_time timestamp(6) not null,
+        status varchar(20) not null,
+        user_agent varchar(255),
+        user_id uuid,
+        user_type varchar(10) not null,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table certificate_templates (
+        id bigserial not null,
+        background_image_path varchar(500),
+        company_logo_path varchar(500),
+        created_at timestamp(6) not null,
+        created_by uuid not null,
+        is_active boolean,
+        is_default boolean,
+        primary_color varchar(7),
+        secondary_color varchar(7),
+        template_content TEXT not null,
+        template_file_path varchar(500),
+        template_format varchar(20),
+        template_name varchar(255) not null,
+        template_type varchar(50) not null check (template_type in ('SHARE_CERTIFICATE','INVESTMENT_CERTIFICATE','UNIT_CERTIFICATE','BOND_CERTIFICATE','EQUITY_CERTIFICATE','CUSTOM')),
+        template_variables TEXT,
+        updated_at timestamp(6),
+        version integer,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table certificates (
+        id bigserial not null,
+        certificate_number varchar(50) not null,
+        certificate_type varchar(50) not null check (certificate_type in ('SHARE_CERTIFICATE','INVESTMENT_CERTIFICATE','UNIT_CERTIFICATE','BOND_CERTIFICATE','EQUITY_CERTIFICATE')),
+        created_at timestamp(6) not null,
+        created_by uuid not null,
+        digital_signature TEXT,
+        expiry_date date,
+        file_hash varchar(128),
+        file_path varchar(500),
+        file_size bigint,
+        investment_amount numeric(15,2),
+        issue_date date not null,
+        number_of_shares numeric(15,4),
+        share_price numeric(10,4),
+        status varchar(20) check (status in ('ACTIVE','INACTIVE','EXPIRED','REVOKED','PENDING')),
+        updated_at timestamp(6),
+        updated_by uuid,
+        version integer,
+        client_id bigint not null,
+        investment_id bigint not null,
+        template_id bigint,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table client_documents (
+        id bigserial not null,
+        access_count integer,
+        created_at timestamp(6),
+        description varchar(1000),
+        document_category varchar(255) not null check (document_category in ('LEGAL','COMPLIANCE','KYC','FINANCIAL','IDENTITY','TAX','INVESTMENT','REGULATORY','POLICY','PERSONAL')),
+        document_name varchar(255) not null,
+        document_status varchar(255) check (document_status in ('UPLOADED','UNDER_REVIEW','APPROVED','REJECTED','EXPIRED','REPLACED','ARCHIVED')),
+        document_type varchar(255) not null check (document_type in ('INVESTMENT_AGREEMENT','TERMS_CONDITIONS','REGULATORY_DISCLOSURE','TAX_DOCUMENT','COMPANY_POLICY','PRODUCT_DISCLOSURE','KYC_DOCUMENT','BANK_STATEMENT','IDENTITY_VERIFICATION','ADDRESS_PROOF','TAX_FILE_NUMBER','BANK_ACCOUNT_UPDATE','OTHER')),
+        expiry_date timestamp(6),
+        file_path varchar(500) not null,
+        file_size bigint,
+        is_active boolean,
+        last_accessed_date timestamp(6),
+        mime_type varchar(100),
+        tags varchar(500),
+        updated_at timestamp(6),
+        upload_date timestamp(6),
+        uploaded_by_client boolean,
+        version_number integer,
+        client_id bigint not null,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table client_login_history (
+        id bigserial not null,
+        client_id bigint,
+        failure_reason varchar(255),
+        ip_address varchar(255),
+        login_successful boolean,
+        login_timestamp timestamp(6) not null,
+        logout_timestamp timestamp(6),
+        session_duration numeric(21,0),
+        user_agent TEXT,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table client_membership (
+        id bigserial not null,
+        benefits_unlocked jsonb,
+        client_id bigint not null,
+        created_at timestamp(6),
+        digital_card_issued boolean,
+        joined_date date not null,
+        membership_number varchar(50) not null,
+        membership_status varchar(20),
+        membership_tier varchar(20),
+        points_balance integer,
+        tier_upgrade_date date,
+        updated_at timestamp(6),
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table client_notification_preferences (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        client_id bigint not null,
+        do_not_disturb_enabled boolean,
+        do_not_disturb_end_time varchar(255),
+        do_not_disturb_start_time varchar(255),
+        general_email boolean,
+        general_in_app boolean,
+        general_push boolean,
+        general_sms boolean,
+        investment_email boolean,
+        investment_in_app boolean,
+        investment_push boolean,
+        investment_sms boolean,
+        kyc_email boolean,
+        kyc_in_app boolean,
+        kyc_push boolean,
+        kyc_sms boolean,
+        language varchar(255),
+        report_email boolean,
+        report_in_app boolean,
+        report_push boolean,
+        report_sms boolean,
+        return_email boolean,
+        return_in_app boolean,
+        return_push boolean,
+        return_sms boolean,
+        security_email boolean,
+        security_in_app boolean,
+        security_push boolean,
+        security_sms boolean,
+        system_email boolean,
+        system_in_app boolean,
+        system_push boolean,
+        system_sms boolean,
+        timezone varchar(255),
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table client_notifications (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        category varchar(255) not null check (category in ('WELCOME','BIRTHDAY','ANNOUNCEMENT','DOCUMENT_REQUEST','VERIFICATION_RESULT','STATUS_UPDATE','NEW_OPPORTUNITY','MATURITY','DISTRIBUTION','MONTHLY_REPORT','ANNUAL_STATEMENT','TAX_DOCUMENT','MAINTENANCE','SECURITY_ALERT')),
+        client_id bigint not null,
+        delivered_at timestamp(6),
+        delivery_method varchar(255) check (delivery_method in ('IN_APP','EMAIL','SMS','PUSH','EMAIL_AND_PUSH','EMAIL_AND_SMS','PUSH_AND_EMAIL','ALL')),
+        delivery_status varchar(255) check (delivery_status in ('PENDING','SENT','DELIVERED','READ','FAILED','EXPIRED','CANCELLED')),
+        expires_at timestamp(6),
+        is_read boolean,
+        message TEXT not null,
+        metadata jsonb,
+        notification_type varchar(255) not null check (notification_type in ('GENERAL','KYC','INVESTMENT','RETURN','REPORT','SYSTEM','SECURITY')),
+        priority_level varchar(255) check (priority_level in ('LOW','NORMAL','HIGH','URGENT','CRITICAL')),
+        read_at timestamp(6),
+        scheduled_at timestamp(6),
+        title varchar(255) not null,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table client_sessions (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        client_id bigint not null,
+        device_fingerprint varchar(255),
+        expires_at timestamp(6) not null,
+        ip_address varchar(255),
+        is_active boolean not null,
+        last_accessed timestamp(6),
+        remember_me_expires_at timestamp(6),
+        remember_me_token varchar(255),
+        session_token varchar(255) not null,
+        user_agent TEXT,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table clients (
+        id bigserial not null,
+        address_city varchar(100),
+        address_country varchar(100),
+        address_postal_code varchar(20),
+        address_state varchar(100),
+        address_street varchar(255),
+        bank_account_name varchar(255),
+        bank_account_number_encrypted varchar(255),
+        bank_bsb varchar(10),
+        blockchain_identity_hash varchar(128),
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        date_of_birth date,
+        email_primary varchar(255) not null,
+        email_secondary varchar(255),
+        first_name varchar(100) not null,
+        investment_target numeric(15,2),
+        last_name varchar(100) not null,
+        mailing_address_same boolean,
+        mailing_city varchar(100),
+        mailing_country varchar(100),
+        mailing_postal_code varchar(20),
+        mailing_state varchar(100),
+        mailing_street varchar(255),
+        membership_number varchar(20) not null,
+        middle_name varchar(100),
+        phone_primary varchar(20),
+        phone_secondary varchar(20),
+        risk_profile varchar(50),
+        status varchar(20) check (status in ('ACTIVE','INACTIVE','PENDING','SUSPENDED')),
+        tax_residency_status varchar(50),
+        tfn_encrypted varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table enquiries (
+        id bigserial not null,
+        assigned_to uuid,
+        category varchar(100),
+        contact_email varchar(255),
+        contact_name varchar(255),
+        contact_phone varchar(20),
+        created_at timestamp(6) not null,
+        created_by uuid,
+        description TEXT,
+        due_date timestamp(6),
+        enquiry_number varchar(20) not null,
+        enquiry_type varchar(255) not null check (enquiry_type in ('GENERAL_INQUIRY','INVESTMENT_INQUIRY','ACCOUNT_SUPPORT','TECHNICAL_SUPPORT','COMPLAINT','FEEDBACK','PARTNERSHIP','MEDIA_INQUIRY','COMPLIANCE','OTHER')),
+        internal_notes TEXT,
+        priority varchar(255) check (priority in ('LOW','MEDIUM','HIGH','URGENT')),
+        resolved_date timestamp(6),
+        response TEXT,
+        response_date timestamp(6),
+        source varchar(50),
+        status varchar(255) check (status in ('OPEN','IN_PROGRESS','PENDING_CLIENT','RESOLVED','CLOSED','ESCALATED')),
+        subject varchar(255) not null,
+        tags varchar(255),
+        updated_at timestamp(6),
+        updated_by uuid,
+        client_id bigint,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table entities (
+        id bigserial not null,
+        abn varchar(11),
+        acn varchar(9),
+        contact_email varchar(255),
+        contact_person varchar(255),
+        contact_phone varchar(20),
+        created_at timestamp(6) not null,
+        created_by bigint,
+        entity_name varchar(255) not null,
+        entity_type varchar(255) not null check (entity_type in ('INDIVIDUAL','JOINT_ACCOUNT','COMPANY','FAMILY_TRUST','UNIT_TRUST','DISCRETIONARY_TRUST','SMSF','PARTNERSHIP','OTHER')),
+        gst_registered boolean,
+        registered_city varchar(100),
+        registered_country varchar(100),
+        registered_postal_code varchar(20),
+        registered_state varchar(100),
+        registered_street varchar(255),
+        registration_date date,
+        registration_number varchar(255),
+        status varchar(255) check (status in ('ACTIVE','INACTIVE','PENDING','SUSPENDED')),
+        tax_residency_status varchar(50),
+        tfn_encrypted varchar(255),
+        updated_at timestamp(6),
+        updated_by bigint,
+        client_id bigint not null,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table investments (
+        id bigserial not null,
+        actual_return_amount numeric(15,2),
+        created_at timestamp(6) not null,
+        created_by bigint,
+        current_price_per_unit numeric(15,4),
+        current_value numeric(15,2),
+        description TEXT,
+        expected_return_amount numeric(15,2),
+        expected_return_rate numeric(5,2),
+        initial_amount numeric(15,2) not null,
+        investment_category varchar(255),
+        investment_name varchar(255) not null,
+        investment_objective TEXT,
+        investment_type varchar(255) not null check (investment_type in ('PROPERTY_RESIDENTIAL','PROPERTY_COMMERCIAL','PROPERTY_INDUSTRIAL','EQUITY_LISTED_SHARES','EQUITY_PRIVATE','FIXED_INCOME_BONDS','FIXED_INCOME_TERM_DEPOSITS','FIXED_INCOME_GOVERNMENT','ALTERNATIVE_COMMODITIES','ALTERNATIVE_CRYPTOCURRENCY','ALTERNATIVE_COLLECTIBLES','MANAGED_FUNDS_MUTUAL','MANAGED_FUNDS_ETF','MANAGED_FUNDS_HEDGE','DIRECT_BUSINESS','DIRECT_STARTUPS')),
+        management_fees numeric(10,2),
+        maturity_date date,
+        performance_fees numeric(10,2),
+        purchase_date date not null,
+        purchase_price_per_unit numeric(15,4),
+        risk_rating varchar(255) check (risk_rating in ('CONSERVATIVE','MODERATE','AGGRESSIVE')),
+        status varchar(255) check (status in ('PENDING','ACTIVE','MATURED','PARTIAL_EXIT','FULLY_EXITED','SUSPENDED','DEFAULTED')),
+        transaction_fees numeric(10,2),
+        units_purchased numeric(15,4),
+        updated_at timestamp(6),
+        updated_by bigint,
+        client_id bigint not null,
+        entity_id bigint,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create table users (
+        id uuid not null,
+        created_at timestamp(6) not null,
+        created_by varchar(255),
+        updated_at timestamp(6),
+        updated_by varchar(255),
+        version bigint,
+        account_locked_at timestamp(6),
+        date_of_birth timestamp(6),
+        email varchar(100) not null,
+        email_verified boolean,
+        failed_login_attempts integer,
+        first_name varchar(50),
+        last_failed_login_at timestamp(6),
+        last_login_at timestamp(6),
+        last_login_ip varchar(255),
+        last_name varchar(50),
+        locale varchar(10),
+        login_count bigint,
+        password varchar(255) not null,
+        password_changed_at timestamp(6),
+        phone_number varchar(20),
+        phone_verified boolean,
+        profile_image_url varchar(255),
+        status varchar(255) not null check (status in ('ACTIVE','SUSPENDED','BANNED','PENDING_VERIFICATION','DEACTIVATED','LOCKED')),
+        status_change_reason varchar(500),
+        status_changed_at timestamp(6),
+        status_changed_by uuid,
+        timezone varchar(10),
+        username varchar(50) not null,
+        primary key (id)
+    )
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_admin_username 
+       on admin_users (username)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_admin_email 
+       on admin_users (email)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_admin_status 
+       on admin_users (status)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_users 
+       drop constraint if exists UK_cp8822350s9vtyww7xdbgeuvu
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_cp8822350s9vtyww7xdbgeuvu" of relation "admin_users" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_users 
+       add constraint UK_cp8822350s9vtyww7xdbgeuvu unique (email)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_users 
+       drop constraint if exists UK_3fgxk4ewgaxgtgvqwb1jjudj6
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_3fgxk4ewgaxgtgvqwb1jjudj6" of relation "admin_users" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_users 
+       add constraint UK_3fgxk4ewgaxgtgvqwb1jjudj6 unique (username)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_audit_user_id 
+       on audit_logs (user_id)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_audit_action_type 
+       on audit_logs (action_type)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_audit_entity_type 
+       on audit_logs (entity_type)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_audit_created_at 
+       on audit_logs (created_at)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists certificates 
+       drop constraint if exists UK_fipjgqr5997w3i89i4mfyng9f
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_fipjgqr5997w3i89i4mfyng9f" of relation "certificates" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists certificates 
+       add constraint UK_fipjgqr5997w3i89i4mfyng9f unique (certificate_number)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_membership 
+       drop constraint if exists UK_b22um3snc7eyi7cfp12t2qeou
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_b22um3snc7eyi7cfp12t2qeou" of relation "client_membership" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_membership 
+       add constraint UK_b22um3snc7eyi7cfp12t2qeou unique (membership_number)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_notification_preferences 
+       drop constraint if exists UK_g1ob3ulb9w8c6g4u8f9fnileh
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_g1ob3ulb9w8c6g4u8f9fnileh" of relation "client_notification_preferences" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_notification_preferences 
+       add constraint UK_g1ob3ulb9w8c6g4u8f9fnileh unique (client_id)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_sessions 
+       drop constraint if exists UK_clg6qoxxv5608dc451dgbyuf5
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_clg6qoxxv5608dc451dgbyuf5" of relation "client_sessions" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_sessions 
+       add constraint UK_clg6qoxxv5608dc451dgbyuf5 unique (remember_me_token)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_sessions 
+       drop constraint if exists UK_t4khl8m6wxmjvyc59i7vwymn0
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_t4khl8m6wxmjvyc59i7vwymn0" of relation "client_sessions" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_sessions 
+       add constraint UK_t4khl8m6wxmjvyc59i7vwymn0 unique (session_token)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists clients 
+       drop constraint if exists UK_dpl3sg78a9pqij2c75dgctvr
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_dpl3sg78a9pqij2c75dgctvr" of relation "clients" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists clients 
+       add constraint UK_dpl3sg78a9pqij2c75dgctvr unique (email_primary)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists clients 
+       drop constraint if exists UK_fkoasmmbcyeiv908fq5chu4ta
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_fkoasmmbcyeiv908fq5chu4ta" of relation "clients" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists clients 
+       add constraint UK_fkoasmmbcyeiv908fq5chu4ta unique (membership_number)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists enquiries 
+       drop constraint if exists UK_s6b5yvplflq9dexihl3yf17i5
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_s6b5yvplflq9dexihl3yf17i5" of relation "enquiries" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists enquiries 
+       add constraint UK_s6b5yvplflq9dexihl3yf17i5 unique (enquiry_number)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_user_email 
+       on users (email)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_user_username 
+       on users (username)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_user_status 
+       on users (status)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_user_created_at 
+       on users (created_at)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    create index idx_user_last_login 
+       on users (last_login_at)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UK_6dotkott2kjsp8vw4d0m25fb7
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       drop constraint if exists UK_r43af9ap4edm43mmtq01oddj6
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-06-15 13:21:35 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_r43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists users 
+       add constraint UK_r43af9ap4edm43mmtq01oddj6 unique (username)
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_user_allowed_ips 
+       add constraint FK6djpms049826iouqv8t4aun7w 
+       foreign key (admin_user_id) 
+       references admin_users
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists admin_user_roles 
+       add constraint FK486l3h5kt03mw088cosejeud1 
+       foreign key (admin_user_id) 
+       references admin_users
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists certificates 
+       add constraint FKlnwjsut7480baufv45j0i4bf3 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists certificates 
+       add constraint FKmuei4qx2vt6qemjkrjqkd0r3b 
+       foreign key (investment_id) 
+       references investments
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists certificates 
+       add constraint FK1qd9d9utbnnhhqff0e01nmgwl 
+       foreign key (template_id) 
+       references certificate_templates
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_documents 
+       add constraint FK8w1vi21ia7d69btkpligpf3hw 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_login_history 
+       add constraint FKj2f6d8l3leqrkylvad72hgpva 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists client_sessions 
+       add constraint FKaivi0y78o2djgkrl9lg4f9xbs 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists enquiries 
+       add constraint FK9r33qikmwbv07bnak6dmstqfv 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists entities 
+       add constraint FKofse0g9fghwfrt42ko68175y1 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists investments 
+       add constraint FKrst49wjxgj0suyv8ceesdv7w1 
+       foreign key (client_id) 
+       references clients
+2025-06-15 13:21:35 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists investments 
+       add constraint FKragfnufauta9wlljt2qpue0hq 
+       foreign key (entity_id) 
+       references entities
+2025-06-15 13:21:35 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 13:21:35 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactory' of type [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:35 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'entityManagerFactory' of type [jdk.proxy2.$Proxy186] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:35 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManager' of type [org.springframework.orm.jpa.JpaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [jobRegistryBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2025-06-15 13:21:35 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$SpringBootBatchConfiguration' of type [org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration$SpringBootBatchConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [jobRegistryBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-06-15 13:21:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8090 (http)
+2025-06-15 13:21:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-15 13:21:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-06-15 13:21:35 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-15 13:21:35 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2021 ms
+2025-06-15 13:21:35 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5433/finance_admin'
+2025-06-15 13:21:35 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-15 13:21:36 [main] INFO  c.finance.admin.config.JacksonConfig - Configuring primary Jackson ObjectMapper
+2025-06-15 13:21:36 [main] INFO  c.f.admin.config.RedisConfiguration - Configuring Redis connection to localhost:6380
+2025-06-15 13:21:36 [main] INFO  c.f.admin.config.RedisConfiguration - Creating Redis connection factory with host: localhost, port: 6380
+2025-06-15 13:21:36 [main] INFO  c.f.admin.config.RedisConfiguration - Testing Redis connection...
+2025-06-15 13:21:36 [main] INFO  c.f.admin.config.RedisConfiguration - Redis connection successful
+2025-06-15 13:21:37 [main] INFO  c.f.admin.config.EmailConfiguration - Creating Mock JavaMailSender bean - Email service is disabled
+2025-06-15 13:21:38 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.11.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "14.3.1"}, "platform": "Java/Eclipse Adoptium/17.0.15+6"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@6cdf12fa], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@5ac6ccfd, com.mongodb.Jep395RecordCodecProvider@70b01a3f, com.mongodb.KotlinCodecProvider@21b7b385]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@a0fc1b], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2025-06-15 13:21:38 [cluster-ClusterId{value='684e3c423501aa2eb961e3b2', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=11525750}
+2025-06-15 13:21:38 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+2025-06-15 13:21:38 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-15 13:21:38 [main] INFO  c.finance.admin.config.WebMvcConfig - Configuring Swagger UI resource handlers
+2025-06-15 13:21:38 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6cc53274, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@518e24d, org.springframework.security.web.context.SecurityContextHolderFilter@1915eeb9, org.springframework.security.web.header.HeaderWriterFilter@1955a811, org.springframework.security.web.authentication.logout.LogoutFilter@2e3948de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@130f5244, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30c46fa0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1381a7d3, org.springframework.security.web.session.SessionManagementFilter@20a05f29, org.springframework.security.web.access.ExceptionTranslationFilter@10e8ecfa, org.springframework.security.web.access.intercept.AuthorizationFilter@7d3f1085]
+2025-06-15 13:21:38 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2025-06-15 13:21:38 [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-06-15 13:21:38 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
+2025-06-15 13:21:38 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2025-06-15 13:21:38 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-06-15 13:21:38 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-06-15 13:21:38 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.2
+2025-06-15 13:21:38 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@347ce314
+2025-06-15 13:21:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8090 (http) with context path ''
+2025-06-15 13:21:38 [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-06-15 13:21:38 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-06-15 13:21:38 [main] INFO  c.f.admin.AdminManagementApplication - Started AdminManagementApplication in 5.352 seconds (process running for 5.483)
+2025-06-15 13:21:38 [main] INFO  o.s.b.a.b.JobLauncherApplicationRunner - Running default command line with: []
+2025-06-15 13:21:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* UPDATE
+        ClientSession cs 
+    SET
+        cs.isActive = false 
+    WHERE
+        cs.expiresAt < :now */ update client_sessions 
+    set
+        is_active=false 
+    where
+        expires_at<?
+2025-06-15 13:21:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* UPDATE
+        ClientSession cs 
+    SET
+        cs.isActive = false 
+    WHERE
+        cs.rememberMeExpiresAt < :now 
+        AND cs.rememberMeToken IS NOT NULL */ update client_sessions 
+    set
+        is_active=false 
+    where
+        remember_me_expires_at<? 
+        and remember_me_token is not null
+2025-06-15 13:21:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:21:38 [main] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        au1_0.id,
+        au1_0.created_at,
+        au1_0.created_by,
+        au1_0.email,
+        au1_0.failed_login_attempts,
+        au1_0.force_password_change,
+        au1_0.last_login,
+        au1_0.last_password_change,
+        au1_0.locked_until,
+        au1_0.mfa_enabled,
+        au1_0.mfa_secret,
+        au1_0.password_expires_at,
+        au1_0.password,
+        au1_0.session_timeout_minutes,
+        au1_0.status,
+        au1_0.updated_at,
+        au1_0.updated_by,
+        au1_0.username,
+        au1_0.version 
+    from
+        admin_users au1_0 
+    where
+        au1_0.username=?
+2025-06-15 13:21:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:21:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing expired notifications
+2025-06-15 13:21:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* UPDATE
+        ClientNotification n 
+    SET
+        n.deliveryStatus = 'EXPIRED' 
+    WHERE
+        n.expiresAt <= :now 
+        AND n.deliveryStatus != 'EXPIRED' */ update client_notifications 
+    set
+        delivery_status='EXPIRED' 
+    where
+        expires_at<=? 
+        and delivery_status<>'EXPIRED'
+2025-06-15 13:21:38 [main] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.finance.admin.auth.entity.AdminUser */insert 
+    into
+        admin_users (created_at, created_by, email, failed_login_attempts, force_password_change, last_login, last_password_change, locked_until, mfa_enabled, mfa_secret, password_expires_at, password, session_timeout_minutes, status, updated_at, updated_by, username, version, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-15 13:21:38 [main] DEBUG org.hibernate.SQL - 
+    /* update
+        for com.finance.admin.auth.entity.AdminUser */update admin_users 
+    set
+        email=?,
+        failed_login_attempts=?,
+        force_password_change=?,
+        last_login=?,
+        last_password_change=?,
+        locked_until=?,
+        mfa_enabled=?,
+        mfa_secret=?,
+        password_expires_at=?,
+        password=?,
+        session_timeout_minutes=?,
+        status=?,
+        updated_at=?,
+        updated_by=?,
+        username=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2025-06-15 13:21:38 [main] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.finance.admin.auth.entity.AdminUser.roles */insert 
+    into
+        admin_user_roles (admin_user_id, role) 
+    values
+        (?, ?)
+2025-06-15 13:21:41 [http-nio-8090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-15 13:21:41 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-15 13:21:41 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-15 13:21:41 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+2025-06-15 13:21:41 [http-nio-8090-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:41 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-06-15 13:21:41 [http-nio-8090-exec-1] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2025-06-15 13:21:41 [http-nio-8090-exec-1] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#79e50fc1:0/SimpleConnection@519220b6 [delegate=amqp://guest@127.0.0.1:5672/, localPort=52775]
+2025-06-15 13:21:42 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+2025-06-15 13:21:42 [http-nio-8090-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:42 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-06-15 13:21:42 [http-nio-8090-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
+2025-06-15 13:21:42 [http-nio-8090-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:42 [http-nio-8090-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-06-15 13:21:45 [http-nio-8090-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.html
+2025-06-15 13:21:45 [http-nio-8090-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:45 [http-nio-8090-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.html
+2025-06-15 13:21:46 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-initializer.js
+2025-06-15 13:21:46 [http-nio-8090-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/index.css
+2025-06-15 13:21:46 [http-nio-8090-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-bundle.js
+2025-06-15 13:21:46 [http-nio-8090-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui.css
+2025-06-15 13:21:46 [http-nio-8090-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:46 [http-nio-8090-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:46 [http-nio-8090-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:46 [http-nio-8090-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-bundle.js
+2025-06-15 13:21:46 [http-nio-8090-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-15 13:21:46 [http-nio-8090-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui.css
+2025-06-15 13:21:46 [http-nio-8090-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/index.css
+2025-06-15 13:21:46 [http-nio-8090-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:46 [http-nio-8090-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2025-06-15 13:21:46 [http-nio-8090-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:46 [http-nio-8090-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /swagger-ui/swagger-initializer.js
+2025-06-15 13:21:46 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs/swagger-config
+2025-06-15 13:21:46 [http-nio-8090-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:46 [http-nio-8090-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs/swagger-config
+2025-06-15 13:21:46 [http-nio-8090-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /v3/api-docs
+2025-06-15 13:21:46 [http-nio-8090-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-06-15 13:21:46 [http-nio-8090-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /v3/api-docs
+2025-06-15 13:21:47 [http-nio-8090-exec-3] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1012 ms
+2025-06-15 13:22:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:22:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:23:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:23:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:24:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:24:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:25:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:25:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:26:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:26:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:27:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:27:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:28:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:28:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:29:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:29:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:30:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:30:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-15 13:31:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:31:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
