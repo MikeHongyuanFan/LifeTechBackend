@@ -2296,3 +2296,70 @@ Hibernate:
         where
             cn1_0.scheduled_at<=? 
             and cn1_0.delivery_status='PENDING'
+2025-06-15 13:32:38 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-15 13:32:38 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+Hibernate: 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
