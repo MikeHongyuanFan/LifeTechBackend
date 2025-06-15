@@ -53,6 +53,7 @@ C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\financ
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\investment\service\ClientInvestmentService.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\investment\dto\InvestmentFilterRequest.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\investment\dto\EnhancedInvestmentFilterRequest.java
+C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\notification\controller\ClientNotificationController.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\enquiry\dto\UpdateEnquiryRequest.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\investment\dto\CreateInvestmentRequest.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\user\entity\User.java
@@ -61,6 +62,7 @@ C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\financ
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\config\AdminUserSeeder.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\investment\model\Investment.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\auth\controller\AuthController.java
+C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\notification\model\ClientNotification.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\investment\dto\InvestmentResponse.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\auth\entity\AdminRole.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\investment\dto\CompletedInvestmentResponse.java
@@ -73,6 +75,7 @@ C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\financ
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\auth\service\AuthenticationService.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\document\util\JwtUtils.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\config\RedisConfiguration.java
+C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\notification\service\ClientNotificationService.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\service\JwtTokenService.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\investment\service\EntityService.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\certificate\dto\CertificateResponse.java
@@ -82,6 +85,7 @@ C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\financ
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\config\EmailConfiguration.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\certificate\service\CloudStorageService.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\document\dto\DocumentListResponse.java
+C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\notification\model\ClientNotificationPreference.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\profile\dto\ClientProfileResponse.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\service\ClientService.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\mapper\ClientMapper.java
@@ -105,6 +109,7 @@ C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\financ
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\AdminManagementApplication.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\investment\dto\InvestmentPerformanceResponse.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\dashboard\dto\UpcomingBirthdaysResponse.java
+C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\notification\repository\ClientNotificationRepository.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\investment\service\InvestmentService.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\client\document\dto\ClientDocumentResponse.java
 C:\Users\fanho\Desktop\lifetech\LifeTechBackend\backend\src\main\java\com\finance\admin\dashboard\service\DashboardService.java
