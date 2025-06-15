@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/client/auth")
@@ -154,6 +155,91 @@ public class ClientAuthController {
         log.info("Session validation request");
         
         Map<String, Object> response = clientAuthService.validateSession(token);
+        return ResponseEntity.ok(response);
+    }
+
+    @Operation(summary = "Set remember me", description = "Enable remember me for current session")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Remember me enabled successfully"),
+        @ApiResponse(responseCode = "401", description = "Invalid or expired token")
+    })
+    @PostMapping("/remember-me")
+    public ResponseEntity<Map<String, Object>> setRememberMe(
+            @Parameter(description = "Authorization token") @RequestHeader("Authorization") String token,
+            HttpServletRequest httpRequest) {
+        
+        log.info("Setting remember me for current session");
+        
+        String ipAddress = getClientIpAddress(httpRequest);
+        String userAgent = httpRequest.getHeader("User-Agent");
+        
+        Map<String, Object> response = clientAuthService.enableRememberMe(token, ipAddress, userAgent);
+        return ResponseEntity.ok(response);
+    }
+
+    @Operation(summary = "Remove remember me", description = "Disable remember me for current session")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Remember me disabled successfully"),
+        @ApiResponse(responseCode = "401", description = "Invalid or expired token")
+    })
+    @DeleteMapping("/remember-me")
+    public ResponseEntity<Map<String, Object>> removeRememberMe(
+            @Parameter(description = "Authorization token") @RequestHeader("Authorization") String token) {
+        
+        log.info("Removing remember me for current session");
+        
+        Map<String, Object> response = clientAuthService.disableRememberMe(token);
+        return ResponseEntity.ok(response);
+    }
+
+    @Operation(summary = "Login with remember me", description = "Authenticate using remember me token")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Login successful"),
+        @ApiResponse(responseCode = "401", description = "Invalid or expired remember me token")
+    })
+    @PostMapping("/login-remember-me")
+    public ResponseEntity<Map<String, Object>> loginWithRememberMe(
+            @RequestBody Map<String, String> request,
+            HttpServletRequest httpRequest) {
+        
+        String rememberMeToken = request.get("rememberMeToken");
+        log.info("Login attempt with remember me token");
+        
+        String ipAddress = getClientIpAddress(httpRequest);
+        String userAgent = httpRequest.getHeader("User-Agent");
+        
+        Map<String, Object> response = clientAuthService.loginWithRememberMe(rememberMeToken, ipAddress, userAgent);
+        return ResponseEntity.ok(response);
+    }
+
+    @Operation(summary = "Get active sessions", description = "Get all active sessions for current client")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Sessions retrieved successfully"),
+        @ApiResponse(responseCode = "401", description = "Invalid or expired token")
+    })
+    @GetMapping("/sessions")
+    public ResponseEntity<Map<String, Object>> getActiveSessions(
+            @Parameter(description = "Authorization token") @RequestHeader("Authorization") String token) {
+        
+        log.info("Getting active sessions for client");
+        
+        Map<String, Object> response = clientAuthService.getActiveSessions(token);
+        return ResponseEntity.ok(response);
+    }
+
+    @Operation(summary = "Terminate session", description = "Terminate a specific session")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Session terminated successfully"),
+        @ApiResponse(responseCode = "401", description = "Invalid or expired token")
+    })
+    @DeleteMapping("/sessions/{sessionId}")
+    public ResponseEntity<Map<String, Object>> terminateSession(
+            @Parameter(description = "Authorization token") @RequestHeader("Authorization") String token,
+            @Parameter(description = "Session ID to terminate") @PathVariable UUID sessionId) {
+        
+        log.info("Terminating session: {}", sessionId);
+        
+        Map<String, Object> response = clientAuthService.terminateSession(token, sessionId);
         return ResponseEntity.ok(response);
     }
 

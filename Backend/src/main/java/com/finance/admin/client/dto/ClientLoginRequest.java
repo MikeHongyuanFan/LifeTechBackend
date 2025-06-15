@@ -21,6 +21,10 @@ public class ClientLoginRequest {
     // Optional MFA token
     private String mfaToken;
 
+    // Remember me functionality
+    @Builder.Default
+    private boolean rememberMe = false;
+
     // Device information for security tracking
     private String deviceFingerprint;
     private String userAgent;

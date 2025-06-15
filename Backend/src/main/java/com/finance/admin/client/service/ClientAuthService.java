@@ -3,6 +3,7 @@ package com.finance.admin.client.service;
 import com.finance.admin.client.dto.ClientLoginRequest;
 import com.finance.admin.client.model.Client;
 import com.finance.admin.client.model.ClientLoginHistory;
+import com.finance.admin.client.model.ClientSession;
 import com.finance.admin.client.repository.ClientRepository;
 import com.finance.admin.client.repository.ClientLoginHistoryRepository;
 import com.finance.admin.common.exception.ResourceNotFoundException;
@@ -27,6 +28,7 @@ public class ClientAuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenService jwtTokenService;
     private final BlockchainService blockchainService;
+    private final ClientSessionService sessionService;
 
     @Value("${app.security.max-failed-attempts:5}")
     private int maxFailedAttempts;
@@ -74,6 +76,10 @@ public class ClientAuthService {
         String accessToken = jwtTokenService.generateAccessToken(client);
         String refreshToken = jwtTokenService.generateRefreshToken(client);
 
+        // Create session with remember me if requested
+        ClientSession session = sessionService.createSession(client, accessToken, request.isRememberMe(), 
+            request.getIpAddress(), request.getUserAgent());
+
         // Create blockchain audit log
         try {
             blockchainService.createAuditLog("CLIENT_LOGIN", client.getId(), 
@@ -92,6 +98,12 @@ public class ClientAuthService {
         response.put("expiresIn", jwtTokenService.getAccessTokenExpirationSeconds());
         response.put("client", createClientSummary(client));
         response.put("loginHistory", createLoginHistorySummary(loginHistory));
+        
+        // Include remember me token if enabled
+        if (request.isRememberMe() && session.getRememberMeToken() != null) {
+            response.put("rememberMeToken", session.getRememberMeToken());
+            response.put("rememberMeExpiresAt", session.getRememberMeExpiresAt());
+        }
 
         log.info("Client {} authenticated successfully", client.getId());
         return response;
@@ -386,6 +398,203 @@ public class ClientAuthService {
         summary.put("loginTime", loginHistory.getLoginTimestamp());
         summary.put("ipAddress", loginHistory.getIpAddress());
         summary.put("userAgent", loginHistory.getUserAgent());
+        return summary;
+    }
+
+    /**
+     * Enable remember me for current session
+     */
+    public Map<String, Object> enableRememberMe(String token, String ipAddress, String userAgent) {
+        try {
+            Long clientId = jwtTokenService.getClientIdFromToken(token);
+            
+            Client client = clientRepository.findById(clientId)
+                .orElseThrow(() -> new ResourceNotFoundException("Client not found"));
+
+            // Create or update session with remember me
+            sessionService.createSession(client, token, true, ipAddress, userAgent);
+
+            // Create blockchain audit log
+            try {
+                blockchainService.createAuditLog("REMEMBER_ME_ENABLED", clientId, 
+                    "Remember me enabled from IP: " + ipAddress);
+            } catch (Exception e) {
+                log.warn("Failed to create blockchain audit log: {}", e.getMessage());
+            }
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("success", true);
+            response.put("message", "Remember me enabled successfully");
+            response.put("timestamp", LocalDateTime.now());
+
+            return response;
+
+        } catch (Exception e) {
+            log.error("Failed to enable remember me: {}", e.getMessage());
+            throw new RuntimeException("Invalid or expired token");
+        }
+    }
+
+    /**
+     * Disable remember me for current session
+     */
+    public Map<String, Object> disableRememberMe(String token) {
+        try {
+            Long clientId = jwtTokenService.getClientIdFromToken(token);
+            
+            // Find and remove remember me token for this session
+            sessionService.findActiveSession(token).ifPresent(session -> {
+                if (session.getRememberMeToken() != null) {
+                    sessionService.invalidateRememberMeToken(session.getRememberMeToken());
+                }
+            });
+
+            // Create blockchain audit log
+            try {
+                blockchainService.createAuditLog("REMEMBER_ME_DISABLED", clientId, 
+                    "Remember me disabled");
+            } catch (Exception e) {
+                log.warn("Failed to create blockchain audit log: {}", e.getMessage());
+            }
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("success", true);
+            response.put("message", "Remember me disabled successfully");
+
+            return response;
+
+        } catch (Exception e) {
+            log.error("Failed to disable remember me: {}", e.getMessage());
+            throw new RuntimeException("Invalid or expired token");
+        }
+    }
+
+    /**
+     * Login using remember me token
+     */
+    public Map<String, Object> loginWithRememberMe(String rememberMeToken, String ipAddress, String userAgent) {
+        try {
+            // Find session by remember me token
+            ClientSession session = sessionService.findByRememberMeToken(rememberMeToken)
+                .orElseThrow(() -> new RuntimeException("Invalid or expired remember me token"));
+
+            Client client = clientRepository.findById(session.getClientId())
+                .orElseThrow(() -> new ResourceNotFoundException("Client not found"));
+
+            // Check if client is still active
+            if (!client.isActive()) {
+                throw new RuntimeException("Account is not active");
+            }
+
+            // Generate new session tokens
+            String accessToken = jwtTokenService.generateAccessToken(client);
+            String refreshToken = jwtTokenService.generateRefreshToken(client);
+
+            // Create new session (this will also extend remember me)
+            ClientSession newSession = sessionService.createSession(client, accessToken, true, ipAddress, userAgent);
+
+            // Record successful login
+            ClientLoginHistory loginHistory = ClientLoginHistory.builder()
+                .clientId(client.getId())
+                .ipAddress(ipAddress)
+                .userAgent(userAgent)
+                .loginSuccessful(true)
+                .build();
+            loginHistoryRepository.save(loginHistory);
+
+            // Create blockchain audit log
+            try {
+                blockchainService.createAuditLog("REMEMBER_ME_LOGIN", client.getId(), 
+                    "Remember me login from IP: " + ipAddress);
+            } catch (Exception e) {
+                log.warn("Failed to create blockchain audit log: {}", e.getMessage());
+            }
+
+            // Prepare response
+            Map<String, Object> response = new HashMap<>();
+            response.put("success", true);
+            response.put("message", "Login successful via remember me");
+            response.put("accessToken", accessToken);
+            response.put("refreshToken", refreshToken);
+            response.put("rememberMeToken", newSession.getRememberMeToken());
+            response.put("tokenType", "Bearer");
+            response.put("expiresIn", jwtTokenService.getAccessTokenExpirationSeconds());
+            response.put("client", createClientSummary(client));
+
+            log.info("Client {} authenticated successfully via remember me", client.getId());
+            return response;
+
+        } catch (Exception e) {
+            log.error("Remember me login failed: {}", e.getMessage());
+            throw new RuntimeException("Invalid or expired remember me token");
+        }
+    }
+
+    /**
+     * Get active sessions for client
+     */
+    public Map<String, Object> getActiveSessions(String token) {
+        try {
+            Long clientId = jwtTokenService.getClientIdFromToken(token);
+            
+            List<ClientSession> activeSessions = sessionService.getActiveSessionsForClient(clientId);
+            
+            List<Map<String, Object>> sessionList = activeSessions.stream()
+                .map(this::createSessionSummary)
+                .toList();
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("success", true);
+            response.put("sessions", sessionList);
+            response.put("totalSessions", sessionList.size());
+
+            return response;
+
+        } catch (Exception e) {
+            log.error("Failed to get active sessions: {}", e.getMessage());
+            throw new RuntimeException("Invalid or expired token");
+        }
+    }
+
+    /**
+     * Terminate a specific session
+     */
+    public Map<String, Object> terminateSession(String token, UUID sessionId) {
+        try {
+            Long clientId = jwtTokenService.getClientIdFromToken(token);
+            
+            // Verify the session belongs to the client
+            List<ClientSession> activeSessions = sessionService.getActiveSessionsForClient(clientId);
+            ClientSession targetSession = activeSessions.stream()
+                .filter(session -> session.getId().equals(sessionId))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Session not found"));
+
+            // Invalidate the session
+            sessionService.invalidateSession(targetSession.getSessionToken());
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("success", true);
+            response.put("message", "Session terminated successfully");
+
+            return response;
+
+        } catch (Exception e) {
+            log.error("Failed to terminate session: {}", e.getMessage());
+            throw new RuntimeException("Failed to terminate session");
+        }
+    }
+
+    private Map<String, Object> createSessionSummary(ClientSession session) {
+        Map<String, Object> summary = new HashMap<>();
+        summary.put("id", session.getId());
+        summary.put("deviceFingerprint", session.getDeviceFingerprint());
+        summary.put("ipAddress", session.getIpAddress());
+        summary.put("userAgent", session.getUserAgent());
+        summary.put("createdAt", session.getCreatedAt());
+        summary.put("lastAccessed", session.getLastAccessed());
+        summary.put("expiresAt", session.getExpiresAt());
+        summary.put("hasRememberMe", session.getRememberMeToken() != null);
         return summary;
     }
 } 
