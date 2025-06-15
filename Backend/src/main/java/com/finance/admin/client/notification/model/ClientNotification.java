@@ -65,6 +65,7 @@ public class ClientNotification extends BaseEntity {
     private LocalDateTime expiresAt;
 
     @Column(name = "metadata", columnDefinition = "jsonb")
+    @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.JSON)
     private Map<String, Object> metadata;
 
     /**
