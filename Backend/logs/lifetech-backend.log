@@ -28834,3 +28834,105 @@ This generated password is for development use only. Your security configuration
 2025-06-16 11:46:23 [http-nio-8090-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /actuator/health
 2025-06-16 11:46:23 [http-nio-8090-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
 2025-06-16 11:46:23 [http-nio-8090-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /actuator/health
+2025-06-16 11:47:19 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-16 11:47:20 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-16 11:48:20 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-16 11:48:20 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'
+2025-06-16 11:49:20 [scheduling-1] DEBUG c.f.a.c.n.s.ClientNotificationService - Processing scheduled notifications
+2025-06-16 11:49:20 [scheduling-1] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        n 
+    FROM
+        ClientNotification n 
+    WHERE
+        n.scheduledAt <= :now 
+        AND n.deliveryStatus = 'PENDING' */ select
+            cn1_0.id,
+            cn1_0.category,
+            cn1_0.client_id,
+            cn1_0.created_at,
+            cn1_0.created_by,
+            cn1_0.delivered_at,
+            cn1_0.delivery_method,
+            cn1_0.delivery_status,
+            cn1_0.expires_at,
+            cn1_0.is_read,
+            cn1_0.message,
+            cn1_0.metadata,
+            cn1_0.notification_type,
+            cn1_0.priority_level,
+            cn1_0.read_at,
+            cn1_0.scheduled_at,
+            cn1_0.title,
+            cn1_0.updated_at,
+            cn1_0.updated_by,
+            cn1_0.version 
+        from
+            client_notifications cn1_0 
+        where
+            cn1_0.scheduled_at<=? 
+            and cn1_0.delivery_status='PENDING'

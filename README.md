@@ -4,13 +4,37 @@ This project is the administrative backend for the Finance Financial Platform.
 
 ## Overview
 
-The Finance Admin Management System is a comprehensive Spring Boot application designed to provide secure administrative capabilities for the Finance platform. It includes user management, role-based access control, audit logging, and various administrative functions.
+The Finance Admin Management System is a comprehensive Spring Boot application designed to provide secure administrative capabilities for the Finance platform. It includes user management, role-based access control, audit logging, blockchain integration, and various administrative functions.
 
 ## Features
 
 - **User Management**: Create, update, delete, and manage user accounts
 - **Role-Based Access Control**: Comprehensive permission system with multiple admin roles
-- **Authentication & Authorization**: JWT-based authentication with MFA support
+- **Authentication & Authorization**: 
+  - JWT-based authentication with MFA support
+  - New session management system with ClientAuthSession
+  - Remember me functionality with blockchain audit
+- **Digital Membership System**:
+  - Unique digital membership numbers
+  - Tiered membership system (Basic/Premium/VIP)
+  - Digital membership cards with QR codes
+  - Points and rewards tracking
+  - Membership benefits management
+- **Blockchain Integration**:
+  - Identity verification and anchoring
+  - Transaction audit logging
+  - Smart contract integration for KYC
+  - Membership verification
+- **KYC Integration**:
+  - Document verification workflow
+  - Identity validation
+  - Compliance tracking
+  - Real-time status updates
+- **Financial Reporting**:
+  - Xero API integration
+  - Automated report generation
+  - Financial data synchronization
+  - Custom report templates
 - **Audit Logging**: Complete audit trail for all administrative actions
 - **Security**: Advanced security features including account lockout, password policies
 - **API Documentation**: Swagger/OpenAPI integration for API documentation
@@ -31,6 +55,8 @@ The Finance Admin Management System is a comprehensive Spring Boot application d
 - **Redis**
 - **RabbitMQ**
 - **JWT (JSON Web Tokens)**
+- **Web3j**: Ethereum blockchain integration
+- **ZXing**: QR code generation
 - **Docker & Docker Compose**
 - **Maven**
 
@@ -41,6 +67,8 @@ The Finance Admin Management System is a comprehensive Spring Boot application d
 - Java 17 or higher
 - Docker and Docker Compose
 - Maven 3.6+
+- Ethereum node access (for blockchain features)
+- Xero API credentials (for financial reporting)
 
 ### Running with Docker Compose
 
