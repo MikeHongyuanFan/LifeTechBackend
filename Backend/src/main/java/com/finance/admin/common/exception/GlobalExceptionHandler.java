@@ -4,13 +4,16 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.bind.MissingRequestHeaderException;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.multipart.support.MissingServletRequestPartException;
 
 import java.time.LocalDateTime;
@@ -103,6 +106,22 @@ public class GlobalExceptionHandler {
             HttpStatus.BAD_REQUEST.value(),
             "Missing Required Part",
             "Required file or form part is missing: " + ex.getRequestPartName(),
+            request.getDescription(false)
+        );
+        
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
+    @ExceptionHandler(MissingRequestHeaderException.class)
+    public ResponseEntity<Map<String, Object>> handleMissingRequestHeaderException(
+            MissingRequestHeaderException ex, WebRequest request) {
+        
+        log.error("Missing required header: {}", ex.getMessage());
+        
+        Map<String, Object> errorResponse = createErrorResponse(
+            HttpStatus.BAD_REQUEST.value(),
+            "Missing Required Header",
+            "Required request header '" + ex.getHeaderName() + "' is not present",
             request.getDescription(false)
         );
         
@@ -212,6 +231,42 @@ public class GlobalExceptionHandler {
             HttpStatus.BAD_REQUEST.value(),
             "Invalid Operation",
             ex.getMessage(),
+            request.getDescription(false)
+        );
+        
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<Map<String, Object>> handleHttpMessageNotReadableException(
+            HttpMessageNotReadableException ex, WebRequest request) {
+        
+        log.error("Invalid JSON format: {}", ex.getMessage());
+        
+        Map<String, Object> errorResponse = createErrorResponse(
+            HttpStatus.BAD_REQUEST.value(),
+            "Invalid JSON Format",
+            "The request body contains invalid JSON format",
+            request.getDescription(false)
+        );
+        
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<Map<String, Object>> handleMethodArgumentTypeMismatchException(
+            MethodArgumentTypeMismatchException ex, WebRequest request) {
+        
+        log.error("Method argument type mismatch: {}", ex.getMessage());
+        
+        String message = String.format("Invalid parameter '%s': %s", 
+            ex.getName(), 
+            "Expected a valid " + ex.getRequiredType().getSimpleName());
+        
+        Map<String, Object> errorResponse = createErrorResponse(
+            HttpStatus.BAD_REQUEST.value(),
+            "Invalid Parameter",
+            message,
             request.getDescription(false)
         );
         
