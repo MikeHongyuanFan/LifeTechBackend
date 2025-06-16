@@ -90,7 +90,7 @@ public class AuthControllerTest extends BaseUnitTest {
         when(authenticationService.authenticateUser(any(LoginRequest.class), any()))
                 .thenReturn(loginResponse);
 
-        mockMvc.perform(post("/auth/login")
+        mockMvc.perform(post("/api/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(getObjectMapper().writeValueAsString(loginRequest))
                 .header("X-Forwarded-For", "127.0.0.1"))
@@ -106,7 +106,7 @@ public class AuthControllerTest extends BaseUnitTest {
         when(authenticationService.authenticateUser(any(LoginRequest.class), any()))
                 .thenReturn(mfaLoginResponse);
 
-        mockMvc.perform(post("/auth/login")
+        mockMvc.perform(post("/api/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(getObjectMapper().writeValueAsString(loginRequest))
                 .header("X-Forwarded-For", "127.0.0.1"))
@@ -121,7 +121,7 @@ public class AuthControllerTest extends BaseUnitTest {
         when(authenticationService.authenticateUser(any(LoginRequest.class), any()))
                 .thenThrow(new RuntimeException("Invalid username or password"));
 
-        mockMvc.perform(post("/auth/login")
+        mockMvc.perform(post("/api/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(getObjectMapper().writeValueAsString(loginRequest))
                 .header("X-Forwarded-For", "127.0.0.1"))
@@ -135,7 +135,7 @@ public class AuthControllerTest extends BaseUnitTest {
         when(authenticationService.verifyMfa(any(MfaVerificationRequest.class), any()))
                 .thenReturn(loginResponse);
 
-        mockMvc.perform(post("/auth/verify-mfa")
+        mockMvc.perform(post("/api/auth/mfa/verify")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(getObjectMapper().writeValueAsString(mfaVerificationRequest))
                 .header("X-Forwarded-For", "127.0.0.1"))
@@ -150,7 +150,7 @@ public class AuthControllerTest extends BaseUnitTest {
         when(authenticationService.verifyMfa(any(MfaVerificationRequest.class), any()))
                 .thenThrow(new RuntimeException("Invalid MFA code"));
 
-        mockMvc.perform(post("/auth/verify-mfa")
+        mockMvc.perform(post("/api/auth/mfa/verify")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(getObjectMapper().writeValueAsString(mfaVerificationRequest))
                 .header("X-Forwarded-For", "127.0.0.1"))
@@ -163,7 +163,7 @@ public class AuthControllerTest extends BaseUnitTest {
     void testLogout() throws Exception {
         doNothing().when(authenticationService).logout(anyString());
 
-        mockMvc.perform(post("/auth/logout")
+        mockMvc.perform(post("/api/auth/logout")
                 .header("Authorization", "Bearer test-access-token"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.success").value(true))
@@ -172,7 +172,7 @@ public class AuthControllerTest extends BaseUnitTest {
 
     @Test
     void testHealthEndpoint() throws Exception {
-        mockMvc.perform(get("/auth/health"))
+        mockMvc.perform(get("/api/auth/health"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.success").value(true))
                 .andExpect(jsonPath("$.message").value("Authentication service is healthy"));

@@ -5,15 +5,15 @@
 INSERT INTO admin_users (id, username, email, password, status, mfa_enabled, created_at, updated_at, failed_login_attempts)
 VALUES 
 ('00000000-0000-0000-0000-000000000001', 'testadmin', 'testadmin@finance.com',
- '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lbdxIo0jQDjT6VmRq',
+ '$2a$10$uNaSM60qZodktvknl5nnS.sXx1HMmwTCsrodGkZ7SqvrPzuEetpBC',
  'ACTIVE', false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0),
 
 ('00000000-0000-0000-0000-000000000002', 'mfaadmin', 'mfaadmin@finance.com',
- '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lbdxIo0jQDjT6VmRq',
+ '$2a$10$uNaSM60qZodktvknl5nnS.sXx1HMmwTCsrodGkZ7SqvrPzuEetpBC',
  'ACTIVE', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0),
 
 ('00000000-0000-0000-0000-000000000003', 'lockedadmin', 'lockedadmin@finance.com',
- '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lbdxIo0jQDjT6VmRq',
+ '$2a$10$uNaSM60qZodktvknl5nnS.sXx1HMmwTCsrodGkZ7SqvrPzuEetpBC',
  'ACTIVE', false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 5);
 
 -- Assign roles to admin users
@@ -27,21 +27,19 @@ VALUES
 INSERT INTO users (id, username, email, password, first_name, last_name, status, email_verified, phone_verified, created_at, updated_at, failed_login_attempts)
 VALUES 
 ('10000000-0000-0000-0000-000000000001', 'testuser', 'testuser@finance.com',
- '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lbdxIo0jQDjT6VmRq',
+ '$2a$10$uNaSM60qZodktvknl5nnS.sXx1HMmwTCsrodGkZ7SqvrPzuEetpBC',
  'Test', 'User', 'ACTIVE', true, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0),
 
 ('10000000-0000-0000-0000-000000000002', 'inactiveuser', 'inactive@finance.com',
- '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lbdxIo0jQDjT6VmRq',
+ '$2a$10$uNaSM60qZodktvknl5nnS.sXx1HMmwTCsrodGkZ7SqvrPzuEetpBC',
  'Inactive', 'User', 'INACTIVE', false, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
 
 -- Insert test clients
-INSERT INTO clients (id, first_name, last_name, email, phone, address_street, address_city, address_state, address_postal_code, address_country, employment_status, annual_income, net_worth, risk_tolerance, investment_experience, kyc_status, status, created_at, updated_at)
+INSERT INTO clients (id, membership_number, first_name, last_name, email_primary, phone_primary, address_street, address_city, address_state, address_postal_code, address_country, status, created_at, updated_at)
 VALUES 
-(1, 'John', 'Doe', 'john.doe@example.com', '0412345678', '123 Test Street', 'Sydney', 'NSW', '2000', 'Australia', 'EMPLOYED', 100000.00, 250000.00, 'MODERATE', 'INTERMEDIATE', 'COMPLETED', 'ACTIVE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-
-(2, 'Jane', 'Smith', 'jane.smith@example.com', '0423456789', '456 Demo Avenue', 'Melbourne', 'VIC', '3000', 'Australia', 'SELF_EMPLOYED', 80000.00, 150000.00, 'CONSERVATIVE', 'BEGINNER', 'IN_PROGRESS', 'ACTIVE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-
-(3, 'Bob', 'Wilson', 'bob.wilson@example.com', '0434567890', '789 Sample Road', 'Brisbane', 'QLD', '4000', 'Australia', 'EMPLOYED', 120000.00, 300000.00, 'AGGRESSIVE', 'ADVANCED', 'COMPLETED', 'ACTIVE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+(1, 'MEM001', 'John', 'Doe', 'john.doe@example.com', '0412345678', '123 Test Street', 'Sydney', 'NSW', '2000', 'Australia', 'ACTIVE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(2, 'MEM002', 'Jane', 'Smith', 'jane.smith@example.com', '0423456789', '456 Demo Avenue', 'Melbourne', 'VIC', '3000', 'Australia', 'ACTIVE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(3, 'MEM003', 'Bob', 'Wilson', 'bob.wilson@example.com', '0434567890', '789 Sample Road', 'Brisbane', 'QLD', '4000', 'Australia', 'ACTIVE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 -- Insert test entities
 INSERT INTO entities (id, client_id, entity_name, entity_type, registration_number, abn, acn, registration_date, registered_street, registered_city, registered_state, registered_postal_code, registered_country, contact_person, contact_phone, contact_email, tax_residency_status, gst_registered, status, created_at, updated_at)
@@ -84,4 +82,16 @@ INSERT INTO certificates (id, certificate_number, investment_id, client_id, temp
 VALUES 
 (1, 'SHR-202401-0001', 1, 1, 1, 'SHARE_CERTIFICATE', '2023-01-15', '2025-01-15', 'ACTIVE', 50000.00, 2000.00, 25.00, '00000000-0000-0000-0000-000000000001', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 (2, 'INV-202401-0001', 2, 2, 2, 'INVESTMENT_CERTIFICATE', '2022-06-01', '2024-06-01', 'ACTIVE', 250000.00, NULL, NULL, '00000000-0000-0000-0000-000000000001', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-(3, 'BND-202401-0001', 3, 3, 3, 'BOND_CERTIFICATE', '2023-03-01', '2025-03-01', 'ACTIVE', 100000.00, 100.00, 1000.00, '00000000-0000-0000-0000-000000000001', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); 
+(3, 'BND-202401-0001', 3, 3, 3, 'BOND_CERTIFICATE', '2023-03-01', '2025-03-01', 'ACTIVE', 100000.00, 100.00, 1000.00, '00000000-0000-0000-0000-000000000001', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- Test Client Documents (updated table name)
+INSERT INTO client_documents (id, client_id, document_name, document_type, document_category, document_status, file_size, file_path, description, tags, uploaded_by_client, is_active, created_at, updated_at, expiry_date, access_count)
+VALUES 
+(1, 1, 'Test Document 1', 'IDENTITY_VERIFICATION', 'KYC', 'UPLOADED', 1024, '/test/path1.pdf', 'Test description 1', 'test,document', false, true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP + INTERVAL '30' DAY, 0),
+(2, 1, 'Test Document 2', 'KYC_DOCUMENT', 'INVESTMENT', 'APPROVED', 2048, '/test/path2.pdf', 'Test description 2', 'test,financial', true, true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP + INTERVAL '60' DAY, 5),
+(3, 1, 'Test Document 3', 'OTHER', 'LEGAL', 'EXPIRED', 3072, '/test/path3.pdf', 'Test description 3', 'test,legal', false, true, CURRENT_TIMESTAMP - INTERVAL '30' DAY, CURRENT_TIMESTAMP - INTERVAL '30' DAY, CURRENT_TIMESTAMP - INTERVAL '1' DAY, 10);
+
+-- Test Client Sessions (updated table name)
+INSERT INTO client_sessions (id, client_id, session_token, created_at, expires_at, is_active)
+VALUES 
+('10000000-0000-0000-0000-000000000001', 1, 'test-session-token', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP + INTERVAL '1' HOUR, true); 

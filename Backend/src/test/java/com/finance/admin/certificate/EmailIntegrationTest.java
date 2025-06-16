@@ -1,50 +1,78 @@
 package com.finance.admin.certificate;
 
 import com.finance.admin.certificate.service.CertificateEmailService;
-import com.finance.admin.config.BaseIntegrationTest;
 import com.finance.admin.config.TestConfig;
+import com.finance.admin.audit.service.AuditService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.jdbc.Sql;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.doNothing;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 @SpringBootTest(
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-    classes = {com.finance.admin.AdminManagementApplication.class, TestConfig.class}
+    properties = {
+        "spring.mail.enabled=false",
+        "app.email.enabled=false",
+        "app.certificate.email.enabled=false"
+    }
 )
 @ActiveProfiles("test")
+@Sql(scripts = {"/test-schema.sql", "/test-data.sql"})
+@Import(TestConfig.class)
 @Slf4j
-public class EmailIntegrationTest extends BaseIntegrationTest {
+public class EmailIntegrationTest {
+
+    @Autowired
+    private JavaMailSender javaMailSender;
 
     @MockBean
     private CertificateEmailService certificateEmailService;
 
+    @MockBean
+    private AuditService auditService;
+
     @Test
-    public void testEmailServiceConfiguration() {
-        // Configure mock behavior
-        doNothing().when(certificateEmailService).sendTestEmail(anyString(), anyString());
-        
-        // This test verifies that the email service can be autowired and configured properly
+    void sendEmail_WithValidData_SendsSuccessfully() {
+        // Setup
+        doNothing().when(javaMailSender).send(any(SimpleMailMessage.class));
+
+        // Test
         assertDoesNotThrow(() -> {
-            log.info("Email service configured successfully");
-            certificateEmailService.sendTestEmail("test@example.com", "Test Email");
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo("test@example.com");
+            message.setSubject("Test Subject");
+            message.setText("Test Content");
+            javaMailSender.send(message);
         });
+
+        // Verify
+        verify(javaMailSender, times(1)).send(any(SimpleMailMessage.class));
     }
 
-    // Uncomment this test to manually verify Gmail SMTP integration
-    // Note: This will send an actual email, so use with caution
-    /*
-    @Test
-    public void testGmailSMTPIntegration() {
-        assertDoesNotThrow(() -> {
-            certificateEmailService.sendTestEmail("test@example.com", "Test Email - Gmail SMTP Integration");
-            log.info("Test email sent successfully via Gmail SMTP");
-        });
-    }
-    */
+    // @Test
+    // void sendCertificateEmail_WithValidData_SendsSuccessfully() {
+    //     // Setup
+    //     doNothing().when(certificateEmailService).sendCertificateEmail(anyLong(), anyString(), anyString());
+
+    //     // Test
+    //     assertDoesNotThrow(() -> 
+    //         certificateEmailService.sendCertificateEmail(1L, "test.pdf", "test@example.com")
+    //     );
+
+    //     // Verify
+    //     verify(certificateEmailService, times(1))
+    //         .sendCertificateEmail(eq(1L), eq("test.pdf"), eq("test@example.com"));
+    // }
+
+    // Add more test methods here...
 } 

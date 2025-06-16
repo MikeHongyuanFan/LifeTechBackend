@@ -8,11 +8,14 @@ This system implements a production-ready admin management platform with the fol
 
 - **JWT-based Authentication** with Multi-Factor Authentication (MFA)
 - **Role-Based Access Control (RBAC)** with 6 admin roles
-- **IP Whitelisting** and session management
-- **Real-time Audit Logging** with AOP
+- **IP Whitelisting** and enhanced session management
+- **Real-time Audit Logging** with AOP and blockchain
 - **User Account Administration** with bulk operations
-- **KYC Document Review System** with state machine workflow
+- **KYC Document Review System** with state machine workflow and blockchain verification
 - **User Level Management** with automated assessment
+- **Digital Membership System** with QR code and blockchain integration
+- **Blockchain Integration** for identity verification and audit trails
+- **Financial Reporting** with Xero API integration
 
 ## 🛠️ Technology Stack
 
@@ -20,6 +23,9 @@ This system implements a production-ready admin management platform with the fol
 - **Security**: Spring Security 6.x with JWT
 - **Database**: PostgreSQL (primary), MongoDB (documents), Redis (cache)
 - **Message Queue**: RabbitMQ with Spring AMQP
+- **Blockchain**: Web3j for Ethereum integration
+- **QR Code**: ZXing for digital membership cards
+- **Financial Integration**: Xero API client
 - **Testing**: JUnit 5, Spring Boot Test, MockMvc, Testcontainers
 - **Documentation**: OpenAPI 3.0 + Swagger UI
 - **Build Tool**: Maven
@@ -32,10 +38,12 @@ Backend/
 ├── src/main/java/com/finance/admin/
 │   ├── AdminManagementApplication.java          # Main application class
 │   ├── auth/                                    # Authentication module (AR-001)
-│   │   ├── controller/AuthController.java      # Login, MFA, logout endpoints
+│   │   ├── controller/AuthController.java       # Login, MFA, logout endpoints
 │   │   ├── dto/                                # Authentication DTOs
 │   │   ├── entity/                             # Admin user entities
-│   │   ├── repository/AdminUserRepository.java # User data access
+│   │   ├── repository/                         # User data access
+│   │   │   ├── AdminUserRepository.java        # User repository
+│   │   │   ├── ClientAuthSessionRepository.java # New session management
 │   │   ├── security/                           # JWT & security components
 │   │   └── service/                            # Authentication services
 │   ├── role/                                   # Role management (AR-002)
@@ -43,18 +51,29 @@ Backend/
 │   ├── user/                                   # User administration (AR-004)
 │   ├── kyc/                                    # KYC document review (AR-005)
 │   ├── level/                                  # User level management (AR-006)
-│   ├── common/                                 # Shared components
-│   │   ├── dto/ApiResponse.java               # Standard API response
-│   │   ├── entity/BaseEntity.java            # Base entity with audit fields
-│   │   ├── exception/                         # Custom exceptions
-│   │   └── util/                              # Utility classes
-│   └── config/                                # Configuration classes
+│   ├── blockchain/                             # Blockchain integration (AR-007)
+│   │   ├── controller/                         # Blockchain endpoints
+│   │   ├── service/                           # Blockchain services
+│   │   └── contracts/                         # Smart contract wrappers
+│   ├── membership/                            # Digital membership (AR-008)
+│   │   ├── controller/                        # Membership endpoints
+│   │   ├── service/                          # Membership services
+│   │   ├── model/                            # Membership entities
+│   │   └── repository/                       # Membership data access
+│   ├── reporting/                            # Financial reporting (AR-009)
+│   │   ├── controller/                       # Report endpoints
+│   │   ├── service/                         # Report generation
+│   │   └── integration/                     # Xero API integration
+│   ├── common/                               # Shared components
+│   │   ├── dto/ApiResponse.java             # Standard API response
+│   │   ├── entity/BaseEntity.java          # Base entity with audit fields
+│   │   ├── exception/                       # Custom exceptions
+│   │   └── util/                            # Utility classes
+│   └── config/                              # Configuration classes
 ├── src/main/resources/
-│   ├── application.yml                        # Main configuration
-│   └── application-test.yml                   # Test configuration
-└── src/test/java/                            # Integration tests
-    └── com/finance/admin/auth/
-        └── AuthenticationIntegrationTest.java # Comprehensive auth tests
+│   ├── application.yml                      # Main configuration
+│   └── application-test.yml                 # Test configuration
+└── src/test/java/                          # Integration tests
 ```
 
 ## 🚀 Quick Start
@@ -67,6 +86,8 @@ Backend/
 - Redis 6+
 - MongoDB 4.4+
 - RabbitMQ 3.8+
+- Ethereum Node (for blockchain features)
+- Xero API Credentials (for financial reporting)
 
 ### Database Setup
 

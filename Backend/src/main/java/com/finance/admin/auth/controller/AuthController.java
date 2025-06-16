@@ -5,6 +5,8 @@ import com.finance.admin.auth.dto.LoginResponse;
 import com.finance.admin.auth.dto.MfaVerificationRequest;
 import com.finance.admin.auth.service.AuthenticationService;
 import com.finance.admin.common.dto.ApiResponse;
+import com.finance.admin.common.exception.AuthenticationException;
+import com.finance.admin.common.exception.AccountLockedException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,11 +14,12 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 @Tag(name = "Authentication", description = "Admin user authentication operations")
 public class AuthController {
 
@@ -47,14 +50,22 @@ public class AuthController {
                 return ResponseEntity.ok(ApiResponse.success("Login successful", loginResponse));
             }
             
+        } catch (AuthenticationException ex) {
+            logger.error("Authentication failed for user: {}, Error: {}", loginRequest.getUsername(), ex.getMessage());
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(ApiResponse.error(ex.getMessage()));
+        } catch (AccountLockedException ex) {
+            logger.error("Account locked for user: {}, Error: {}", loginRequest.getUsername(), ex.getMessage());
+            return ResponseEntity.status(HttpStatus.LOCKED)
+                    .body(ApiResponse.error(ex.getMessage()));
         } catch (Exception ex) {
-            logger.error("Login failed for user: {}, Error: {}", loginRequest.getUsername(), ex.getMessage());
+            logger.error("Unexpected error during login for user: {}, Error: {}", loginRequest.getUsername(), ex.getMessage());
             return ResponseEntity.badRequest()
                     .body(ApiResponse.error(ex.getMessage()));
         }
     }
 
-    @PostMapping("/verify-mfa")
+    @PostMapping("/mfa/verify")
     @Operation(summary = "Verify MFA code", description = "Complete authentication by verifying MFA code")
     public ResponseEntity<ApiResponse<LoginResponse>> verifyMfa(
             @Valid @RequestBody MfaVerificationRequest mfaRequest,
@@ -67,8 +78,12 @@ public class AuthController {
             logger.info("MFA verification successful");
             return ResponseEntity.ok(ApiResponse.success("MFA verification successful", loginResponse));
             
-        } catch (Exception ex) {
+        } catch (AuthenticationException ex) {
             logger.error("MFA verification failed: {}", ex.getMessage());
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(ApiResponse.error(ex.getMessage()));
+        } catch (Exception ex) {
+            logger.error("Unexpected error during MFA verification: {}", ex.getMessage());
             return ResponseEntity.badRequest()
                     .body(ApiResponse.error(ex.getMessage()));
         }

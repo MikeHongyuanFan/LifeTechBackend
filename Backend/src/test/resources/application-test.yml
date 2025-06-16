@@ -1,42 +1,31 @@
+# Removed 'spring.profiles.active' as it should not be set in a profile-specific configuration file.
+
+# Test Configuration
 spring:
-  application:
-    name: finance-admin-management-test
-  
   # Test Database Configuration
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
     username: sa
     password: 
-    driver-class-name: org.h2.Driver
     
   # JPA Configuration for Tests
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: create-drop
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      ddl-auto: none
     show-sql: false
     properties:
       hibernate:
-        dialect: com.finance.admin.config.CustomH2Dialect
-        format_sql: false
-        use_sql_comments: false
-        globally_quoted_identifiers: false
-        enable_lazy_load_no_trans: true
-        hbm2ddl:
-          auto: create-drop
-    generate-ddl: true
-    defer-datasource-initialization: true
-    open-in-view: false
-    database-platform: com.finance.admin.config.CustomH2Dialect
-    
+        format_sql: true
+        use_sql_comments: true
+        
   # SQL Initialization
   sql:
     init:
       mode: always
-      data-locations: classpath:test-data.sql
       schema-locations: classpath:test-schema.sql
+      data-locations: classpath:test-data.sql
       platform: h2
       continue-on-error: false
       
@@ -44,7 +33,6 @@ spring:
   h2:
     console:
       enabled: true
-      path: /h2-console
       
   # Exclude external services for testing
   autoconfigure:
@@ -55,6 +43,7 @@ spring:
       - org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
       - org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration
       - org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration
+      - org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration
     
   # Main configuration
   main:
@@ -69,6 +58,56 @@ spring:
     port: 3025
     username: test
     password: test
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+
+  # Test-specific Jackson configuration
+  jackson:
+    default-property-inclusion: NON_NULL
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+
+  # Disable Flyway for tests
+  flyway:
+    enabled: false
+
+  # AWS Configuration for Tests
+  aws:
+    s3:
+      endpoint: http://localhost:4566
+      region: us-east-1
+      bucket: test-bucket
+      
+  # Security Configuration for Tests
+  security:
+    jwt:
+      secret: test-secret-key-for-jwt-token-generation-in-tests
+      expiration: 3600000
+
+  # RabbitMQ Configuration for Tests
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  # MongoDB Configuration for Tests
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: test
+      
+  # Redis Configuration for Tests
+  redis:
+    host: localhost
+    port: 6379
 
 # Test-specific Application Configuration
 app:
@@ -94,17 +133,27 @@ app:
     enabled: false
     smtp:
       enabled: false
+      host: localhost
+      port: 3025
+      username: test
+      password: test
+      auth: false
+      starttls: false
   
   certificate:
     email:
       enabled: false
+      from: test@example.com
+      admin: test@example.com
 
 # Logging Configuration
 logging:
   level:
     root: WARN
     org.springframework: WARN
-    org.springframework.security: INFO
+    org.springframework.security: DEBUG
+    org.springframework.security.authentication: DEBUG
+    org.springframework.security.authentication.dao: DEBUG
     org.springframework.test: INFO
     org.springframework.boot.test: INFO
     org.springframework.transaction: WARN
@@ -113,7 +162,8 @@ logging:
     org.hibernate: WARN
     org.hibernate.SQL: WARN
     org.hibernate.type.descriptor.sql.BasicBinder: WARN
-    com.finance.admin: INFO
+    com.finance.admin: DEBUG
+    com.finance.admin.auth: DEBUG
     com.zaxxer.hikari: WARN
   pattern:
     console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
@@ -138,47 +188,3 @@ server:
     include-binding-errors: always
     include-stacktrace: never
     include-exception: false
-
-# Test-specific Jackson configuration
-spring.jackson:
-  default-property-inclusion: NON_NULL
-  serialization:
-    write-dates-as-timestamps: false
-  deserialization:
-    fail-on-unknown-properties: false
-
-# Disable Flyway for tests
-flyway:
-  enabled: false
-
-# AWS Configuration for Tests
-aws:
-  s3:
-    endpoint: http://localhost:4566
-    region: us-east-1
-    bucket: test-bucket
-    
-# Security Configuration for Tests
-security:
-  jwt:
-    secret: test-secret-key-for-jwt-token-generation-in-tests
-    expiration: 3600000
-
-# RabbitMQ Configuration for Tests
-rabbitmq:
-  host: localhost
-  port: 5672
-  username: guest
-  password: guest
-
-# MongoDB Configuration for Tests
-data:
-  mongodb:
-    host: localhost
-    port: 27017
-    database: test
-    
-# Redis Configuration for Tests
-redis:
-  host: localhost
-  port: 6379

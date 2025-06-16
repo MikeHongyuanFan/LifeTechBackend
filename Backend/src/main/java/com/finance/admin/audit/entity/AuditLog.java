@@ -31,10 +31,10 @@ public class AuditLog extends BaseEntity {
     @Column(name = "entity_id")
     private UUID entityId;
 
-    @Column(name = "old_values", columnDefinition = "jsonb")
+    @Column(name = "old_values", columnDefinition = "TEXT")
     private String oldValues;
 
-    @Column(name = "new_values", columnDefinition = "jsonb")
+    @Column(name = "new_values", columnDefinition = "TEXT")
     private String newValues;
 
     @Column(name = "ip_address", length = 45)

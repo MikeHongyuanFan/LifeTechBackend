@@ -1,65 +1,45 @@
 package com.finance.admin.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.AuditorAware;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.test.context.TestPropertySource;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.test.context.ActiveProfiles;
 
 import javax.sql.DataSource;
 import java.util.Optional;
 
 /**
- * Comprehensive test configuration that provides all necessary beans for test scenarios
- * This configuration is specifically designed for H2 in-memory database testing
+ * Minimal test configuration for @DataJpaTest
+ * Only provides essential beans without loading full application context
  */
-@Configuration
-@EnableJpaAuditing
-@EnableWebSecurity
-@EnableMethodSecurity
-@EnableJpaRepositories(basePackages = {
-    "com.finance.admin.user.repository",
-    "com.finance.admin.auth.repository",
-    "com.finance.admin.audit.repository",
-    "com.finance.admin.client.repository",
-    "com.finance.admin.client.document.repository",
-    "com.finance.admin.investment.repository",
-    "com.finance.admin.enquiry.repository",
-    "com.finance.admin.certificate.repository"
-})
-@EntityScan(basePackages = {
-    "com.finance.admin.user.entity",
-    "com.finance.admin.auth.entity", 
-    "com.finance.admin.audit.entity",
-    "com.finance.admin.client.model",
-    "com.finance.admin.client.document.model",
-    "com.finance.admin.investment.model",
-    "com.finance.admin.enquiry.model",
-    "com.finance.admin.certificate.model",
-    "com.finance.admin.common.entity"
-})
-@AutoConfigureDataJpa
-@TestPropertySource(locations = "classpath:application-test.yml")
-@Profile("test")
+@TestConfiguration
+@EnableJpaRepositories(basePackages = "com.finance.admin")
+@ActiveProfiles("test")
 public class TestConfig {
+
+    @MockBean
+    private RedisTemplate<String, Object> redisTemplate;
+
+    @MockBean
+    private RabbitTemplate rabbitTemplate;
+
+    @MockBean
+    private JavaMailSender javaMailSender;
 
     /**
      * Primary DataSource bean for tests using H2 in-memory database
@@ -92,36 +72,22 @@ public class TestConfig {
     }
 
     /**
-     * Authentication manager for test environment
+     * Test-specific security configuration to avoid servlet context issues
      */
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
-        return authConfig.getAuthenticationManager();
-    }
-
-    /**
-     * Security filter chain for test environment
-     */
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    @Primary
+    public SecurityFilterChain testSecurityFilterChain(HttpSecurity http) throws Exception {
         http
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/auth/**", "/auth/health").permitAll()
+                .requestMatchers("/api/auth/**", "/h2-console/**", "/swagger-ui/**", "/swagger-ui/index.html", "/v3/api-docs/**", "/actuator/health").permitAll()
                 .anyRequest().authenticated()
             );
-        return http.build();
-    }
 
-    /**
-     * ObjectMapper for JSON handling in tests
-     */
-    @Bean
-    @Primary
-    public ObjectMapper objectMapper() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.findAndRegisterModules();
-        return objectMapper;
+        // Allow H2 console frame
+        http.headers(headers -> headers.frameOptions(frame -> frame.disable()));
+
+        return http.build();
     }
 }

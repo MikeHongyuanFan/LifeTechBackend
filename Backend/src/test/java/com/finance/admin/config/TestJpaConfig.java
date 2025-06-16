@@ -13,13 +13,23 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = {
     "com.finance.admin.user.entity",
     "com.finance.admin.auth.entity", 
-    "com.finance.admin.audit.entity",
-    "com.finance.admin.common.entity",
-    "com.finance.admin.security.entity"
+    "com.finance.admin.client.model",
+    "com.finance.admin.client.document.model",
+    "com.finance.admin.investment.model",
+    "com.finance.admin.certificate.model",
+    "com.finance.admin.enquiry.model",
+    "com.finance.admin.client.notification.model",
+    "com.finance.admin.audit.entity"
 })
 @EnableJpaRepositories(basePackages = {
     "com.finance.admin.user.repository",
     "com.finance.admin.auth.repository",
+    "com.finance.admin.client.repository",
+    "com.finance.admin.client.document.repository",
+    "com.finance.admin.investment.repository",
+    "com.finance.admin.certificate.repository",
+    "com.finance.admin.enquiry.repository",
+    "com.finance.admin.client.notification.repository",
     "com.finance.admin.audit.repository"
 })
 public class TestJpaConfig {
