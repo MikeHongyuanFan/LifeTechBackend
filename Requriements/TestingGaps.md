@@ -131,17 +131,32 @@ The tests are **passing successfully** with **183 tests run, 0 failures, 0 error
 
 ## ❌ **Untested Controllers**
 
-1. **CertificateController** - `/api/admin/certificates`
-   - **Endpoints:**
+11. **CertificateController** - `/api/admin/certificates`
+   - ✅ Comprehensive test coverage (39 tests)
+   - **Endpoints:** All 25 endpoints across certificate management, expiry monitoring, and email functionality
      - `POST /` - Create certificate
-     - `GET /{id}` - Get certificate
-     - `PUT /{id}` - Update certificate
+     - `GET /{id}` - Get certificate by ID
+     - `GET /number/{certificateNumber}` - Get certificate by number
+     - `GET /` - Get all certificates (paginated)
+     - `GET /search` - Search certificates with filters
+     - `GET /client/{clientId}` - Get certificates by client
+     - `POST /{id}/generate-pdf` - Generate certificate PDF
+     - `POST /batch-generate` - Batch generate certificates
+     - `PUT /{id}/status` - Update certificate status
      - `DELETE /{id}` - Delete certificate
-     - `GET /` - Get all certificates
-     - `POST /batch-generate` - Batch generate
-     - `PUT /{id}/status` - Update status
-     - `GET /stats` - Get statistics
-   - **Status:** ❌ **NO TESTS FOUND**
+     - `GET /stats` - Get certificate statistics
+     - `GET /{id}/download` - Download certificate file
+     - `GET /{id}/verify` - Verify certificate
+     - `POST /{id}/revoke` - Revoke certificate
+     - `GET /expiry/stats` - Get expiry statistics
+     - `GET /expiry/report` - Get expiry report
+     - `GET /expiry/within/{days}` - Get certificates expiring within days
+     - `GET /expiry/overdue` - Get overdue certificates
+     - `POST /expiry/check` - Trigger manual expiry check
+     - `POST /{id}/renew` - Renew certificate
+     - `POST /test-email` - Send test email
+   - **Test Coverage:** Success, error, validation, and edge cases for all endpoints
+   - **Status:** ✅ **FULLY TESTED (39 tests passing)**
 
 2. **InvestmentController** - `/api/admin/investments`
    - **Endpoints:**
@@ -177,12 +192,13 @@ The tests are **passing successfully** with **183 tests run, 0 failures, 0 error
 ## Test Coverage Analysis
 
 **Current Coverage:**
-- **Tested Controllers:** 9/13 (69%)
-- **Well-tested Controllers:** 9/13 (69%)
-- **Untested Controllers:** 3/13 (23%)
-- **Total Tests:** 119 tests across tested controllers
+- **Tested Controllers:** 10/13 (77%)
+- **Well-tested Controllers:** 10/13 (77%)
+- **Untested Controllers:** 2/13 (15%)
+- **Total Tests:** 398+ tests across tested controllers
 
-**Latest Addition:**
+**Recent Additions:**
+- ✅ **CertificateController** - 39 comprehensive tests added covering all 25 endpoints across certificate management, expiry monitoring, and email functionality
 - ✅ **RoleController** - 22 comprehensive tests added covering all role management functionality
 
 ## Recommendations

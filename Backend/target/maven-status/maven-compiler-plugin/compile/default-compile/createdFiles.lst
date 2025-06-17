@@ -1,3 +1,4 @@
+com/finance/admin/client/wallet/model/ClientWalletIntegration$PlatformType.class
 com/finance/admin/client/dto/UpdateClientRequest.class
 com/finance/admin/client/service/EncryptionService.class
 com/finance/admin/client/dto/ClientLoginRequest$ClientLoginRequestBuilder.class
@@ -27,6 +28,7 @@ com/finance/admin/client/investment/dto/InvestmentComparisonResponse$ComparisonI
 com/finance/admin/client/service/JwtTokenService.class
 com/finance/admin/config/RedisConfiguration.class
 com/finance/admin/client/document/dto/DocumentListResponse$PaginationInfo.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$WalletSummary.class
 com/finance/admin/auth/dto/LoginResponse$UserInfo.class
 com/finance/admin/investment/service/InvestmentService$InvestmentSummary.class
 com/finance/admin/user/mapper/UserMapper.class
@@ -37,6 +39,7 @@ com/finance/admin/dashboard/dto/UpcomingBirthdaysResponse$UpcomingBirthdaysRespo
 com/finance/admin/investment/model/Investment$InvestmentStatus.class
 com/finance/admin/client/investment/dto/ActiveInvestmentResponse$PerformanceStatus.class
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse$BenchmarkComparison$BenchmarkPerformance$BenchmarkPerformanceBuilder.class
+com/finance/admin/client/wallet/model/ClientDigitalCertificate$ClientDigitalCertificateBuilder.class
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse.class
 com/finance/admin/user/specification/UserSpecifications.class
 com/finance/admin/client/dto/CreateClientRequest$CreateClientRequestBuilder.class
@@ -68,6 +71,8 @@ com/finance/admin/client/document/util/JwtUtils.class
 com/finance/admin/dashboard/dto/UpcomingBirthdaysResponse$BirthdayClient$BirthdayClientBuilder.class
 com/finance/admin/dashboard/dto/ClientStatsResponse.class
 com/finance/admin/client/document/dto/DocumentListResponse$PaginationInfo$PaginationInfoBuilder.class
+com/finance/admin/client/wallet/dto/WalletIntegrationResponse.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$RecentTransaction.class
 com/finance/admin/client/investment/dto/CompletedInvestmentResponse$CompletedInvestmentResponseBuilder.class
 com/finance/admin/config/CloudStorageConfig.class
 com/finance/admin/client/investment/dto/InvestmentSummaryResponse$StatusDistribution$StatusDistributionBuilder.class
@@ -103,6 +108,7 @@ com/finance/admin/certificate/controller/CertificateController.class
 com/finance/admin/dashboard/dto/InvestmentStatsResponse.class
 com/finance/admin/client/investment/dto/InvestmentComparisonRequest$ComparisonMetric.class
 com/finance/admin/certificate/service/CertificateEmailService.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$WalletSummary$WalletSummaryBuilder.class
 com/finance/admin/client/document/dto/ClientDocumentResponse$ClientDocumentResponseBuilder.class
 com/finance/admin/client/document/dto/BulkDocumentOperationResponse$BulkDocumentOperationResponseBuilder.class
 com/finance/admin/common/controller/TestController.class
@@ -124,16 +130,20 @@ com/finance/admin/client/dto/ClientResponse.class
 com/finance/admin/client/document/dto/DocumentUploadResponse$DocumentUploadResponseBuilder.class
 com/finance/admin/client/model/ClientMembership$ClientMembershipBuilder.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$TrendAnalytics$VolatilityTrend$VolatilityTrendBuilder.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse.class
 com/finance/admin/client/dto/ClientResponse$ClientResponseBuilder.class
 com/finance/admin/client/investment/dto/InvestmentChartsResponse$BarChartDataPoint.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$RiskAnalytics$RiskDistribution$RiskDistributionBuilder.class
+com/finance/admin/client/wallet/model/ClientWalletIntegration$SyncFrequency.class
 com/finance/admin/user/service/UserServiceImpl.class
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse$InvestmentComparisonItem$InvestmentComparisonItemBuilder.class
 com/finance/admin/client/dto/ClientSearchRequest$ClientSearchRequestBuilder.class
 com/finance/admin/config/SwaggerConfig.class
+com/finance/admin/client/wallet/dto/WalletIntegrationRequest.class
 com/finance/admin/client/document/dto/DocumentFilterRequest.class
 com/finance/admin/auth/repository/AdminUserRepository.class
 com/finance/admin/email/service/EmailService.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$PlatformBalance.class
 com/finance/admin/client/investment/dto/InvestmentFilterRequest$InvestmentFilterRequestBuilder.class
 com/finance/admin/client/notification/model/ClientNotification$DeliveryMethod.class
 com/finance/admin/investment/repository/EntityRepository.class
@@ -143,14 +153,17 @@ com/finance/admin/client/dto/UpdateClientRequest$UpdateClientRequestBuilder.clas
 com/finance/admin/client/investment/dto/InvestmentPerformanceResponse.class
 com/finance/admin/client/profile/dto/ClientProfileResponse$ProfileCompletionInfo.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$RiskAnalytics.class
+com/finance/admin/client/wallet/dto/WalletIntegrationResponse$WalletIntegrationResponseBuilder.class
 com/finance/admin/client/document/dto/ClientDocumentResponse$DocumentSecurityInfo$DocumentSecurityInfoBuilder.class
 com/finance/admin/certificate/service/CertificateExpiryMonitoringService$ExpiryReport$ExpiryReportBuilder.class
 com/finance/admin/client/controller/ClientAuthController.class
 com/finance/admin/client/profile/dto/ClientProfileResponse$KycStatusInfo$KycDocumentStatus.class
 com/finance/admin/client/profile/service/ClientProfileService.class
 com/finance/admin/client/investment/dto/InvestmentSummaryResponse$AssetAllocation.class
+com/finance/admin/client/wallet/service/ClientWalletService.class
 com/finance/admin/client/investment/dto/ActiveInvestmentResponse$ActiveInvestmentResponseBuilder.class
 com/finance/admin/client/service/ClientAuthService.class
+com/finance/admin/client/wallet/dto/DigitalCertificateResponse.class
 com/finance/admin/client/dto/ClientSearchRequest.class
 com/finance/admin/investment/dto/UpdateInvestmentRequest.class
 com/finance/admin/client/notification/model/ClientNotification$ClientNotificationBuilder.class
@@ -162,10 +175,12 @@ com/finance/admin/audit/entity/AuditLog.class
 com/finance/admin/client/investment/dto/InvestmentFilterRequest$SortBy.class
 com/finance/admin/dashboard/dto/DashboardSummaryResponse$UpcomingBirthdayClient$UpcomingBirthdayClientBuilder.class
 com/finance/admin/dashboard/dto/UpcomingBirthdaysResponse$BirthdayGreeting.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$AssetAllocation$AssetAllocationBuilder.class
 com/finance/admin/investment/service/InvestmentService.class
 com/finance/admin/auth/security/AdminUserPrincipal.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$DiversificationAnalytics$CorrelationAnalysis.class
 com/finance/admin/client/repository/ClientSessionRepository.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$PerformanceMetrics$PerformanceMetricsBuilder.class
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse$ComparisonChart$ChartDataSeries$DataPoint$DataPointBuilder.class
 com/finance/admin/client/document/dto/DocumentUploadRequest.class
 com/finance/admin/investment/dto/InvestmentResponse.class
@@ -185,10 +200,12 @@ com/finance/admin/client/investment/dto/InvestmentComparisonResponse$ComparisonC
 com/finance/admin/client/investment/dto/FilteredInvestmentsResponse$PaginationInfo.class
 com/finance/admin/client/dto/MembershipResponse$MembershipResponseBuilder.class
 com/finance/admin/client/investment/dto/InvestmentPerformanceResponse$AssetPerformanceRanking.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$PlatformBalance$PlatformBalanceBuilder.class
 com/finance/admin/client/notification/model/ClientNotification$NotificationCategory.class
 com/finance/admin/client/notification/model/ClientNotification$NotificationType.class
 com/finance/admin/client/service/ClientMembershipService.class
 com/finance/admin/client/investment/dto/InvestmentChartsResponse$PieChartDataPoint$PieChartDataPointBuilder.class
+com/finance/admin/client/wallet/repository/ClientDigitalCertificateRepository.class
 com/finance/admin/enquiry/repository/EnquiryRepository.class
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse$BenchmarkComparison$BenchmarkComparisonBuilder.class
 com/finance/admin/investment/model/Investment$RiskRating.class
@@ -202,10 +219,12 @@ com/finance/admin/client/investment/dto/InvestmentComparisonRequest$ComparisonPe
 com/finance/admin/client/model/ClientSession.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$RiskAnalytics$RiskAnalyticsBuilder.class
 com/finance/admin/client/controller/ClientMembershipController.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$PerformanceMetrics.class
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse$ComparisonInsights$ActionableInsight$ActionableInsightBuilder.class
 com/finance/admin/client/service/BlockchainService.class
 com/finance/admin/client/investment/dto/InvestmentDetailResponse$PerformanceDataPoint.class
 com/finance/admin/client/model/Client$ClientStatus.class
+com/finance/admin/client/wallet/dto/DigitalCertificateResponse$DigitalCertificateResponseBuilder.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$TrendAnalytics.class
 com/finance/admin/dashboard/dto/InvestmentStatsResponse$InvestmentStatsResponseBuilder.class
 com/finance/admin/enquiry/dto/CreateEnquiryRequest$CreateEnquiryRequestBuilder.class
@@ -216,6 +235,7 @@ com/finance/admin/client/investment/dto/InvestmentComparisonResponse$ComparisonI
 com/finance/admin/client/profile/dto/UpdateClientProfileRequest.class
 com/finance/admin/dashboard/dto/DashboardSummaryResponse.class
 com/finance/admin/client/document/dto/DocumentCategoriesResponse.class
+com/finance/admin/client/wallet/controller/ClientWalletController.class
 com/finance/admin/client/document/dto/DocumentSearchResponse$SearchMetadata$SearchMetadataBuilder.class
 com/finance/admin/client/document/dto/BulkDocumentOperationRequest.class
 com/finance/admin/client/model/ClientMembership.class
@@ -224,6 +244,7 @@ com/finance/admin/investment/model/Investment$InvestmentBuilder.class
 com/finance/admin/client/investment/dto/InvestmentFilterRequest$ReturnType.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$InvestmentAnalyticsResponseBuilder.class
 com/finance/admin/client/investment/dto/AllInvestmentsResponse$AllInvestmentsResponseBuilder.class
+com/finance/admin/client/wallet/model/ClientWalletIntegration.class
 com/finance/admin/investment/dto/CreateInvestmentRequest.class
 com/finance/admin/client/controller/BulkUpdateRequest.class
 com/finance/admin/investment/dto/CreateInvestmentRequest$CreateInvestmentRequestBuilder.class
@@ -253,6 +274,7 @@ com/finance/admin/client/investment/dto/InvestmentAlert$InvestmentAlertBuilder.c
 com/finance/admin/auth/dto/LoginRequest.class
 com/finance/admin/audit/service/AuditService.class
 com/finance/admin/investment/controller/EntityController.class
+com/finance/admin/client/wallet/model/ClientWalletIntegration$ClientWalletIntegrationBuilder.class
 com/finance/admin/auth/security/JwtAuthenticationEntryPoint.class
 com/finance/admin/client/investment/dto/EnhancedInvestmentFilterRequest$CustomMetricFilter.class
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse$ComparisonInsights$ActionableInsight.class
@@ -282,6 +304,7 @@ com/finance/admin/dashboard/dto/UpcomingBirthdaysResponse$BirthdayGreeting$Birth
 com/finance/admin/enquiry/dto/UpdateEnquiryRequest$UpdateEnquiryRequestBuilder.class
 com/finance/admin/user/controller/UserController.class
 com/finance/admin/certificate/model/CertificateTemplate.class
+com/finance/admin/client/wallet/service/ClientDigitalCertificateService$1.class
 com/finance/admin/client/investment/dto/AllInvestmentsResponse$CategoryBreakdown.class
 com/finance/admin/client/investment/dto/EnhancedInvestmentFilterRequest$SortBy.class
 com/finance/admin/client/dto/CreateClientRequest.class
@@ -290,6 +313,7 @@ com/finance/admin/client/repository/ClientLoginHistoryRepository.class
 com/finance/admin/config/MockJavaMailSender.class
 com/finance/admin/auth/security/JwtTokenProvider.class
 com/finance/admin/client/investment/dto/FilteredInvestmentsResponse$FilteredInvestmentsResponseBuilder.class
+com/finance/admin/client/wallet/model/ClientDigitalCertificate$CertificateType.class
 com/finance/admin/client/investment/dto/FilteredInvestmentsResponse.class
 com/finance/admin/common/exception/GlobalExceptionHandler.class
 com/finance/admin/client/document/dto/DocumentSearchResponse$DocumentSearchResponseBuilder.class
@@ -307,8 +331,10 @@ com/finance/admin/certificate/dto/CertificateResponse.class
 com/finance/admin/certificate/model/Certificate$CertificateType.class
 com/finance/admin/client/document/dto/ClientDocumentResponse.class
 com/finance/admin/investment/model/Entity$EntityStatus.class
+com/finance/admin/client/wallet/service/ClientDigitalCertificateService.class
 com/finance/admin/client/investment/dto/InvestmentSummaryResponse.class
 com/finance/admin/dashboard/dto/InvestmentStatsResponse$TopPerformingInvestment$TopPerformingInvestmentBuilder.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$AssetAllocation.class
 com/finance/admin/client/investment/dto/InvestmentComparisonResponse$ComparisonChart$ChartDataSeries$DataPoint.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$DiversificationAnalytics$CorrelationAnalysis$HighCorrelationPair$HighCorrelationPairBuilder.class
 com/finance/admin/enquiry/model/Enquiry.class
@@ -319,6 +345,7 @@ com/finance/admin/client/profile/dto/ClientProfileResponse.class
 com/finance/admin/client/investment/dto/InvestmentFilterRequest.class
 com/finance/admin/auth/service/MfaService.class
 com/finance/admin/client/investment/dto/InvestmentSummaryResponse$RiskDistribution$RiskDistributionBuilder.class
+com/finance/admin/client/wallet/service/ClientWalletService$1.class
 com/finance/admin/enquiry/dto/CreateEnquiryRequest.class
 com/finance/admin/client/document/model/ClientDocument.class
 com/finance/admin/enquiry/model/Enquiry$Priority.class
@@ -329,6 +356,8 @@ com/finance/admin/client/investment/dto/InvestmentChartsResponse$PieChartDataPoi
 com/finance/admin/investment/dto/EntityResponse$EntityResponseBuilder.class
 com/finance/admin/client/profile/dto/ClientProfileResponse$KycStatusInfo$KycStatus.class
 com/finance/admin/client/model/Client$ClientBuilder.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$WalletOverviewResponseBuilder.class
+com/finance/admin/client/wallet/dto/WalletOverviewResponse$RecentTransaction$RecentTransactionBuilder.class
 com/finance/admin/enquiry/dto/EnquiryResponse$EnquiryResponseBuilder.class
 com/finance/admin/certificate/service/CertificateExpiryMonitoringService$ExpiryStatistics$ExpiryStatisticsBuilder.class
 com/finance/admin/client/investment/dto/InvestmentDetailResponse$PerformanceDataPoint$PerformanceDataPointBuilder.class
@@ -339,6 +368,7 @@ com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$Diversificat
 com/finance/admin/config/DigitalSignatureConfig.class
 com/finance/admin/certificate/service/DigitalSignatureService.class
 com/finance/admin/client/notification/service/ClientNotificationService$1.class
+com/finance/admin/client/wallet/model/ClientDigitalCertificate.class
 com/finance/admin/investment/model/Entity$EntityType.class
 com/finance/admin/enquiry/model/Enquiry$EnquiryBuilder.class
 com/finance/admin/client/investment/dto/InvestmentAnalyticsResponse$DiversificationAnalytics$CorrelationAnalysis$CorrelationAnalysisBuilder.class
@@ -354,6 +384,7 @@ com/finance/admin/client/investment/service/ClientInvestmentService.class
 com/finance/admin/investment/dto/EntityResponse.class
 com/finance/admin/dashboard/dto/ClientStatsResponse$ClientTrendData$ClientTrendDataBuilder.class
 com/finance/admin/audit/repository/AuditLogRepository.class
+com/finance/admin/client/wallet/dto/WalletIntegrationRequest$WalletIntegrationRequestBuilder.class
 com/finance/admin/client/investment/dto/ActiveInvestmentResponse.class
 com/finance/admin/client/investment/dto/FilteredInvestmentsResponse$InvestmentSummaryItem.class
 com/finance/admin/client/investment/dto/EnhancedInvestmentFilterRequest$EnhancedInvestmentFilterRequestBuilder.class
@@ -372,6 +403,7 @@ com/finance/admin/client/investment/dto/InvestmentDetailResponse$PerformanceMetr
 com/finance/admin/config/SecurityConfig.class
 com/finance/admin/audit/annotation/Audited.class
 com/finance/admin/auth/security/JwtAuthenticationFilter.class
+com/finance/admin/client/wallet/repository/ClientWalletIntegrationRepository.class
 com/finance/admin/audit/aspect/AuditLoggingAspect.class
 com/finance/admin/dashboard/controller/DashboardController.class
 com/finance/admin/enquiry/model/Enquiry$EnquiryStatus.class
@@ -397,3 +429,4 @@ com/finance/admin/user/dto/UserUpdateRequest.class
 com/finance/admin/client/investment/dto/InvestmentChartsResponse$ChartMetrics.class
 com/finance/admin/client/investment/dto/InvestmentChartsResponse$TimeSeriesDataPoint.class
 com/finance/admin/client/investment/dto/FilteredInvestmentsResponse$FilterSummary.class
+com/finance/admin/client/wallet/model/ClientWalletIntegration$IntegrationStatus.class

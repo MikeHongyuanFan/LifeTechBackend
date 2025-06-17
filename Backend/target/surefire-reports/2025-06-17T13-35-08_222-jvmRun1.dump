@@ -1,0 +1,780 @@
+# Created at 2025-06-17T13:35:19.148
+Thread dump for process (71376@hongyuandeMacBook-Pro.local):
+"main" 
+   java.lang.Thread.State: RUNNABLE
+        at java.base@17.0.15/java.lang.Class.forName0(Native Method)
+        at java.base@17.0.15/java.lang.Class.forName(Class.java:375)
+        at app//org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateFactory.create15Delegate(ReflectionBasedReferenceTypeDelegateFactory.java:71)
+        at app//org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateFactory.createDelegate(ReflectionBasedReferenceTypeDelegateFactory.java:38)
+        at app//org.aspectj.weaver.reflect.ReflectionWorld.resolveDelegate(ReflectionWorld.java:193)
+        at app//org.aspectj.weaver.World.resolveToReferenceType(World.java:486)
+        at app//org.aspectj.weaver.World.resolve(World.java:321)
+        at app//org.aspectj.weaver.World.resolve(World.java:231)
+        at app//org.aspectj.weaver.World.resolve(World.java:436)
+        at app//org.aspectj.weaver.reflect.ReflectionWorld.resolve(ReflectionWorld.java:154)
+        at app//org.aspectj.weaver.reflect.ReflectionWorld.resolve(ReflectionWorld.java:144)
+        at app//org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateFactory.toResolvedTypeArray(ReflectionBasedReferenceTypeDelegateFactory.java:214)
+        at app//org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateFactory.createResolvedMethod(ReflectionBasedReferenceTypeDelegateFactory.java:140)
+        at app//org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateFactory.createResolvedMember(ReflectionBasedReferenceTypeDelegateFactory.java:129)
+        at app//org.aspectj.weaver.reflect.ReflectionShadow.makeExecutionShadow(ReflectionShadow.java:53)
+        at app//org.aspectj.weaver.internal.tools.PointcutExpressionImpl.matchesExecution(PointcutExpressionImpl.java:128)
+        at app//org.aspectj.weaver.internal.tools.PointcutExpressionImpl.matchesMethodExecution(PointcutExpressionImpl.java:110)
+        at app//org.springframework.aop.aspectj.AspectJExpressionPointcut.getShadowMatch(AspectJExpressionPointcut.java:461)
+        at app//org.springframework.aop.aspectj.AspectJExpressionPointcut.getTargetShadowMatch(AspectJExpressionPointcut.java:446)
+        at app//org.springframework.aop.aspectj.AspectJExpressionPointcut.matches(AspectJExpressionPointcut.java:291)
+        at app//org.springframework.aop.support.AopUtils.canApply(AopUtils.java:258)
+        at app//org.springframework.aop.support.AopUtils.canApply(AopUtils.java:295)
+        at app//org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:327)
+        at app//org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128)
+        at app//org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97)
+        at app//org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78)
+        at app//org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:366)
+        at app//org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:318)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1789)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$1059/0x000000700164df88.getObject(Unknown Source)
+        at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+        at app//org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1689)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1653)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeanCollection(DefaultListableBeanFactory.java:1543)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1511)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1392)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+        at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:887)
+        at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:848)
+        at app//org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+        at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$1059/0x000000700164df88.getObject(Unknown Source)
+        at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+        at app//org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$1059/0x000000700164df88.getObject(Unknown Source)
+        at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+        at app//org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1237)
+        at app//org.springdoc.core.providers.WebConversionServiceProvider.afterPropertiesSet(WebConversionServiceProvider.java:88)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$1059/0x000000700164df88.getObject(Unknown Source)
+        at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+        at app//org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959)
+        at app//org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+        at app//org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+        at app//org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+        at app//org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+        at app//org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+        at app//org.springframework.boot.test.context.SpringBootContextLoader$$Lambda$882/0x00000070015a8668.getWithException(Unknown Source)
+        at app//org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+        at app//org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+        at app//org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1454)
+        at app//org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553)
+        at app//org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+        at app//org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+        at app//org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
+        at app//org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
+        at app//org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
+        at app//org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
+        at app//org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
+        at app//org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+        at app//org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
+        at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
+        at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor$$Lambda$861/0x0000007001599530.execute(Unknown Source)
+
+"Reference Handler" 
+   java.lang.Thread.State: RUNNABLE
+        at java.base@17.0.15/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+        at java.base@17.0.15/java.lang.ref.Reference.processPendingReferences(Reference.java:253)
+        at java.base@17.0.15/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:215)
+
+"Finalizer" 
+   java.lang.Thread.State: WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at java.base@17.0.15/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+        at java.base@17.0.15/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:176)
+        at java.base@17.0.15/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:172)
+
+"Signal Dispatcher" 
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" 
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at java.base@17.0.15/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+        at java.base@17.0.15/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+        at java.base@17.0.15/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:162)
+
+"surefire-forkedjvm-stream-flusher" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@17.0.15/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+        at java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"surefire-forkedjvm-command-thread" 
+   java.lang.Thread.State: RUNNABLE
+        at java.management@17.0.15/sun.management.ThreadImpl.getThreadInfo1(Native Method)
+        at java.management@17.0.15/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:197)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.generateThreadDump(ForkedBooter.java:579)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.access$600(ForkedBooter.java:79)
+        at app//org.apache.maven.surefire.booter.ForkedBooter$4.update(ForkedBooter.java:322)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.callListeners(CommandReader.java:357)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:309)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"process reaper" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@17.0.15/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+        at java.base@17.0.15/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+        at java.base@17.0.15/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"Attach Listener" 
+   java.lang.Thread.State: RUNNABLE
+
+"Catalina-utility-1" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@17.0.15/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+        at java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"Catalina-utility-2" 
+   java.lang.Thread.State: WAITING
+        at java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+        at java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+        at java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+        at java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+        at java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1177)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"container-0" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//org.apache.catalina.core.StandardServer.await(StandardServer.java:564)
+        at app//org.springframework.boot.web.embedded.tomcat.TomcatWebServer$1.run(TomcatWebServer.java:217)
+
+"lettuce-eventExecutorLoop-1-1" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"quartzScheduler_Worker-1" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-2" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-3" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-4" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-5" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-6" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-7" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-8" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-9" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-10" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_QuartzSchedulerThread" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:254)
+
+"idle-connection-reaper" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//software.amazon.awssdk.http.apache.internal.conn.IdleConnectionReaper$ReaperTask.run(IdleConnectionReaper.java:151)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"SIGINT handler" 
+   java.lang.Thread.State: WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at java.base@17.0.15/java.lang.Thread.join(Thread.java:1313)
+        at java.base@17.0.15/java.lang.Thread.join(Thread.java:1381)
+        at java.base@17.0.15/java.lang.ApplicationShutdownHooks.runHooks(ApplicationShutdownHooks.java:107)
+        at java.base@17.0.15/java.lang.ApplicationShutdownHooks$1.run(ApplicationShutdownHooks.java:46)
+        at java.base@17.0.15/java.lang.Shutdown.runHooks(Shutdown.java:130)
+        at java.base@17.0.15/java.lang.Shutdown.exit(Shutdown.java:173)
+        at java.base@17.0.15/java.lang.Terminator$1.handle(Terminator.java:51)
+        at java.base@17.0.15/jdk.internal.misc.Signal$1.run(Signal.java:219)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"SpringApplicationShutdownHook" 
+   java.lang.Thread.State: WAITING
+        at java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:211)
+        at java.base@17.0.15/java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1864)
+        at java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+        at java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+        at java.base@17.0.15/java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1898)
+        at java.base@17.0.15/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2072)
+        at app//io.lettuce.core.AbstractRedisClient.shutdown(AbstractRedisClient.java:529)
+        at app//org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.stop(LettuceConnectionFactory.java:914)
+        at app//org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:117)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:348)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:487)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor$$Lambda$2838/0x00000070020a2cb8.accept(Unknown Source)
+        at java.base@17.0.15/java.lang.Iterable.forEach(Iterable.java:75)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:317)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:218)
+        at app//org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1136)
+        at app//org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+        at app//org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1090)
+        at app//org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+        at app//org.springframework.boot.SpringApplicationShutdownHook$$Lambda$2835/0x00000070020a2600.accept(Unknown Source)
+        at java.base@17.0.15/java.lang.Iterable.forEach(Iterable.java:75)
+        at app//org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-2" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-3" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-4" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-5" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-6" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-7" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-8" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+
+
+# Created at 2025-06-17T13:35:19.152
+Exiting self fork JVM. Received SHUTDOWN command from Maven shutdown hook.
+Thread dump before exiting the process (71376@hongyuandeMacBook-Pro.local):
+"main" 
+   java.lang.Thread.State: RUNNABLE
+        at app//org.springframework.boot.context.properties.source.SpringConfigurationPropertySources$SourcesIterator.fetchNext(SpringConfigurationPropertySources.java:112)
+        at app//org.springframework.boot.context.properties.source.SpringConfigurationPropertySources$SourcesIterator.hasNext(SpringConfigurationPropertySources.java:94)
+        at app//org.springframework.boot.context.properties.bind.Binder.containsNoDescendantOf(Binder.java:508)
+        at app//org.springframework.boot.context.properties.bind.Binder.bindObject(Binder.java:398)
+        at app//org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:350)
+        at app//org.springframework.boot.context.properties.bind.Binder.lambda$bindDataObject$5(Binder.java:477)
+        at app//org.springframework.boot.context.properties.bind.Binder$$Lambda$843/0x000000700158e498.bindProperty(Unknown Source)
+        at app//org.springframework.boot.context.properties.bind.JavaBeanBinder.bind(JavaBeanBinder.java:99)
+        at app//org.springframework.boot.context.properties.bind.JavaBeanBinder.bind(JavaBeanBinder.java:87)
+        at app//org.springframework.boot.context.properties.bind.JavaBeanBinder.bind(JavaBeanBinder.java:63)
+        at app//org.springframework.boot.context.properties.bind.Binder.lambda$bindDataObject$6(Binder.java:480)
+        at app//org.springframework.boot.context.properties.bind.Binder$$Lambda$845/0x000000700158e8e8.apply(Unknown Source)
+        at java.base@17.0.15/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+        at java.base@17.0.15/java.util.AbstractList$RandomAccessSpliterator.tryAdvance(AbstractList.java:706)
+        at java.base@17.0.15/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+        at java.base@17.0.15/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+        at java.base@17.0.15/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+        at java.base@17.0.15/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+        at java.base@17.0.15/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+        at java.base@17.0.15/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+        at java.base@17.0.15/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+        at app//org.springframework.boot.context.properties.bind.Binder.fromDataObjectBinders(Binder.java:488)
+        at app//org.springframework.boot.context.properties.bind.Binder.lambda$bindDataObject$7(Binder.java:479)
+        at app//org.springframework.boot.context.properties.bind.Binder$$Lambda$844/0x000000700158e6c0.get(Unknown Source)
+        at app//org.springframework.boot.context.properties.bind.Binder$Context.withIncreasedDepth(Binder.java:597)
+        at app//org.springframework.boot.context.properties.bind.Binder$Context.withDataObject(Binder.java:583)
+        at app//org.springframework.boot.context.properties.bind.Binder.bindDataObject(Binder.java:479)
+        at app//org.springframework.boot.context.properties.bind.Binder.bindObject(Binder.java:418)
+        at app//org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:350)
+        at app//org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:339)
+        at app//org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:269)
+        at app//org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:256)
+        at app//org.springframework.boot.context.properties.ConfigurationPropertiesBinder.bind(ConfigurationPropertiesBinder.java:94)
+        at app//org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.bind(ConfigurationPropertiesBindingPostProcessor.java:96)
+        at app//org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.postProcessBeforeInitialization(ConfigurationPropertiesBindingPostProcessor.java:79)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$1059/0x000000700164df88.getObject(Unknown Source)
+        at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+        at app//org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+        at app//org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907)
+        at app//org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785)
+        at app//org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$1059/0x000000700164df88.getObject(Unknown Source)
+        at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+        at app//org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+        at app//org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907)
+        at app//org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785)
+        at app//org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$1059/0x000000700164df88.getObject(Unknown Source)
+        at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+        at app//org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1689)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1653)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeanCollection(DefaultListableBeanFactory.java:1543)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1511)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1392)
+        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+        at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:887)
+        at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:848)
+        at app//org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+        at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$1059/0x000000700164df88.getObject(Unknown Source)
+        at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+        at app//org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+        at app//org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$1059/0x000000700164df88.getObject(Unknown Source)
+
+"Reference Handler" 
+   java.lang.Thread.State: RUNNABLE
+        at java.base@17.0.15/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+        at java.base@17.0.15/java.lang.ref.Reference.processPendingReferences(Reference.java:253)
+        at java.base@17.0.15/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:215)
+
+"Finalizer" 
+   java.lang.Thread.State: WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at java.base@17.0.15/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+        at java.base@17.0.15/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:176)
+        at java.base@17.0.15/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:172)
+
+"Signal Dispatcher" 
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" 
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at java.base@17.0.15/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+        at java.base@17.0.15/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+        at java.base@17.0.15/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:162)
+
+"surefire-forkedjvm-stream-flusher" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@17.0.15/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+        at java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"surefire-forkedjvm-command-thread" 
+   java.lang.Thread.State: RUNNABLE
+        at java.management@17.0.15/sun.management.ThreadImpl.getThreadInfo1(Native Method)
+        at java.management@17.0.15/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:197)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.generateThreadDump(ForkedBooter.java:579)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.access$600(ForkedBooter.java:79)
+        at app//org.apache.maven.surefire.booter.ForkedBooter$4.update(ForkedBooter.java:315)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.callListeners(CommandReader.java:357)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.exitByConfiguration(CommandReader.java:367)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:330)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"process reaper" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@17.0.15/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+        at java.base@17.0.15/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+        at java.base@17.0.15/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"Attach Listener" 
+   java.lang.Thread.State: RUNNABLE
+
+"Catalina-utility-1" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@17.0.15/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+        at java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"Catalina-utility-2" 
+   java.lang.Thread.State: WAITING
+        at java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+        at java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+        at java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+        at java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+        at java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1177)
+        at java.base@17.0.15/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"container-0" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//org.apache.catalina.core.StandardServer.await(StandardServer.java:564)
+        at app//org.springframework.boot.web.embedded.tomcat.TomcatWebServer$1.run(TomcatWebServer.java:217)
+
+"lettuce-eventExecutorLoop-1-1" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"quartzScheduler_Worker-1" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-2" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-3" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-4" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-5" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-6" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-7" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-8" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-9" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_Worker-10" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:568)
+
+"quartzScheduler_QuartzSchedulerThread" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at app//org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:254)
+
+"idle-connection-reaper" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//software.amazon.awssdk.http.apache.internal.conn.IdleConnectionReaper$ReaperTask.run(IdleConnectionReaper.java:151)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base@17.0.15/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"SIGINT handler" 
+   java.lang.Thread.State: WAITING
+        at java.base@17.0.15/java.lang.Object.wait(Native Method)
+        at java.base@17.0.15/java.lang.Thread.join(Thread.java:1313)
+        at java.base@17.0.15/java.lang.Thread.join(Thread.java:1381)
+        at java.base@17.0.15/java.lang.ApplicationShutdownHooks.runHooks(ApplicationShutdownHooks.java:107)
+        at java.base@17.0.15/java.lang.ApplicationShutdownHooks$1.run(ApplicationShutdownHooks.java:46)
+        at java.base@17.0.15/java.lang.Shutdown.runHooks(Shutdown.java:130)
+        at java.base@17.0.15/java.lang.Shutdown.exit(Shutdown.java:173)
+        at java.base@17.0.15/java.lang.Terminator$1.handle(Terminator.java:51)
+        at java.base@17.0.15/jdk.internal.misc.Signal$1.run(Signal.java:219)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"SpringApplicationShutdownHook" 
+   java.lang.Thread.State: WAITING
+        at java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:211)
+        at java.base@17.0.15/java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1864)
+        at java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+        at java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+        at java.base@17.0.15/java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1898)
+        at java.base@17.0.15/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2072)
+        at app//io.lettuce.core.AbstractRedisClient.shutdown(AbstractRedisClient.java:529)
+        at app//org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.stop(LettuceConnectionFactory.java:914)
+        at app//org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:117)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:348)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:487)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor$$Lambda$2838/0x00000070020a2cb8.accept(Unknown Source)
+        at java.base@17.0.15/java.lang.Iterable.forEach(Iterable.java:75)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:317)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:218)
+        at app//org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1136)
+        at app//org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+        at app//org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1090)
+        at app//org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+        at app//org.springframework.boot.SpringApplicationShutdownHook$$Lambda$2835/0x00000070020a2600.accept(Unknown Source)
+        at java.base@17.0.15/java.lang.Iterable.forEach(Iterable.java:75)
+        at app//org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-2" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-3" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-4" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-5" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-6" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-7" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+"lettuce-eventExecutorLoop-1-8" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@17.0.15/java.lang.Thread.sleep(Native Method)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor.confirmShutdown(SingleThreadEventExecutor.java:790)
+        at app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:70)
+        at app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+        at app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+        at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+
+
+

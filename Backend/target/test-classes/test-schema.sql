@@ -1,5 +1,7 @@
 -- Test Database Schema
 -- Drop all tables first to ensure clean state
+DROP TABLE IF EXISTS client_digital_certificates CASCADE;
+DROP TABLE IF EXISTS client_wallet_integrations CASCADE;
 DROP TABLE IF EXISTS certificates CASCADE;
 DROP TABLE IF EXISTS certificate_templates CASCADE;
 DROP TABLE IF EXISTS client_sessions CASCADE;
@@ -385,4 +387,65 @@ CREATE TABLE client_sessions (
     FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE
 );
 
--- Removed client_auth_session table as there's no corresponding entity 
+-- Removed client_auth_session table as there's no corresponding entity
+
+-- Client Wallet Integrations Table (Sprint 4.4)
+CREATE TABLE client_wallet_integrations (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    client_id BIGINT NOT NULL,
+    platform_name VARCHAR(100) NOT NULL,
+    platform_type VARCHAR(50) NOT NULL,
+    account_identifier VARCHAR(255),
+    integration_status VARCHAR(20) DEFAULT 'CONNECTED',
+    last_sync_at TIMESTAMP,
+    api_credentials_encrypted TEXT,
+    sync_frequency VARCHAR(20) DEFAULT 'DAILY',
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(36) NOT NULL DEFAULT 'SYSTEM',
+    updated_by VARCHAR(36),
+    version INTEGER DEFAULT 1,
+    FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE
+);
+
+-- Client Digital Certificates Table (Sprint 4.4)
+CREATE TABLE client_digital_certificates (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    client_id BIGINT NOT NULL,
+    certificate_number VARCHAR(100) UNIQUE NOT NULL,
+    certificate_type VARCHAR(50) NOT NULL,
+    company_name VARCHAR(255) NOT NULL,
+    number_of_shares DECIMAL(15,4),
+    issue_date DATE NOT NULL,
+    digital_signature TEXT,
+    blockchain_hash VARCHAR(255),
+    certificate_data TEXT,
+    is_valid BOOLEAN DEFAULT TRUE,
+    share_class VARCHAR(50),
+    nominal_value DECIMAL(10,4),
+    current_market_value DECIMAL(15,2),
+    transfer_restrictions TEXT,
+    voting_rights BOOLEAN,
+    dividend_entitlement BOOLEAN,
+    last_transfer_date DATE,
+    certificate_url VARCHAR(500),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(36) NOT NULL DEFAULT 'SYSTEM',
+    updated_by VARCHAR(36),
+    version INTEGER DEFAULT 1,
+    FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE
+);
+
+-- Create indexes for wallet integrations
+CREATE INDEX idx_client_wallet_integrations_client_id ON client_wallet_integrations(client_id);
+CREATE INDEX idx_client_wallet_integrations_platform_name ON client_wallet_integrations(platform_name);
+CREATE INDEX idx_client_wallet_integrations_status ON client_wallet_integrations(integration_status);
+CREATE INDEX idx_client_wallet_integrations_active ON client_wallet_integrations(is_active);
+
+-- Create indexes for digital certificates
+CREATE INDEX idx_client_digital_certificates_client_id ON client_digital_certificates(client_id);
+CREATE INDEX idx_client_digital_certificates_certificate_number ON client_digital_certificates(certificate_number);
+CREATE INDEX idx_client_digital_certificates_company_name ON client_digital_certificates(company_name);
+CREATE INDEX idx_client_digital_certificates_is_valid ON client_digital_certificates(is_valid); 

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.finance.admin.client.document.repository.ClientDocumentRepositoryTest
 -------------------------------------------------------------------------------
-Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.571 s -- in com.finance.admin.client.document.repository.ClientDocumentRepositoryTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.477 s -- in com.finance.admin.client.document.repository.ClientDocumentRepositoryTest
