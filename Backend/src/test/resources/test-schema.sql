@@ -1,5 +1,7 @@
 -- Test Database Schema
 -- Drop all tables first to ensure clean state
+DROP TABLE IF EXISTS client_digital_certificates CASCADE;
+DROP TABLE IF EXISTS client_wallet_integrations CASCADE;
 DROP TABLE IF EXISTS certificates CASCADE;
 DROP TABLE IF EXISTS certificate_templates CASCADE;
 DROP TABLE IF EXISTS client_sessions CASCADE;
