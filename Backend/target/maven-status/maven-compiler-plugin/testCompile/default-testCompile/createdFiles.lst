@@ -14,7 +14,9 @@ com/finance/admin/config/BaseIntegrationTest.class
 com/finance/admin/dashboard/controller/DashboardControllerTest.class
 com/finance/admin/auth/AuthenticationIntegrationTest.class
 com/finance/admin/client/controller/ClientControllerTest.class
+com/finance/admin/investment/controller/EntityControllerTest.class
 com/finance/admin/config/TestJpaConfig.class
+com/finance/admin/investment/controller/InvestmentControllerTest.class
 com/finance/admin/client/investment/service/ClientInvestmentServiceTest.class
 com/finance/admin/client/profile/service/ClientProfileServiceTest.class
 com/finance/admin/config/BaseUnitTest.class

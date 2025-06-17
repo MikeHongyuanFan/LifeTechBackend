@@ -1,4 +1,5 @@
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/client/service/ClientMembershipServiceTest.java
+/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/investment/controller/EntityControllerTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/client/document/dto/ClientDocumentResponseTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/client/wallet/controller/ClientWalletControllerTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/user/UserControllerTest.java
@@ -20,6 +21,7 @@
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/certificate/controller/CertificateControllerTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/certificate/EmailIntegrationTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/config/TestConfig.java
+/Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/investment/controller/InvestmentControllerTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/config/BaseTestConfiguration.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/client/document/controller/ClientDocumentControllerTest.java
 /Users/hongyuanfan/Desktop/lifetech/LifeTechBackend/Backend/src/test/java/com/finance/admin/client/document/service/ClientDocumentServiceTest.java
